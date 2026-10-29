@@ -23,6 +23,8 @@ interoperability community.
 - The concept's principles and boundaries: what it is, what it is not, and how
   it relates to clinical information, Schedule Authorities, Knowledge Bases,
   and CDS engines.
+- What any representation of the concept, such as HL7 v2 or FHIR, needs to
+  convey, described at a general level.
 - The working decisions reached on the concept, the reasoning behind them, and
   the questions that remain open.
 
@@ -34,6 +36,8 @@ interoperability community.
   That publication is itself a proposal under discussion.
 - **Clinical policy.** Schedule Authorities decide which factors affect their
   guidance and what each condition means.
+- **Detailed HL7 v2 and FHIR specifications.** These belong to the related
+  topics listed in the next section, which depend on this concept.
 - **Forecasting logic.** CDS engines and their Knowledge Bases decide how
   conditions affect recommendations.
 

@@ -48,7 +48,10 @@
 - Do not create clinical policy. If guidance does not settle a question, mark it
   as open.
 - Keep concept and transport separate. HL7 v2, FHIR, or other representations
-  are bindings of the concept, not the concept itself.
+  are bindings of the concept, not the concept itself. Describe them only at a
+  general level and link to the related InteropHub topics listed in
+  `content/01-related-work.md` for detail; do not replicate their
+  specifications here.
 - Code-system publication is out of scope; refer to IVC rather than restating or
   deciding its publication choices.
 

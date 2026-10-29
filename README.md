@@ -24,7 +24,10 @@ decisions reached on it.
 ## What belongs here, and what does not
 
 This project covers the **concept**: its definition, principles, boundaries,
-and working decisions. It does not publish Contextual Condition codes or
+and working decisions. It describes the HL7 v2 and FHIR representations only at
+a general level; their detailed specifications belong to the related
+[InteropHub topics](content/01-related-work.md), which depend on this concept.
+It does not publish Contextual Condition codes or
 values. That is an operational activity, currently being explored by the
 Immunization Vocabularies Collaborative at <https://ivci.org/contextual-conditions/>
 and itself still a proposal.
@@ -59,8 +62,9 @@ the [open questions](content/90-working-decisions.md#open-questions).
    Confluence concept page and bringing in material from the earlier proposal
    and primer that is still relevant, with conflicts carried as open questions.
 2. Build the regeneration step for the Confluence pages.
-3. Cross-link this repository from the Confluence pages, InteropHub, the IVC
-   pages, and the ImmDS + HALO FHIR implementation guide.
+3. Cross-link this repository from the Confluence pages, the related InteropHub
+   topics (1, 7, 137, 140, and 141), the IVC pages, and the ImmDS + HALO FHIR
+   implementation guide.
 
 ## Repository structure
 

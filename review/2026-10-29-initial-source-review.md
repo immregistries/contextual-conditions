@@ -141,3 +141,26 @@ updating once the concept text settles here.
 - Automated access to confluence.hl7.org is blocked by a human-verification
   check. Regenerating the Confluence pages from this repository will need either
   an access token that passes that check or a manual paste step.
+
+## Follow-up, October 29, 2026
+
+The project lead set the scope for representations after this review:
+
+- OQ-1 is resolved by working decision WD-5. The core document describes the HL7
+  v2 and FHIR representations at a general level and refers to the InteropHub
+  topics that own them: [topic 1](https://informatics.immregistries.org/hub/es/topic/1)
+  (ImmDS + HALO, FHIR), [topic 137](https://informatics.immregistries.org/hub/es/topic/137)
+  (HL7 v2 exchange), [topic 140](https://informatics.immregistries.org/hub/es/topic/140)
+  (HL7 v2 updates), and [topic 141](https://informatics.immregistries.org/hub/es/topic/141)
+  (HL7 v2 queries).
+- WD-6 records that HALO factors are Contextual Conditions.
+- OQ-3 (OBX-2 value type) is an HL7 v2 detail and is referred to topic 137.
+- The storage rules in OQ-2 fall within topic 140, whose description includes
+  "whether and how an IIS may retain or use the information." This document
+  still needs to state the boundary between stateless CDS evaluation and IIS
+  storage.
+- The descriptions of topics 137, 140, and 141 list example conditions such as
+  "lifestyle" and "medical or risk factors" and describe conditions as coded
+  observations. They should be checked against the concept's definition, which
+  treats a condition as a Schedule Authority-defined input rather than a
+  clinical observation, once that text settles here (see finding 10).
