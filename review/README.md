@@ -10,6 +10,9 @@ until it is adjudicated into `content/`.
   or, when several points arrive together, in a dated file here such as
   `2026-11-phwg-call.md`. Record the substance and source, not personal
   details.
+- **Comments made on the web guide** are downloaded as JSON and turned into a
+  dated review record with
+  `python process/tools/import_guide_comments.py <files>`.
 - **Comments in generated documents** are transcribed the same way. Do not edit
   the generated document as if it were source.
 

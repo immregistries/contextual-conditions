@@ -22,4 +22,9 @@ if ($LASTEXITCODE -ne 0) {
     throw "Applying the Word table style failed with exit code $LASTEXITCODE."
 }
 
-Write-Host "Built core document in output/."
+& $python.Source .\process\tools\build_guide.py --assembly ContextualConditions.qmd
+if ($LASTEXITCODE -ne 0) {
+    throw "Building the web guide failed with exit code $LASTEXITCODE."
+}
+
+Write-Host "Built core document and web guide in output/."

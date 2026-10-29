@@ -1,0 +1,20 @@
+{
+  "id": "contextual-conditions",
+  "status": "Draft",
+  "interophubTopic": 7,
+  "repository": "https://github.com/immregistries/contextual-conditions",
+  "license": "Content licensed CC BY 4.0",
+  "navLabels": {
+    "status-and-scope": "Scope",
+    "related-work": "Related Work",
+    "the-problem": "Problem",
+    "the-concept": "Concept",
+    "clinical-information": "Clinical Information",
+    "evaluation-and-time": "Evaluation and Time",
+    "authorities": "Authorities",
+    "representations": "Representations",
+    "adoption-and-boundaries": "Boundaries",
+    "applying-the-concept": "Applying",
+    "working-decisions": "Decisions"
+  }
+}

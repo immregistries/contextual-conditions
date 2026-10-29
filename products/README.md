@@ -8,3 +8,4 @@ product go back into `content/` first.
 | Product | Purpose |
 |---|---|
 | [confluence/](confluence/brief.yml) | The HL7 PHWG Confluence pages used for sharing and feedback |
+| [web-guide/](web-guide/brief.yml) | The web guide on GitHub Pages, with on-page comments |
