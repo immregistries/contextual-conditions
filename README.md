@@ -40,6 +40,28 @@ Work Group Confluence pages are regenerated from it for sharing and feedback:
 Comments made on Confluence are welcome. They are brought back here as review
 inputs; the Confluence text is not edited independently.
 
+## Community coordination
+
+The community works on this topic through InteropHub:
+[CDS Contextual Conditions, topic 7](https://informatics.immregistries.org/hub/es/topic/7).
+Meetings, agendas, and discussion notes are tracked there.
+
+## Work in progress, in the open
+
+The concept is still under discussion, and its existing descriptions disagree in
+places. This project brings them together and keeps the disagreements visible:
+see the [initial source review](review/2026-10-29-initial-source-review.md) and
+the [open questions](content/90-working-decisions.md#open-questions).
+
+## Next steps
+
+1. Draft the concept sections in `content/`, starting from the September 2026
+   Confluence concept page and bringing in material from the earlier proposal
+   and primer that is still relevant, with conflicts carried as open questions.
+2. Build the regeneration step for the Confluence pages.
+3. Cross-link this repository from the Confluence pages, InteropHub, the IVC
+   pages, and the ImmDS + HALO FHIR implementation guide.
+
 ## Repository structure
 
 ```text

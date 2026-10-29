@@ -15,6 +15,7 @@ is rewritten, reviewed, and placed in `content/`. Nothing private is committed;
 |---|---|---|
 | [CDS Contextual Conditions](https://confluence.hl7.org/spaces/PHWG/pages/453920359/CDS+Contextual+Conditions) (HL7 PHWG Confluence) | Updated September 15, 2026 | Most recent statement of the concept |
 | [CDS Contextual Conditions in HL7 v2](https://confluence.hl7.org/spaces/PHWG/pages/468260886/CDS+Contextual+Conditions+in+HL7+v2) (HL7 PHWG Confluence) | Updated June 26, 2026 | HL7 v2 representation and the maternal RSV use case |
+| [InteropHub topic 7: CDS Contextual Conditions](https://informatics.immregistries.org/hub/es/topic/7) | Current | Community coordination, meetings, and discussion notes |
 | [IVC Contextual Conditions proof of concept](https://ivci.org/contextual-conditions/) | October 2026 | Context only; code publication is out of scope |
 | [IVC canonical publication planning note](https://github.com/IVC-NUVA/IVC-Website/blob/main/discussion/contextual-conditions-canonical-publication-plan.md) | 2026 | Context only; namespace and publication proposal |
 

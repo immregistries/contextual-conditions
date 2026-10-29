@@ -62,6 +62,13 @@ it for sharing and feedback:
 - [CDS Contextual Conditions](https://confluence.hl7.org/spaces/PHWG/pages/453920359/CDS+Contextual+Conditions)
 - [CDS Contextual Conditions in HL7 v2](https://confluence.hl7.org/spaces/PHWG/pages/468260886/CDS+Contextual+Conditions+in+HL7+v2)
 
+Community coordination, meetings, and discussion notes are tracked on
+InteropHub as [CDS Contextual Conditions, topic 7](https://informatics.immregistries.org/hub/es/topic/7).
+
+The concept is still being worked out, and its earlier descriptions do not all
+agree. Those disagreements, and critiques of the concept, are recorded openly
+in this repository as review inputs and open questions.
+
 Feedback is welcome as a GitHub issue, a Confluence comment, or in community
 meetings. Accepted changes are made here first, then the Confluence pages are
 regenerated.
@@ -81,11 +88,14 @@ it can be revisited.
 |---|---|---|
 | WD-1 | This project covers the concept of Contextual Conditions. Publication of code systems and values is operational and is handled separately, currently as an IVC proposal. | Project scope, October 2026 |
 | WD-2 | This repository is the authoritative source for the concept. Confluence pages are regenerated from it for sharing and feedback. | Project scope, October 2026 |
+| WD-3 | Community coordination, meetings, and discussion notes are tracked on InteropHub, [topic 7](https://informatics.immregistries.org/hub/es/topic/7). | Project scope, October 2026 |
+| WD-4 | Disagreements among sources, and critiques of the concept, are kept visible in this repository rather than resolved privately. | Project scope, October 2026 |
 
 ## Open questions
 
-These were identified by comparing existing sources. Each needs discussion
-before the affected text is settled.
+These were identified by comparing existing sources; see the
+[initial source review](review/2026-10-29-initial-source-review.md) for
+detail. Each needs discussion before the affected text is settled.
 
 | ID | Question | Sources in tension |
 |---|---|---|
@@ -93,3 +103,4 @@ before the affected text is settled.
 | OQ-2 | May an IIS store Contextual Conditions received in a VXU? | The Confluence concept page (September 2026) describes conditions as evaluation-scoped and leaves longitudinal storage to separate work; the HL7 v2 page (June 2026) and the primer allow optional storage under local policy. |
 | OQ-3 | Which OBX-2 value type carries a Boolean Contextual Condition? | The primer's example uses `ID`; the HL7 v2 Confluence page uses `CE`. |
 | OQ-4 | What are the current names for the governance roles? | The primer names four roles (Code System, Publishing, Namespace, and CDS Authority); the Confluence concept page uses Schedule Authority, terminology steward, and Knowledge Base. |
+| OQ-5 | Is there a nullified state that removes a previously stored assertion? | The primer describes one; the Confluence concept page's stateless model has none. Depends on OQ-2. |

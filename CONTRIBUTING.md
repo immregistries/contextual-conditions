@@ -9,6 +9,9 @@ proposed wording are all welcome.
 - **Open an issue** to raise a question, challenge a working decision, or share
   an implementation experience. Issue templates are provided for general
   feedback and for proposing or challenging a working decision.
+- **Join the community discussion** on InteropHub,
+  [CDS Contextual Conditions, topic 7](https://informatics.immregistries.org/hub/es/topic/7),
+  where meetings and discussion notes are tracked.
 - **Comment on Confluence.** The HL7 Public Health Work Group pages are copies of
   this document. Comments there are brought back here for consideration.
 - **Propose a change** with a pull request against the Markdown in `content/`.

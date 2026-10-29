@@ -6,12 +6,17 @@ until it is adjudicated into `content/`.
 
 - **GitHub issues** are the preferred record. Link the issue from the working
   decision or content change it produced.
-- **Confluence comments and meeting feedback** are summarized as a GitHub issue,
+- **Confluence comments, InteropHub discussion notes, and meeting feedback** are summarized as a GitHub issue,
   or, when several points arrive together, in a dated file here such as
   `2026-11-phwg-call.md`. Record the substance and source, not personal
   details.
 - **Comments in generated documents** are transcribed the same way. Do not edit
   the generated document as if it were source.
+
+Current review records:
+
+- [2026-10-29-initial-source-review.md](2026-10-29-initial-source-review.md):
+  comparison of the existing sources made while setting up the repository.
 
 When a review input is resolved, note the outcome: accepted into `content/`,
 recorded as a working decision, kept as an open question, or declined with a
