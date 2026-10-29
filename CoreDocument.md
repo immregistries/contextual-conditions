@@ -40,7 +40,8 @@ interoperability community.
   it relates to clinical information, Schedule Authorities, Knowledge Bases,
   and CDS engines.
 - What any representation of the concept, such as HL7 v2 or FHIR, needs to
-  convey, described at a general level.
+  convey, described at a general level, including modeling principles that
+  apply to every representation.
 - The working decisions reached on the concept, the reasoning behind them, and
   the questions that remain open.
 
@@ -52,6 +53,8 @@ interoperability community.
   That publication is itself a proposal under discussion.
 - **Clinical policy.** Schedule Authorities decide which factors affect their
   guidance and what each condition means.
+- **Who creates, determines, or stores Contextual Conditions,** and how they
+  are included in messages and workflows.
 - **Detailed HL7 v2 and FHIR specifications.** These belong to the related
   topics listed in the next section, which depend on this concept.
 - **Forecasting logic.** CDS engines and their Knowledge Bases decide how
@@ -94,8 +97,8 @@ may develop documentation of its own.
 |---|---|
 | [Immunization CDS (ImmDS + HALO), topic 1](https://informatics.immregistries.org/hub/es/topic/1) | The FHIR-based CDS interface work that created the need for Contextual Conditions. HALO factors are Contextual Conditions as defined here. Defines the FHIR representation, including how a CDS engine reports which conditions it supports. |
 | [HL7 v2 Contextual Conditions Exchange, topic 137](https://informatics.immregistries.org/hub/es/topic/137) | The overall HL7 v2 representation, using coded OBX observations. Parent of topics 140 and 141. |
-| [HL7 v2 Contextual Conditions in Immunization Updates, topic 140](https://informatics.immregistries.org/hub/es/topic/140) | Submission of conditions in VXU messages, including whether and how an IIS may retain or use them. |
-| [HL7 v2 Contextual Conditions in Immunization Queries, topic 141](https://informatics.immregistries.org/hub/es/topic/141) | Conditions supplied with a QBP query to influence the forecast returned in the RSP. |
+| [HL7 v2 Contextual Conditions in Immunization Updates, topic 140](https://informatics.immregistries.org/hub/es/topic/140) | Submission of conditions in VXU messages, including whether and how an IIS may retain or use them. IIS storage rules belong here. |
+| [HL7 v2 Contextual Conditions in Immunization Queries, topic 141](https://informatics.immregistries.org/hub/es/topic/141) | Conditions supplied with a QBP query to influence the forecast returned in the RSP. Also touches on storage, and is likely to prohibit storing conditions supplied in a query. |
 | [CDS Contextual Conditions, topic 7](https://informatics.immregistries.org/hub/es/topic/7) | This work: the concept itself. |
 
 Publication of the code systems that define individual conditions is handled
@@ -107,8 +110,18 @@ separately, currently as an Immunization Vocabularies Collaborative proposal at
 HL7 v2 and FHIR are two representations of the same concept. This document
 describes what any representation needs to convey and the principles it must
 preserve, so that the representations stay consistent with each other and with
-the concept. Message structures, field-level rules, conformance requirements,
-and workflow behavior belong to the related topics above.
+the concept.
+
+Some modeling principles are part of the concept because they apply to every
+representation. For example, when a date is meaningful to a Contextual
+Condition, it is modeled as a separate Contextual Condition with a date value,
+not conveyed through a representation's own date fields such as HL7 v2 OBX-14
+or the date elements of a FHIR Observation.
+
+Out of scope here are the rules for who creates, determines, or stores
+Contextual Conditions, and how they are included in messages and workflows.
+Message structures, field-level rules, conformance requirements, storage, and
+workflow behavior belong to the related topics above.
 
 ---
 
@@ -129,6 +142,8 @@ it can be revisited.
 | WD-4 | Disagreements among sources, and critiques of the concept, are kept visible in this repository rather than resolved privately. | Project scope, October 2026 |
 | WD-5 | This document describes the HL7 v2 and FHIR representations at a general level: what a representation must convey and which principles it must preserve. Detailed specifications belong to the related InteropHub topics (1, 137, 140, and 141), which depend on this concept and may develop their own documentation. Resolves OQ-1. | Project direction, October 2026 |
 | WD-6 | HALO factors, from the Immunization CDS (ImmDS + HALO) work, are Contextual Conditions as defined in this document. | Project direction, October 2026 |
+| WD-7 | This document describes what a Contextual Condition is conceptually. It does not set rules for who creates, determines, or stores Contextual Conditions, or for how they are included in messages and workflows. IIS storage rules belong to topic 140; topic 141 also touches on storage and is likely to prohibit storing conditions supplied in a query. Resolves OQ-2. | Project direction, October 2026 |
+| WD-8 | When a date is meaningful to a Contextual Condition, it is modeled as a separate Contextual Condition with a date value. It is not conveyed through a representation's own date fields, such as HL7 v2 OBX-14 or the date elements of a FHIR Observation. This modeling rule applies to every representation and is in scope. | Project direction, October 2026 |
 
 ## Open questions
 
@@ -140,7 +155,7 @@ that belong to a related topic are referred there rather than answered here.
 | ID | Question | Sources in tension | Status |
 |---|---|---|---|
 | OQ-1 | Does this document include an HL7 v2 representation, or only the transport-neutral concept, with HL7 v2 and other representations documented elsewhere? | The Confluence concept page lists transport representations as a non-goal; the HL7 v2 Confluence page is a child of it. | Resolved by WD-5 |
-| OQ-2 | May an IIS store Contextual Conditions received in a VXU? | The Confluence concept page (September 2026) describes conditions as evaluation-scoped and leaves longitudinal storage to separate work; the HL7 v2 page (June 2026) and the primer allow optional storage under local policy. | Open. This document needs to state the boundary between a stateless CDS evaluation and IIS storage; storage rules are referred to topic 140. <!-- CONFIRM: Referral of IIS storage rules to topic 140. --> |
+| OQ-2 | May an IIS store Contextual Conditions received in a VXU? | The Confluence concept page (September 2026) describes conditions as evaluation-scoped and leaves longitudinal storage to separate work; the HL7 v2 page (June 2026) and the primer allow optional storage under local policy. | Resolved by WD-7; storage rules belong to topic 140 |
 | OQ-3 | Which OBX-2 value type carries a Boolean Contextual Condition? | The primer's example uses `ID`; the HL7 v2 Confluence page uses `CE`. | Referred to topic 137 under WD-5 |
 | OQ-4 | What are the current names for the governance roles? | The primer names four roles (Code System, Publishing, Namespace, and CDS Authority); the Confluence concept page uses Schedule Authority, terminology steward, and Knowledge Base. | Open |
-| OQ-5 | Is there a nullified state that removes a previously stored assertion? | The primer describes one; the Confluence concept page's stateless model has none. Depends on OQ-2. | Open; follows OQ-2 |
+| OQ-5 | Is there a nullified state that removes a previously stored assertion? | The primer describes one; the Confluence concept page's stateless model has none. Depends on OQ-2. | Referred to topic 140 under WD-7 |

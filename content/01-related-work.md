@@ -13,8 +13,8 @@ may develop documentation of its own.
 |---|---|
 | [Immunization CDS (ImmDS + HALO), topic 1](https://informatics.immregistries.org/hub/es/topic/1) | The FHIR-based CDS interface work that created the need for Contextual Conditions. HALO factors are Contextual Conditions as defined here. Defines the FHIR representation, including how a CDS engine reports which conditions it supports. |
 | [HL7 v2 Contextual Conditions Exchange, topic 137](https://informatics.immregistries.org/hub/es/topic/137) | The overall HL7 v2 representation, using coded OBX observations. Parent of topics 140 and 141. |
-| [HL7 v2 Contextual Conditions in Immunization Updates, topic 140](https://informatics.immregistries.org/hub/es/topic/140) | Submission of conditions in VXU messages, including whether and how an IIS may retain or use them. |
-| [HL7 v2 Contextual Conditions in Immunization Queries, topic 141](https://informatics.immregistries.org/hub/es/topic/141) | Conditions supplied with a QBP query to influence the forecast returned in the RSP. |
+| [HL7 v2 Contextual Conditions in Immunization Updates, topic 140](https://informatics.immregistries.org/hub/es/topic/140) | Submission of conditions in VXU messages, including whether and how an IIS may retain or use them. IIS storage rules belong here. |
+| [HL7 v2 Contextual Conditions in Immunization Queries, topic 141](https://informatics.immregistries.org/hub/es/topic/141) | Conditions supplied with a QBP query to influence the forecast returned in the RSP. Also touches on storage, and is likely to prohibit storing conditions supplied in a query. |
 | [CDS Contextual Conditions, topic 7](https://informatics.immregistries.org/hub/es/topic/7) | This work: the concept itself. |
 
 Publication of the code systems that define individual conditions is handled
@@ -26,5 +26,15 @@ separately, currently as an Immunization Vocabularies Collaborative proposal at
 HL7 v2 and FHIR are two representations of the same concept. This document
 describes what any representation needs to convey and the principles it must
 preserve, so that the representations stay consistent with each other and with
-the concept. Message structures, field-level rules, conformance requirements,
-and workflow behavior belong to the related topics above.
+the concept.
+
+Some modeling principles are part of the concept because they apply to every
+representation. For example, when a date is meaningful to a Contextual
+Condition, it is modeled as a separate Contextual Condition with a date value,
+not conveyed through a representation's own date fields such as HL7 v2 OBX-14
+or the date elements of a FHIR Observation.
+
+Out of scope here are the rules for who creates, determines, or stores
+Contextual Conditions, and how they are included in messages and workflows.
+Message structures, field-level rules, conformance requirements, storage, and
+workflow behavior belong to the related topics above.

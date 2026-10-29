@@ -24,7 +24,8 @@ interoperability community.
   it relates to clinical information, Schedule Authorities, Knowledge Bases,
   and CDS engines.
 - What any representation of the concept, such as HL7 v2 or FHIR, needs to
-  convey, described at a general level.
+  convey, described at a general level, including modeling principles that
+  apply to every representation.
 - The working decisions reached on the concept, the reasoning behind them, and
   the questions that remain open.
 
@@ -36,6 +37,8 @@ interoperability community.
   That publication is itself a proposal under discussion.
 - **Clinical policy.** Schedule Authorities decide which factors affect their
   guidance and what each condition means.
+- **Who creates, determines, or stores Contextual Conditions,** and how they
+  are included in messages and workflows.
 - **Detailed HL7 v2 and FHIR specifications.** These belong to the related
   topics listed in the next section, which depend on this concept.
 - **Forecasting logic.** CDS engines and their Knowledge Bases decide how

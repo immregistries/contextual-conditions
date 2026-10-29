@@ -52,6 +52,11 @@
   general level and link to the related InteropHub topics listed in
   `content/01-related-work.md` for detail; do not replicate their
   specifications here.
+- A date meaningful to a condition is modeled as a separate Contextual
+  Condition with a date value, never through HL7 v2 OBX-14 or FHIR Observation
+  date elements.
+- Rules for who creates, determines, or stores conditions, and for messaging
+  and workflow inclusion, are out of scope; refer to topics 140 and 141.
 - Code-system publication is out of scope; refer to IVC rather than restating or
   deciding its publication choices.
 

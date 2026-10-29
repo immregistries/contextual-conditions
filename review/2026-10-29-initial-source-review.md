@@ -164,3 +164,20 @@ The project lead set the scope for representations after this review:
   observations. They should be checked against the concept's definition, which
   treats a condition as a Schedule Authority-defined input rather than a
   clinical observation, once that text settles here (see finding 10).
+
+## Second follow-up, October 29, 2026
+
+The project lead clarified the boundary between concept and workflow:
+
+- WD-7 resolves OQ-2. This project describes what a Contextual Condition is; it
+  does not set rules for who creates, determines, or stores conditions, or how
+  they are included in messages and workflows. IIS storage rules belong to
+  topic 140, and topic 141 is likely to prohibit storing conditions supplied in
+  a query. OQ-5 (nullification of stored assertions) is referred to topic 140
+  for the same reason.
+- WD-8 keeps one overlap in scope: a date meaningful to a condition is modeled
+  as a separate Contextual Condition with a date value, not carried in HL7 v2
+  OBX-14 or FHIR Observation date elements. This agrees with the Proposal and
+  the HL7 v2 page, which already say OBX-14 is not an onset, expiration, or
+  validity date, and states the rule for every representation.
+
