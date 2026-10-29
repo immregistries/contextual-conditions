@@ -1,0 +1,62 @@
+id: hl7-phwg-confluence-pages
+status: draft
+core_release: null
+
+product:
+  type: web pages
+  format: Confluence pages on confluence.hl7.org (PHWG space)
+  length: one page per mapped section group
+  presentation_time: null
+  template: null
+
+audience:
+  name: HL7 Public Health Work Group and the immunization interoperability community
+  assumed_knowledge:
+    - Familiar with immunization information systems and immunization CDS
+    - May not follow this GitHub repository
+
+purpose: >-
+  Share the current state of the Contextual Conditions concept where the HL7
+  community already works, and invite comment.
+
+desired_outcome: >-
+  Readers understand the concept and its working decisions, and give feedback
+  that is brought back to this repository.
+
+emphasize:
+  - The document is a working proposal, not a standard or final decision
+  - The GitHub repository is the source of truth; link to it from every page
+  - Where and how to give feedback
+
+exclude_or_deemphasize:
+  - Repository build and maintenance detail
+
+tone:
+  - Plain language
+  - Open to discussion
+
+# Confluence page id -> canonical sections it is generated from.
+# The HL7 v2 mapping depends on open question OQ-1.
+pages:
+  - id: "453920359"
+    title: CDS Contextual Conditions
+    url: https://confluence.hl7.org/spaces/PHWG/pages/453920359/CDS+Contextual+Conditions
+    sources: []
+  - id: "468260886"
+    title: CDS Contextual Conditions in HL7 v2
+    url: https://confluence.hl7.org/spaces/PHWG/pages/468260886/CDS+Contextual+Conditions+in+HL7+v2
+    sources: []
+
+required_elements:
+  - A status notice at the top of each page
+  - A link to the GitHub repository and the core release the page was built from
+  - A note that the page is generated, so edits belong in GitHub
+
+assumptions:
+  - Pages are regenerated whole from the core release; manual edits on
+    Confluence are overwritten after their substance is brought back as review input.
+
+delivery_context: []
+requested_by: null
+requested_date: null
+needed_by: null

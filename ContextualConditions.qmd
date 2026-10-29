@@ -1,0 +1,10 @@
+---
+title: "Contextual Conditions for Immunization Decision Support"
+subtitle: "Working Proposal for Community Discussion — Not a Standard or Final Decision"
+date: last-modified
+date-format: "MMMM YYYY"
+---
+
+{{< include content/00-status-and-scope.md >}}
+
+{{< include content/90-working-decisions.md >}}

@@ -1,0 +1,39 @@
+product_id: hl7-phwg-confluence-pages
+status: draft
+core_release: null
+canonical_source_revision: null
+
+brief: brief.yml
+product_source: ./
+output: ../../output/confluence/
+
+build:
+  date: null
+  method: null
+  template: null
+
+sources: []
+
+new_or_changed_claims: []
+edge_innovations_awaiting_core_adjudication: []
+deliberate_departures: []
+unresolved_issues:
+  - The current Confluence pages predate this repository and have not yet been
+    reconciled with it.
+  - Automated access to confluence.hl7.org is behind a human-verification check,
+    so the publishing method (API with a personal token, or manual paste of
+    generated content) is not yet settled.
+
+review:
+  subject_matter:
+    reviewer: null
+    date: null
+    status: pending
+  audience:
+    reviewer: null
+    date: null
+    status: pending
+  publication:
+    approver: null
+    date: null
+    status: pending
