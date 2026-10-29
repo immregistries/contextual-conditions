@@ -58,9 +58,7 @@ the [open questions](content/90-working-decisions.md#open-questions).
 
 ## Next steps
 
-1. Draft the concept sections in `content/`, starting from the September 2026
-   Confluence concept page and bringing in material from the earlier proposal
-   and primer that is still relevant, with conflicts carried as open questions.
+1. Release version 0.1 of the core document.
 2. Build the regeneration step for the Confluence pages.
 3. Cross-link this repository from the Confluence pages, the related InteropHub
    topics (1, 7, 137, 140, and 141), the IVC pages, and the ImmDS + HALO FHIR

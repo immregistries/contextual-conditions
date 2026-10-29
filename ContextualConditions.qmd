@@ -9,4 +9,20 @@ date-format: "MMMM YYYY"
 
 {{< include content/01-related-work.md >}}
 
+{{< include content/02-the-problem.md >}}
+
+{{< include content/03-the-concept.md >}}
+
+{{< include content/04-clinical-information.md >}}
+
+{{< include content/05-evaluation-and-time.md >}}
+
+{{< include content/06-authorities.md >}}
+
+{{< include content/07-representations.md >}}
+
+{{< include content/08-adoption-and-boundaries.md >}}
+
+{{< include content/09-applying-the-concept.md >}}
+
 {{< include content/90-working-decisions.md >}}

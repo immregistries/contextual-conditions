@@ -17,6 +17,8 @@ Current review records:
 
 - [2026-10-29-initial-source-review.md](2026-10-29-initial-source-review.md):
   comparison of the existing sources made while setting up the repository.
+- [2026-10-29-v0.1-drafting-notes.md](2026-10-29-v0.1-drafting-notes.md):
+  where the version 0.1 concept text came from and the choices made in drafting it.
 
 When a review input is resolved, note the outcome: accepted into `content/`,
 recorded as a working decision, kept as an open question, or declined with a

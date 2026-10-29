@@ -36,16 +36,30 @@ tone:
   - Open to discussion
 
 # Confluence page id -> canonical sections it is generated from.
-# The HL7 v2 mapping depends on open question OQ-1.
 pages:
   - id: "453920359"
     title: CDS Contextual Conditions
     url: https://confluence.hl7.org/spaces/PHWG/pages/453920359/CDS+Contextual+Conditions
-    sources: []
+    sources:
+      - ../../content/00-status-and-scope.md
+      - ../../content/01-related-work.md
+      - ../../content/02-the-problem.md
+      - ../../content/03-the-concept.md
+      - ../../content/04-clinical-information.md
+      - ../../content/05-evaluation-and-time.md
+      - ../../content/06-authorities.md
+      - ../../content/07-representations.md
+      - ../../content/08-adoption-and-boundaries.md
+      - ../../content/09-applying-the-concept.md
+      - ../../content/90-working-decisions.md
   - id: "468260886"
     title: CDS Contextual Conditions in HL7 v2
     url: https://confluence.hl7.org/spaces/PHWG/pages/468260886/CDS+Contextual+Conditions+in+HL7+v2
-    sources: []
+    # Under WD-5 this page summarizes the HL7 v2 representation and points to
+    # topics 137, 140, and 141 rather than specifying it.
+    sources:
+      - ../../content/07-representations.md
+      - ../../content/01-related-work.md
 
 required_elements:
   - A status notice at the top of each page

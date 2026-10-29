@@ -5,6 +5,20 @@
 > Working decisions are recorded so the community can see, question, and
 > improve them, and any of them may change.
 
+## In brief
+
+A Contextual Condition is an input to immunization clinical decision support,
+defined by a Schedule Authority with a specific meaning and datatype, such as
+"patient is pregnant" or "birth mother received RSV vaccine during pregnancy."
+A requesting system determines whether the condition applies and supplies that
+assertion with its recommendation request. The CDS engine uses the assertion
+without reinterpreting the clinical record behind it. A condition that is not
+supplied is unknown, not No.
+
+Contextual Conditions give immunization CDS a bounded, stable input layer, so
+that new guidance can be supported by adding vocabulary rather than redesigning
+interfaces.
+
 ## Purpose
 
 This document develops the concept of Contextual Conditions: the bounded set of

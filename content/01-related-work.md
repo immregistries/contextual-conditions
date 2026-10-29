@@ -24,15 +24,10 @@ separately, currently as an Immunization Vocabularies Collaborative proposal at
 ## Representations
 
 HL7 v2 and FHIR are two representations of the same concept. This document
-describes what any representation needs to convey and the principles it must
-preserve, so that the representations stay consistent with each other and with
-the concept.
-
-Some modeling principles are part of the concept because they apply to every
-representation. For example, when a date is meaningful to a Contextual
-Condition, it is modeled as a separate Contextual Condition with a date value,
-not conveyed through a representation's own date fields such as HL7 v2 OBX-14
-or the date elements of a FHIR Observation.
+describes, in [Representing Contextual Conditions](07-representations.md), what
+any representation needs to convey and the principles it must preserve, such as
+modeling a meaningful date as its own Contextual Condition, so that the
+representations stay consistent with each other and with the concept.
 
 Out of scope here are the rules for who creates, determines, or stores
 Contextual Conditions, and how they are included in messages and workflows.
