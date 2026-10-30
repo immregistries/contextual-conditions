@@ -12,6 +12,9 @@ proposed wording are all welcome.
 - **Join the community discussion** on InteropHub,
   [CDS Contextual Conditions, topic 7](https://informatics.immregistries.org/hub/es/topic/7),
   where meetings and discussion notes are tracked.
+- **Comment on the [Topic Reference](https://immregistries.github.io/contextual-conditions/latest/).**
+  Comments stay in your browser until you download them. Share the downloaded
+  file with the maintainers, for example by attaching it to an issue.
 - **Comment on Confluence.** The HL7 Public Health Work Group pages are copies of
   this document. Comments there are brought back here for consideration.
 - **Propose a change** with a pull request against the Markdown in `content/`.

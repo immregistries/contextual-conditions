@@ -11,12 +11,14 @@ bounded set of inputs, defined by those authorities, that a requesting system
 supplies to immunization clinical decision support (CDS) so that each new
 factor becomes a vocabulary addition rather than a new interface design.
 
-This repository develops the concept in the open and records the working
-decisions reached on it.
+This repository is the Topic Reference for
+[CDS Contextual Conditions, InteropHub topic 7](https://informatics.immregistries.org/hub/es/topic/7).
+It develops the concept in the open and records the working decisions reached
+on it.
 
 ## Start here
 
-1. Read the [web guide](https://immregistries.github.io/contextual-conditions/latest/),
+1. Read the [Topic Reference](https://immregistries.github.io/contextual-conditions/latest/),
    where you can also leave comments, or the [GitHub reading copy](CoreDocument.md),
    or browse the [canonical source sections](content/README.md).
 2. See the [working decisions and open questions](content/90-working-decisions.md).
@@ -61,7 +63,7 @@ the [open questions](content/90-working-decisions.md#open-questions).
 
 1. Release version 0.1 of the core document.
 2. Build the regeneration step for the Confluence pages.
-3. Link the web guide from InteropHub topic 7.
+3. Link the Topic Reference from InteropHub topic 7.
 4. Cross-link this repository from the Confluence pages, the related InteropHub
    topics (1, 7, 137, 140, and 141), the IVC pages, and the ImmDS + HALO FHIR
    implementation guide.

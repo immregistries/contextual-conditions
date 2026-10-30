@@ -1,5 +1,10 @@
 $ErrorActionPreference = 'Stop'
 
+# Keep Quarto's user cache inside the project so builds also work in restricted
+# or service accounts that cannot write to the normal Windows profile cache.
+$env:LOCALAPPDATA = Join-Path (Get-Location) '.quarto\local-app-data'
+New-Item -ItemType Directory -Force -Path $env:LOCALAPPDATA | Out-Null
+
 if (-not (Test-Path .\process\templates\word\aira-reference-document.docx)) {
     throw "Shared templates are missing. Run: git submodule update --init"
 }
@@ -12,7 +17,6 @@ if ($LASTEXITCODE -ne 0) {
 
 $quarto = Get-Command quarto -ErrorAction Stop
 & $quarto.Source render
-
 if ($LASTEXITCODE -ne 0) {
     throw "Quarto build failed with exit code $LASTEXITCODE."
 }
@@ -27,4 +31,4 @@ if ($LASTEXITCODE -ne 0) {
     throw "Building the web guide failed with exit code $LASTEXITCODE."
 }
 
-Write-Host "Built core document and web guide in output/."
+Write-Host "Built core document and web guide in output/. The published page is output/guide/index.html."

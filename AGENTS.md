@@ -1,5 +1,19 @@
 # Repository Instructions
 
+## What this repository is
+
+- This is the Topic Reference for InteropHub topic 7,
+  [CDS Contextual Conditions](https://informatics.immregistries.org/hub/es/topic/7):
+  the current, versioned statement of the concept's definitions, principles,
+  working decisions, and open questions. See the shared Topic Reference
+  guidance in `process/guidance/TopicReference.md`.
+- The published Topic Reference is the web guide, `output/guide/index.html`,
+  built by `process/tools/build_guide.py` with the shared AIRA Web template and
+  published to https://immregistries.github.io/contextual-conditions/latest/ by
+  `.github/workflows/publish-guide.yml`. Do not write a separate HTML page,
+  stylesheet, or site generator. `output/ContextualConditions.html` is Quarto's
+  review copy, not the published page.
+
 ## Public repository
 
 - This repository is public. Everything committed here may be read, copied,
@@ -72,7 +86,7 @@
 - After editing `content/` or `ContextualConditions.qmd`, run
   `python process/tools/build_core_markdown.py --assembly ContextualConditions.qmd`,
   then `validate.ps1`.
-- Run `build.ps1` and open the output before any release.
+- Run `build.ps1` and open `output/guide/index.html` before any release.
 - Review the `CONFIRM` list printed by the content check.
 - Successful generation is a mechanical check, not editorial approval.
 - Do not commit, push, publish, or update Confluence without explicit
