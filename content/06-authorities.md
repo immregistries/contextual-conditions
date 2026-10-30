@@ -34,14 +34,20 @@ versioned code system, so it can express exactly the concepts its guidance
 needs without first reconciling language, policy, clinical definitions, or
 implementation criteria with other authorities.
 
+<!-- anchor: authority-differences-matter -->
+
 For example, French and American Schedule Authorities may define conditions
 that look similar but differ in subtle and important ways. Forcing them into
 one concept would risk hiding those differences, or letting an interoperability
 project reinterpret clinical policy.
 
+<!-- anchor: mapping-not-equivalence -->
+
 Future work may identify relationships or mappings between conditions from
 different authorities. A mapping must not imply equivalence unless equivalence
 has been established. Similar labels are not evidence of equivalence.
+
+<!-- anchor: stable-published-meaning -->
 
 Published identifiers and definitions must remain stable. A material change in
 meaning results in a new version or a new concept, not a silent change to an
@@ -51,10 +57,14 @@ existing code.
 
 Schedule Authorities own the clinical meaning of their Contextual Conditions.
 
+<!-- anchor: terminology-steward-role -->
+
 A terminology steward may provide the technical publication framework: stable
 identifiers, namespace management, versioning, and distribution, so that those
 definitions are computable and exchangeable. The steward does not create
 clinical guidance or reinterpret the authority's intent.
+
+<!-- anchor: publication-outside-architecture -->
 
 The Immunization Vocabularies Collaborative (IVC) may serve as a publication
 and coordination mechanism for these code systems, and may support future work

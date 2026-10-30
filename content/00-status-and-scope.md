@@ -60,6 +60,8 @@ interoperability community.
 
 ## How this document is maintained
 
+<!-- anchor: authoritative-source -->
+
 The Markdown source in this repository is the authoritative record of the
 concept. The HL7 Public Health Work Group Confluence pages are copies made from
 it for sharing and feedback:
@@ -73,6 +75,8 @@ InteropHub as [CDS Contextual Conditions, topic 7](https://informatics.immregist
 The concept is still being worked out, and its earlier descriptions do not all
 agree. Those disagreements, and critiques of the concept, are recorded openly
 in this repository as review inputs and open questions.
+
+<!-- anchor: feedback-adjudication -->
 
 Feedback is welcome as a GitHub issue, a Confluence comment, or in community
 meetings. Accepted changes are made here first, then the Confluence pages are

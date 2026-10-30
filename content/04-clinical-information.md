@@ -5,6 +5,8 @@ information model. They do not replace FHIR Observation, Condition,
 Immunization, or QuestionnaireResponse resources, SNOMED CT, diagnosis codes,
 problem lists, or other clinical representations.
 
+<!-- anchor: clinical-vs-evaluation-context -->
+
 Clinical systems represent information in relation to the patient and the
 broader needs of care. Contextual Conditions represent information in relation
 to an immunization recommendation evaluation and the guidance published by a
@@ -28,6 +30,8 @@ The concept separates four activities:
 3. **Assertion:** supplying the Contextual Condition and its value to CDS.
 4. **Decision support:** applying immunization guidance to the assertion.
 
+<!-- anchor: engine-consumes-assertion -->
+
 The requesting system is responsible for determination. The CDS engine accepts
 the supplied assertion as authoritative for the evaluation. It does not
 independently interpret the underlying clinical record or decide whether the
@@ -39,6 +43,8 @@ information and its provenance for clinical, audit, or operational purposes.
 Who creates, determines, or stores Contextual Conditions in a given workflow is
 outside this concept and is addressed by the
 [related topics](01-related-work.md).
+
+<!-- anchor: responsibilities-evolve-independently -->
 
 This separation lets a source organization improve how it determines a
 condition without changing the interface, and lets a Schedule Authority or

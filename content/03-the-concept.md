@@ -9,6 +9,8 @@ recommendation.
 A **Contextual Condition assertion** is the value that a requesting system
 supplies for that input as part of a particular recommendation request.
 
+<!-- anchor: definition-vs-assertion -->
+
 Keeping the two apart matters. The Contextual Condition is a stable, published
 definition. The assertion is one system's statement, for one evaluation, that
 the condition does or does not apply, or has a particular value.
@@ -30,6 +32,8 @@ gestation. A Schedule Authority may define other datatypes when its guidance
 requires them. An assertion must use the datatype the condition defines; a date
 or number is not reduced to Yes or No.
 <!-- CONFIRM: Numeric datatype. The Confluence concept page says "integer"; the draft French inventory includes "Number" values such as laboratory results, height, and weight, which may need decimals. See OQ-6. -->
+
+<!-- anchor: date-as-own-condition -->
 
 When a date is meaningful to a condition, the date is modeled as a Contextual
 Condition of its own, with a date value. It is not carried in a
@@ -63,6 +67,8 @@ A Contextual Condition is not, by itself:
 - an inference algorithm; or
 - a requirement that any particular condition be collected.
 
+<!-- anchor: assertion-not-evidence -->
+
 For example, diagnoses, medications, laboratory results, and a clinician's
 assessment may together support the conclusion that a patient is severely
 immunocompromised. Those facts remain important in their proper systems. The
@@ -81,6 +87,8 @@ Contextual Conditions formalize an abstraction that immunization CDS engines
 already require. At some point, complex clinical and nonclinical information
 must be reduced to the inputs that forecasting rules use. This concept exposes
 and standardizes that input layer so other systems have a consistent target.
+
+<!-- anchor: determination-still-required -->
 
 It is not a complete end-to-end solution. Systems must still determine
 Contextual Condition values from the information available to them.

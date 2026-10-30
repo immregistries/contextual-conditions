@@ -12,6 +12,8 @@ reports, clinician assessments, or local business rules. These representations
 appropriately support the broader needs of clinical care, but they do not give
 immunization CDS engines a bounded and consistent set of inputs.
 
+<!-- anchor: intermediate-abstraction -->
+
 Without an intermediate abstraction, a CDS engine must either:
 
 1. receive only demographics and immunization history, leaving important
@@ -34,6 +36,8 @@ vaccination. When a birth mother receives RSV vaccine during pregnancy, her
 infant generally does not need RSV monoclonal antibody. To recommend correctly
 for the infant, the CDS engine needs to know about a vaccination recorded on
 another person's record.
+
+<!-- anchor: minimum-needed-assertion -->
 
 Sending the mother's clinical record, or enough of it to establish the fact, is
 complex for both sender and receiver and discloses more than the evaluation

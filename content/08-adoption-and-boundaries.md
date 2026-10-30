@@ -13,6 +13,8 @@ expected, especially early on:
   interface.
 - New conditions may be added as guidance evolves.
 
+<!-- anchor: support-can-grow -->
+
 The benefit of the framework is not immediate universal support. It is a
 consistent mechanism through which support can grow.
 
@@ -26,6 +28,8 @@ Contextual Conditions set a boundary among three responsibilities:
    history, and Contextual Condition values.
 3. **The CDS engine and its selected Knowledge Base** apply immunization
    guidance and return evaluations and recommendations.
+
+<!-- anchor: layers-evolve-independently -->
 
 This boundary lets each layer evolve without requiring the CDS engine to
 interpret the full clinical record, and without requiring the clinical record
@@ -61,6 +65,8 @@ Condition. Success means immunization CDS has a bounded, explicitly defined
 input layer. Schedule Authorities can identify the factors their guidance
 requires, Knowledge Bases can declare which inputs they implement, and
 requesting systems can add support incrementally.
+
+<!-- anchor: vocabulary-led-growth -->
 
 As guidance evolves, new factors can be introduced mainly as vocabulary and
 Knowledge Base additions rather than as new proprietary interface designs.

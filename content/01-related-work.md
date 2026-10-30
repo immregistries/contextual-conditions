@@ -21,7 +21,7 @@ Publication of the code systems that define individual conditions is handled
 separately, currently as an Immunization Vocabularies Collaborative proposal at
 <https://ivci.org/contextual-conditions/>.
 
-## Representations
+## Representations {#related-representations}
 
 HL7 v2 and FHIR are two representations of the same concept. This document
 describes, in [Representing Contextual Conditions](07-representations.md), what

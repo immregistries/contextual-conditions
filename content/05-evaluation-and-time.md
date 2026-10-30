@@ -10,9 +10,13 @@ Each request is a complete and independent evaluation snapshot. The CDS engine:
 - does not retrieve values from previous evaluations; and
 - does not treat omission as an instruction to keep an earlier value.
 
+<!-- anchor: independent-evaluation-snapshot -->
+
 After the engine returns its evaluations and recommendations, the supplied
 Contextual Conditions have no continuing role within the engine. A later
 request is evaluated solely from the information supplied with it.
+
+<!-- anchor: longitudinal-record-boundary -->
 
 Typical immunization CDS installations contain an embedded Knowledge Base but
 no patient, immunization, or longitudinal clinical database. Maintaining a
@@ -27,6 +31,8 @@ time, correction, expiration, and retraction, and is addressed by
 Omission means the requesting system makes no assertion about a Contextual
 Condition. The value is unknown to the CDS engine. Absence is never a No.
 
+<!-- anchor: explicit-no-vs-unknown -->
+
 A requesting system may explicitly supply No when it knows that a Boolean
 condition does not apply. False and unknown sometimes produce the same
 recommendation, but they mean different things and some guidance treats them
@@ -39,6 +45,8 @@ which recommendations are calculated. In routine use this is normally the
 current date. Contextual Condition values are asserted as applicable to the
 evaluation performed for that date.
 
+<!-- anchor: simulation-date-limits -->
+
 The evaluation date may be changed for testing or simulation. It is not:
 
 - a way to select a historical Knowledge Base;
@@ -48,6 +56,8 @@ The evaluation date may be changed for testing or simulation. It is not:
   was given.
 
 Knowledge Base identity and version are separate from the evaluation date.
+
+<!-- anchor: prospective-model -->
 
 The model is intentionally prospective. Its primary purpose is to improve
 guidance about what the patient should receive next, not to explain or
@@ -68,11 +78,15 @@ Its meaning may concern:
 - another person: "Birth mother received RSV vaccine during the relevant
   pregnancy."
 
+<!-- anchor: applicability-in-definition -->
+
 What they share is that the requesting system asserts the value as applicable
 to the evaluation date. The relationship or temporal meaning the engine needs
 is contained in the definition of the condition. The engine does not receive a
 separate model of the related person, pregnancy, travel event, or underlying
 evidence.
+
+<!-- anchor: minimum-related-information -->
 
 This is deliberate. For maternal RSV vaccination, the engine may need only one
 or two assertions from the mother's history. Requiring the mother's identity

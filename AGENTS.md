@@ -80,6 +80,11 @@
   `immregistries/content-publishing-templates`, pinned to a release tag. Do not
   edit or copy files under it. Adopt changes by moving the pointer, rebuilding,
   reviewing the output, and committing.
+- Place review anchors according to `process/guidance/Conventions.md`.
+- Keep anchor names stable when editing nearby text.
+- When reorganizing content, move an anchor with the text it identifies.
+- When renaming or removing an anchor, say so in the commit message because
+  comments attached to it will become orphaned.
 
 ## Validation
 

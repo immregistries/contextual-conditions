@@ -17,6 +17,8 @@ questions have clear answers:
 - Can it be defined without embedding a particular CDS engine's internal rule?
 - Is its temporal meaning, relative to the evaluation date, clear?
 
+<!-- anchor: candidate-boundary -->
+
 A proposal that tries to carry a clinical narrative, reproduce a problem list,
 or encode a recommendation probably belongs elsewhere.
 
