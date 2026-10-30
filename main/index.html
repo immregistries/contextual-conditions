@@ -2692,6 +2692,12 @@ html {
   position: relative;
 }
 
+.guide-anchor {
+  display: block;
+  position: relative;
+  scroll-margin-top: 4.5rem;
+}
+
 .guide-comment-button {
   position: absolute;
   top: 0;
@@ -2740,6 +2746,17 @@ html {
   background: var(--aira-warning-surface);
   font-size: 0.9rem;
   line-height: 1.45;
+}
+
+.guide-comment--target {
+  outline: 3px solid var(--aira-blue);
+  outline-offset: 2px;
+}
+
+.guide-orphans {
+  margin-top: var(--aira-space-8);
+  padding-top: var(--aira-space-4);
+  border-top: 1px solid var(--aira-border-subtle);
 }
 
 .guide-comment__meta {
@@ -2879,30 +2896,31 @@ html {
           </div>
           <div class="aira-topic-actions guide-status">
             <span class="aira-tag aira-tag--warning guide-status-tag">DRAFT</span>
-            <span class="aira-meta">Version main (3612075)</span>
+            <span class="aira-meta">Version main (97b36c9)</span>
           </div>
         </div>
       </header>
       <div class="aira-right-rail-layout guide-layout">
         <article class="aira-prose guide-content" id="guide-content">
+<div id="document-start" class="guide-anchor" data-guide-anchor="document-start"></div>
 <section id="status-and-scope" class="level2">
 <h2>Status and Scope</h2>
-<blockquote>
+<blockquote data-anchor="status-and-scope" data-block-index="0">
 <p><strong>Status:</strong> Working proposal for community discussion. Nothing in this document is a published standard, an HL7 ballot, or a final decision. Working decisions are recorded so the community can see, question, and improve them, and any of them may change.</p>
 </blockquote>
 <section id="in-brief" class="level3">
 <h3>In brief</h3>
-<p>A Contextual Condition is an input to immunization clinical decision support, defined by a Schedule Authority with a specific meaning and datatype, such as “patient is pregnant” or “birth mother received RSV vaccine during pregnancy.” A requesting system determines whether the condition applies and supplies that assertion with its recommendation request. The CDS engine uses the assertion without reinterpreting the clinical record behind it. A condition that is not supplied is unknown, not No.</p>
-<p>Contextual Conditions give immunization CDS a bounded, stable input layer, so that new guidance can be supported by adding vocabulary rather than redesigning interfaces.</p>
+<p data-anchor="in-brief" data-block-index="0">A Contextual Condition is an input to immunization clinical decision support, defined by a Schedule Authority with a specific meaning and datatype, such as “patient is pregnant” or “birth mother received RSV vaccine during pregnancy.” A requesting system determines whether the condition applies and supplies that assertion with its recommendation request. The CDS engine uses the assertion without reinterpreting the clinical record behind it. A condition that is not supplied is unknown, not No.</p>
+<p data-anchor="in-brief" data-block-index="1">Contextual Conditions give immunization CDS a bounded, stable input layer, so that new guidance can be supported by adding vocabulary rather than redesigning interfaces.</p>
 </section>
 <section id="purpose" class="level3">
 <h3>Purpose</h3>
-<p>This document develops the concept of Contextual Conditions: the bounded set of inputs, defined by immunization Schedule Authorities, that a requesting system can supply to immunization clinical decision support (CDS) alongside patient demographics and immunization history.</p>
-<p>The goal is to make the concept clear, well reasoned, and strong enough for others to build on, through open discussion with the immunization interoperability community.</p>
+<p data-anchor="purpose" data-block-index="0">This document develops the concept of Contextual Conditions: the bounded set of inputs, defined by immunization Schedule Authorities, that a requesting system can supply to immunization clinical decision support (CDS) alongside patient demographics and immunization history.</p>
+<p data-anchor="purpose" data-block-index="1">The goal is to make the concept clear, well reasoned, and strong enough for others to build on, through open discussion with the immunization interoperability community.</p>
 </section>
 <section id="what-this-project-covers" class="level3">
 <h3>What this project covers</h3>
-<ul>
+<ul data-anchor="what-this-project-covers" data-block-index="0">
 <li>The definition of a Contextual Condition and a Contextual Condition assertion.</li>
 <li>The concept’s principles and boundaries: what it is, what it is not, and how it relates to clinical information, Schedule Authorities, Knowledge Bases, and CDS engines.</li>
 <li>What any representation of the concept, such as HL7 v2 or FHIR, needs to convey, described at a general level, including modeling principles that apply to every representation.</li>
@@ -2911,7 +2929,7 @@ html {
 </section>
 <section id="what-this-project-does-not-cover" class="level3">
 <h3>What this project does not cover</h3>
-<ul>
+<ul data-anchor="what-this-project-does-not-cover" data-block-index="0">
 <li><strong>Publishing Contextual Condition codes.</strong> Code systems and their values are operational publications. The Immunization Vocabularies Collaborative (IVC) is exploring how to publish them at <a href="https://ivci.org/contextual-conditions/" class="uri">https://ivci.org/contextual-conditions/</a>. That publication is itself a proposal under discussion.</li>
 <li><strong>Clinical policy.</strong> Schedule Authorities decide which factors affect their guidance and what each condition means.</li>
 <li><strong>Who creates, determines, or stores Contextual Conditions,</strong> and how they are included in messages and workflows.</li>
@@ -2921,22 +2939,28 @@ html {
 </section>
 <section id="how-this-document-is-maintained" class="level3">
 <h3>How this document is maintained</h3>
-<p>The Markdown source in this repository is the authoritative record of the concept. The HL7 Public Health Work Group Confluence pages are copies made from it for sharing and feedback:</p>
-<ul>
+<div id="authoritative-source" class="guide-anchor" data-guide-anchor="authoritative-source">
+
+</div>
+<p data-anchor="authoritative-source" data-block-index="0">The Markdown source in this repository is the authoritative record of the concept. The HL7 Public Health Work Group Confluence pages are copies made from it for sharing and feedback:</p>
+<ul data-anchor="authoritative-source" data-block-index="1">
 <li><a href="https://confluence.hl7.org/spaces/PHWG/pages/453920359/CDS+Contextual+Conditions">CDS Contextual Conditions</a></li>
 <li><a href="https://confluence.hl7.org/spaces/PHWG/pages/468260886/CDS+Contextual+Conditions+in+HL7+v2">CDS Contextual Conditions in HL7 v2</a></li>
 </ul>
-<p>Community coordination, meetings, and discussion notes are tracked on InteropHub as <a href="https://informatics.immregistries.org/hub/es/topic/7">CDS Contextual Conditions, topic 7</a>.</p>
-<p>The concept is still being worked out, and its earlier descriptions do not all agree. Those disagreements, and critiques of the concept, are recorded openly in this repository as review inputs and open questions.</p>
-<p>Feedback is welcome as a GitHub issue, a Confluence comment, or in community meetings. Accepted changes are made here first, then the Confluence pages are regenerated.</p>
+<p data-anchor="authoritative-source" data-block-index="2">Community coordination, meetings, and discussion notes are tracked on InteropHub as <a href="https://informatics.immregistries.org/hub/es/topic/7">CDS Contextual Conditions, topic 7</a>.</p>
+<p data-anchor="authoritative-source" data-block-index="3">The concept is still being worked out, and its earlier descriptions do not all agree. Those disagreements, and critiques of the concept, are recorded openly in this repository as review inputs and open questions.</p>
+<div id="feedback-adjudication" class="guide-anchor" data-guide-anchor="feedback-adjudication">
+
+</div>
+<p data-anchor="feedback-adjudication" data-block-index="0">Feedback is welcome as a GitHub issue, a Confluence comment, or in community meetings. Accepted changes are made here first, then the Confluence pages are regenerated.</p>
 </section>
 </section>
 <section id="related-work" class="level2">
 <h2>Related Work and Representations</h2>
-<p>Contextual Conditions began as a need within immunization CDS interface work and are now relied on by several related efforts. This document covers the concept those efforts share. It describes how the concept is represented in HL7 v2 and FHIR only at a general level and does not repeat their detailed specifications. Each related effort is tracked as its own InteropHub topic and may develop documentation of its own.</p>
+<p data-anchor="related-work" data-block-index="0">Contextual Conditions began as a need within immunization CDS interface work and are now relied on by several related efforts. This document covers the concept those efforts share. It describes how the concept is represented in HL7 v2 and FHIR only at a general level and does not repeat their detailed specifications. Each related effort is tracked as its own InteropHub topic and may develop documentation of its own.</p>
 <section id="related-topics" class="level3">
 <h3>Related topics</h3>
-<div class="aira-table-wrap"><table class="aira-table">
+<div class="aira-table-wrap" data-anchor="related-topics" data-block-index="0"><table class="aira-table">
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -2970,37 +2994,43 @@ html {
 </tr>
 </tbody>
 </table></div>
-<p>Publication of the code systems that define individual conditions is handled separately, currently as an Immunization Vocabularies Collaborative proposal at <a href="https://ivci.org/contextual-conditions/" class="uri">https://ivci.org/contextual-conditions/</a>.</p>
+<p data-anchor="related-topics" data-block-index="1">Publication of the code systems that define individual conditions is handled separately, currently as an Immunization Vocabularies Collaborative proposal at <a href="https://ivci.org/contextual-conditions/" class="uri">https://ivci.org/contextual-conditions/</a>.</p>
 </section>
-<section id="representations" class="level3">
+<section id="related-representations" class="level3">
 <h3>Representations</h3>
-<p>HL7 v2 and FHIR are two representations of the same concept. This document describes, in <a href="#representations">Representing Contextual Conditions</a>, what any representation needs to convey and the principles it must preserve, such as modeling a meaningful date as its own Contextual Condition, so that the representations stay consistent with each other and with the concept.</p>
-<p>Out of scope here are the rules for who creates, determines, or stores Contextual Conditions, and how they are included in messages and workflows. Message structures, field-level rules, conformance requirements, storage, and workflow behavior belong to the related topics above.</p>
+<p data-anchor="related-representations" data-block-index="0">HL7 v2 and FHIR are two representations of the same concept. This document describes, in <a href="#representations">Representing Contextual Conditions</a>, what any representation needs to convey and the principles it must preserve, such as modeling a meaningful date as its own Contextual Condition, so that the representations stay consistent with each other and with the concept.</p>
+<p data-anchor="related-representations" data-block-index="1">Out of scope here are the rules for who creates, determines, or stores Contextual Conditions, and how they are included in messages and workflows. Message structures, field-level rules, conformance requirements, storage, and workflow behavior belong to the related topics above.</p>
 </section>
 </section>
 <section id="the-problem" class="level2">
 <h2>The Problem</h2>
-<p>Immunization clinical decision support (CDS) depends on more than patient demographics and vaccination history. Recommendations may also depend on pregnancy, immune status, prior disease, travel plans, occupational exposure, living circumstances, maternal vaccination, and other factors identified by immunization Schedule Authorities.</p>
-<p>This information may be represented in clinical systems through diagnoses, observations, immunizations, laboratory results, questionnaires, patient reports, clinician assessments, or local business rules. These representations appropriately support the broader needs of clinical care, but they do not give immunization CDS engines a bounded and consistent set of inputs.</p>
-<p>Without an intermediate abstraction, a CDS engine must either:</p>
-<ol type="1">
+<p data-anchor="the-problem" data-block-index="0">Immunization clinical decision support (CDS) depends on more than patient demographics and vaccination history. Recommendations may also depend on pregnancy, immune status, prior disease, travel plans, occupational exposure, living circumstances, maternal vaccination, and other factors identified by immunization Schedule Authorities.</p>
+<p data-anchor="the-problem" data-block-index="1">This information may be represented in clinical systems through diagnoses, observations, immunizations, laboratory results, questionnaires, patient reports, clinician assessments, or local business rules. These representations appropriately support the broader needs of clinical care, but they do not give immunization CDS engines a bounded and consistent set of inputs.</p>
+<div id="intermediate-abstraction" class="guide-anchor" data-guide-anchor="intermediate-abstraction">
+
+</div>
+<p data-anchor="intermediate-abstraction" data-block-index="0">Without an intermediate abstraction, a CDS engine must either:</p>
+<ol type="1" data-anchor="intermediate-abstraction" data-block-index="1">
 <li>receive only demographics and immunization history, leaving important factors unknown;</li>
 <li>interpret an increasingly broad range of clinical information; or</li>
 <li>depend on proprietary inputs negotiated separately between implementations.</li>
 </ol>
-<p>The second approach would require an immunization CDS engine to become expert not only in immunization guidance but in interpreting information from many other clinical and nonclinical domains. The third causes interface designs to change whenever new guidance introduces another relevant factor, and leads to local fields, proprietary extensions, inconsistent use of contraindication and allergy fields, and repeated mappings among electronic health records (EHRs), immunization information systems (IIS), and CDS engines.</p>
+<p data-anchor="intermediate-abstraction" data-block-index="2">The second approach would require an immunization CDS engine to become expert not only in immunization guidance but in interpreting information from many other clinical and nonclinical domains. The third causes interface designs to change whenever new guidance introduces another relevant factor, and leads to local fields, proprietary extensions, inconsistent use of contraindication and allergy fields, and repeated mappings among electronic health records (EHRs), immunization information systems (IIS), and CDS engines.</p>
 <section id="a-motivating-example-maternal-rsv-vaccination" class="level3">
 <h3>A motivating example: maternal RSV vaccination</h3>
-<p>The need became concrete with maternal respiratory syncytial virus (RSV) vaccination. When a birth mother receives RSV vaccine during pregnancy, her infant generally does not need RSV monoclonal antibody. To recommend correctly for the infant, the CDS engine needs to know about a vaccination recorded on another person’s record.</p>
-<p>Sending the mother’s clinical record, or enough of it to establish the fact, is complex for both sender and receiver and discloses more than the evaluation needs. What the infant’s evaluation actually needs is a single assertion:</p>
-<blockquote>
+<p data-anchor="a-motivating-example-maternal-rsv-vaccination" data-block-index="0">The need became concrete with maternal respiratory syncytial virus (RSV) vaccination. When a birth mother receives RSV vaccine during pregnancy, her infant generally does not need RSV monoclonal antibody. To recommend correctly for the infant, the CDS engine needs to know about a vaccination recorded on another person’s record.</p>
+<div id="minimum-needed-assertion" class="guide-anchor" data-guide-anchor="minimum-needed-assertion">
+
+</div>
+<p data-anchor="minimum-needed-assertion" data-block-index="0">Sending the mother’s clinical record, or enough of it to establish the fact, is complex for both sender and receiver and discloses more than the evaluation needs. What the infant’s evaluation actually needs is a single assertion:</p>
+<blockquote data-anchor="minimum-needed-assertion" data-block-index="1">
 <p>Birth mother received RSV vaccine during pregnancy: Yes.</p>
 </blockquote>
 </section>
 <section id="a-third-input-to-immunization-cds" class="level3">
 <h3>A third input to immunization CDS</h3>
-<p>Immunization exchange has traditionally answered two questions: who the patient is, and what immunizations the patient has received. Contextual Conditions add a third:</p>
-<div class="aira-table-wrap"><table class="aira-table">
+<p data-anchor="a-third-input-to-immunization-cds" data-block-index="0">Immunization exchange has traditionally answered two questions: who the patient is, and what immunizations the patient has received. Contextual Conditions add a third:</p>
+<div class="aira-table-wrap" data-anchor="a-third-input-to-immunization-cds" data-block-index="1"><table class="aira-table">
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -3031,18 +3061,21 @@ html {
 </tr>
 </tbody>
 </table></div>
-<p>Contextual Conditions provide a tractable layer between detailed source information and immunization forecasting logic.</p>
+<p data-anchor="a-third-input-to-immunization-cds" data-block-index="2">Contextual Conditions provide a tractable layer between detailed source information and immunization forecasting logic.</p>
 </section>
 </section>
 <section id="the-concept" class="level2">
 <h2>The Concept</h2>
 <section id="definitions" class="level3">
 <h3>Definitions</h3>
-<p>A <strong>Contextual Condition</strong> is a Schedule Authority-defined input, with an assigned meaning and datatype, that may influence an immunization evaluation or recommendation.</p>
-<p>A <strong>Contextual Condition assertion</strong> is the value that a requesting system supplies for that input as part of a particular recommendation request.</p>
-<p>Keeping the two apart matters. The Contextual Condition is a stable, published definition. The assertion is one system’s statement, for one evaluation, that the condition does or does not apply, or has a particular value.</p>
-<p>Examples of Contextual Conditions:</p>
-<ul>
+<p data-anchor="definitions" data-block-index="0">A <strong>Contextual Condition</strong> is a Schedule Authority-defined input, with an assigned meaning and datatype, that may influence an immunization evaluation or recommendation.</p>
+<p data-anchor="definitions" data-block-index="1">A <strong>Contextual Condition assertion</strong> is the value that a requesting system supplies for that input as part of a particular recommendation request.</p>
+<div id="definition-vs-assertion" class="guide-anchor" data-guide-anchor="definition-vs-assertion">
+
+</div>
+<p data-anchor="definition-vs-assertion" data-block-index="0">Keeping the two apart matters. The Contextual Condition is a stable, published definition. The assertion is one system’s statement, for one evaluation, that the condition does or does not apply, or has a particular value.</p>
+<p data-anchor="definition-vs-assertion" data-block-index="1">Examples of Contextual Conditions:</p>
+<ul data-anchor="definition-vs-assertion" data-block-index="2">
 <li>Patient has had varicella disease.</li>
 <li>Patient is pregnant.</li>
 <li>Patient is severely immunocompromised, as defined by the Schedule Authority.</li>
@@ -3053,13 +3086,16 @@ html {
 </section>
 <section id="datatypes" class="level3">
 <h3>Datatypes</h3>
-<p>Most Contextual Conditions are Boolean: the assertion is Yes or No. Some take a date or a number, such as a pregnancy start date or a number of weeks of gestation. A Schedule Authority may define other datatypes when its guidance requires them. An assertion must use the datatype the condition defines; a date or number is not reduced to Yes or No. <!-- CONFIRM: Numeric datatype. The Confluence concept page says "integer"; the draft French inventory includes "Number" values such as laboratory results, height, and weight, which may need decimals. See OQ-6. --></p>
-<p>When a date is meaningful to a condition, the date is modeled as a Contextual Condition of its own, with a date value. It is not carried in a representation’s own date fields; see <a href="#representations">Representing Contextual Conditions</a>.</p>
+<p data-anchor="datatypes" data-block-index="0">Most Contextual Conditions are Boolean: the assertion is Yes or No. Some take a date or a number, such as a pregnancy start date or a number of weeks of gestation. A Schedule Authority may define other datatypes when its guidance requires them. An assertion must use the datatype the condition defines; a date or number is not reduced to Yes or No. <!-- CONFIRM: Numeric datatype. The Confluence concept page says "integer"; the draft French inventory includes "Number" values such as laboratory results, height, and weight, which may need decimals. See OQ-6. --></p>
+<div id="date-as-own-condition" class="guide-anchor" data-guide-anchor="date-as-own-condition">
+
+</div>
+<p data-anchor="date-as-own-condition" data-block-index="0">When a date is meaningful to a condition, the date is modeled as a Contextual Condition of its own, with a date value. It is not carried in a representation’s own date fields; see <a href="#representations">Representing Contextual Conditions</a>.</p>
 </section>
 <section id="properties-of-a-contextual-condition" class="level3">
 <h3>Properties of a Contextual Condition</h3>
-<p>A Contextual Condition is:</p>
-<ul>
+<p data-anchor="properties-of-a-contextual-condition" data-block-index="0">A Contextual Condition is:</p>
+<ul data-anchor="properties-of-a-contextual-condition" data-block-index="1">
 <li><strong>Defined by an authority.</strong> A Schedule Authority assigns its meaning, its datatype, and a stable identifier.</li>
 <li><strong>Operational.</strong> It exists because immunization guidance needs it to evaluate or recommend. It engages CDS logic; it does not reproduce the clinical record.</li>
 <li><strong>Bounded.</strong> Its definition states what is, and is not, being asserted.</li>
@@ -3069,8 +3105,8 @@ html {
 </section>
 <section id="what-a-contextual-condition-is-not" class="level3">
 <h3>What a Contextual Condition is not</h3>
-<p>A Contextual Condition is not, by itself:</p>
-<ul>
+<p data-anchor="what-a-contextual-condition-is-not" data-block-index="0">A Contextual Condition is not, by itself:</p>
+<ul data-anchor="what-a-contextual-condition-is-not" data-block-index="1">
 <li>a diagnosis code or problem-list entry;</li>
 <li>a general-purpose clinical observation;</li>
 <li>a complete allergy, precaution, or contraindication record;</li>
@@ -3079,93 +3115,129 @@ html {
 <li>an inference algorithm; or</li>
 <li>a requirement that any particular condition be collected.</li>
 </ul>
-<p>For example, diagnoses, medications, laboratory results, and a clinician’s assessment may together support the conclusion that a patient is severely immunocompromised. Those facts remain important in their proper systems. The Contextual Condition is the assertion that the patient meets the Schedule Authority’s definition.</p>
-<p>This is also why a clinical terminology such as SNOMED CT is not used directly as the Contextual Condition vocabulary. Clinical terminologies describe evidence and may be related to Contextual Conditions, but a Contextual Condition is defined from immunization guidance and keeps its meaning as evidence mappings and local determination logic improve.</p>
+<div id="assertion-not-evidence" class="guide-anchor" data-guide-anchor="assertion-not-evidence">
+
+</div>
+<p data-anchor="assertion-not-evidence" data-block-index="0">For example, diagnoses, medications, laboratory results, and a clinician’s assessment may together support the conclusion that a patient is severely immunocompromised. Those facts remain important in their proper systems. The Contextual Condition is the assertion that the patient meets the Schedule Authority’s definition.</p>
+<p data-anchor="assertion-not-evidence" data-block-index="1">This is also why a clinical terminology such as SNOMED CT is not used directly as the Contextual Condition vocabulary. Clinical terminologies describe evidence and may be related to Contextual Conditions, but a Contextual Condition is defined from immunization guidance and keeps its meaning as evidence mappings and local determination logic improve.</p>
 </section>
 <section id="formalizing-an-existing-abstraction" class="level3">
 <h3>Formalizing an existing abstraction</h3>
-<p>Contextual Conditions formalize an abstraction that immunization CDS engines already require. At some point, complex clinical and nonclinical information must be reduced to the inputs that forecasting rules use. This concept exposes and standardizes that input layer so other systems have a consistent target.</p>
-<p>It is not a complete end-to-end solution. Systems must still determine Contextual Condition values from the information available to them.</p>
+<p data-anchor="formalizing-an-existing-abstraction" data-block-index="0">Contextual Conditions formalize an abstraction that immunization CDS engines already require. At some point, complex clinical and nonclinical information must be reduced to the inputs that forecasting rules use. This concept exposes and standardizes that input layer so other systems have a consistent target.</p>
+<div id="determination-still-required" class="guide-anchor" data-guide-anchor="determination-still-required">
+
+</div>
+<p data-anchor="determination-still-required" data-block-index="0">It is not a complete end-to-end solution. Systems must still determine Contextual Condition values from the information available to them.</p>
 </section>
 </section>
 <section id="clinical-information" class="level2">
 <h2>Relationship to Clinical Information</h2>
-<p>Contextual Conditions are not intended to replace or reorganize the clinical information model. They do not replace FHIR Observation, Condition, Immunization, or QuestionnaireResponse resources, SNOMED CT, diagnosis codes, problem lists, or other clinical representations.</p>
-<p>Clinical systems represent information in relation to the patient and the broader needs of care. Contextual Conditions represent information in relation to an immunization recommendation evaluation and the guidance published by a Schedule Authority.</p>
-<p>For example, a clinical system may represent immune status through diagnoses, medications, laboratory results, procedures, and clinician assessments. An immunization schedule may need only the resulting determination:</p>
-<blockquote>
+<p data-anchor="clinical-information" data-block-index="0">Contextual Conditions are not intended to replace or reorganize the clinical information model. They do not replace FHIR Observation, Condition, Immunization, or QuestionnaireResponse resources, SNOMED CT, diagnosis codes, problem lists, or other clinical representations.</p>
+<div id="clinical-vs-evaluation-context" class="guide-anchor" data-guide-anchor="clinical-vs-evaluation-context">
+
+</div>
+<p data-anchor="clinical-vs-evaluation-context" data-block-index="0">Clinical systems represent information in relation to the patient and the broader needs of care. Contextual Conditions represent information in relation to an immunization recommendation evaluation and the guidance published by a Schedule Authority.</p>
+<p data-anchor="clinical-vs-evaluation-context" data-block-index="1">For example, a clinical system may represent immune status through diagnoses, medications, laboratory results, procedures, and clinician assessments. An immunization schedule may need only the resulting determination:</p>
+<blockquote data-anchor="clinical-vs-evaluation-context" data-block-index="2">
 <p>Patient meets this Schedule Authority’s definition of severely immunocompromised.</p>
 </blockquote>
 <section id="separation-of-responsibilities" class="level3">
 <h3>Separation of responsibilities</h3>
-<p>The concept separates four activities:</p>
-<ol type="1">
+<p data-anchor="separation-of-responsibilities" data-block-index="0">The concept separates four activities:</p>
+<ol type="1" data-anchor="separation-of-responsibilities" data-block-index="1">
 <li><strong>Clinical data capture:</strong> recording diagnoses, observations, treatments, questionnaire answers, patient reports, and other evidence.</li>
 <li><strong>Determination:</strong> deciding, under appropriate policy, that a Contextual Condition applies or what its value is.</li>
 <li><strong>Assertion:</strong> supplying the Contextual Condition and its value to CDS.</li>
 <li><strong>Decision support:</strong> applying immunization guidance to the assertion.</li>
 </ol>
-<p>The requesting system is responsible for determination. The CDS engine accepts the supplied assertion as authoritative for the evaluation. It does not independently interpret the underlying clinical record or decide whether the assertion was correctly derived.</p>
-<p>Collection, derivation, validation, and provenance remain the responsibility of the requesting system. A clinical system or IIS may keep the underlying information and its provenance for clinical, audit, or operational purposes. Who creates, determines, or stores Contextual Conditions in a given workflow is outside this concept and is addressed by the <a href="#related-work">related topics</a>.</p>
-<p>This separation lets a source organization improve how it determines a condition without changing the interface, and lets a Schedule Authority or Knowledge Base change recommendation logic without redefining the clinical data.</p>
+<div id="engine-consumes-assertion" class="guide-anchor" data-guide-anchor="engine-consumes-assertion">
+
+</div>
+<p data-anchor="engine-consumes-assertion" data-block-index="0">The requesting system is responsible for determination. The CDS engine accepts the supplied assertion as authoritative for the evaluation. It does not independently interpret the underlying clinical record or decide whether the assertion was correctly derived.</p>
+<p data-anchor="engine-consumes-assertion" data-block-index="1">Collection, derivation, validation, and provenance remain the responsibility of the requesting system. A clinical system or IIS may keep the underlying information and its provenance for clinical, audit, or operational purposes. Who creates, determines, or stores Contextual Conditions in a given workflow is outside this concept and is addressed by the <a href="#related-work">related topics</a>.</p>
+<div id="responsibilities-evolve-independently" class="guide-anchor" data-guide-anchor="responsibilities-evolve-independently">
+
+</div>
+<p data-anchor="responsibilities-evolve-independently" data-block-index="0">This separation lets a source organization improve how it determines a condition without changing the interface, and lets a Schedule Authority or Knowledge Base change recommendation logic without redefining the clinical data.</p>
 </section>
 </section>
 <section id="evaluation-and-time" class="level2">
 <h2>Evaluation Scope, Absence, and Time</h2>
 <section id="evaluation-scoped-and-stateless" class="level3">
 <h3>Evaluation-scoped and stateless</h3>
-<p>Contextual Conditions are supplied as part of a single recommendation request. Each request is a complete and independent evaluation snapshot. The CDS engine:</p>
-<ul>
+<p data-anchor="evaluation-scoped-and-stateless" data-block-index="0">Contextual Conditions are supplied as part of a single recommendation request. Each request is a complete and independent evaluation snapshot. The CDS engine:</p>
+<ul data-anchor="evaluation-scoped-and-stateless" data-block-index="1">
 <li>considers only the information supplied in that request;</li>
 <li>retains no patient-specific information between requests;</li>
 <li>does not retrieve values from previous evaluations; and</li>
 <li>does not treat omission as an instruction to keep an earlier value.</li>
 </ul>
-<p>After the engine returns its evaluations and recommendations, the supplied Contextual Conditions have no continuing role within the engine. A later request is evaluated solely from the information supplied with it.</p>
-<p>Typical immunization CDS installations contain an embedded Knowledge Base but no patient, immunization, or longitudinal clinical database. Maintaining a longitudinal record is the responsibility of a clinical system or IIS, not the CDS engine. Whether and how an IIS stores Contextual Conditions for later requests is outside this concept; it would need rules for provenance, effective time, correction, expiration, and retraction, and is addressed by <a href="https://informatics.immregistries.org/hub/es/topic/140">topic 140</a>.</p>
+<div id="independent-evaluation-snapshot" class="guide-anchor" data-guide-anchor="independent-evaluation-snapshot">
+
+</div>
+<p data-anchor="independent-evaluation-snapshot" data-block-index="0">After the engine returns its evaluations and recommendations, the supplied Contextual Conditions have no continuing role within the engine. A later request is evaluated solely from the information supplied with it.</p>
+<div id="longitudinal-record-boundary" class="guide-anchor" data-guide-anchor="longitudinal-record-boundary">
+
+</div>
+<p data-anchor="longitudinal-record-boundary" data-block-index="0">Typical immunization CDS installations contain an embedded Knowledge Base but no patient, immunization, or longitudinal clinical database. Maintaining a longitudinal record is the responsibility of a clinical system or IIS, not the CDS engine. Whether and how an IIS stores Contextual Conditions for later requests is outside this concept; it would need rules for provenance, effective time, correction, expiration, and retraction, and is addressed by <a href="https://informatics.immregistries.org/hub/es/topic/140">topic 140</a>.</p>
 </section>
 <section id="absence-means-unknown" class="level3">
 <h3>Absence means unknown</h3>
-<p>Omission means the requesting system makes no assertion about a Contextual Condition. The value is unknown to the CDS engine. Absence is never a No.</p>
-<p>A requesting system may explicitly supply No when it knows that a Boolean condition does not apply. False and unknown sometimes produce the same recommendation, but they mean different things and some guidance treats them differently.</p>
+<p data-anchor="absence-means-unknown" data-block-index="0">Omission means the requesting system makes no assertion about a Contextual Condition. The value is unknown to the CDS engine. Absence is never a No.</p>
+<div id="explicit-no-vs-unknown" class="guide-anchor" data-guide-anchor="explicit-no-vs-unknown">
+
+</div>
+<p data-anchor="explicit-no-vs-unknown" data-block-index="0">A requesting system may explicitly supply No when it knows that a Boolean condition does not apply. False and unknown sometimes produce the same recommendation, but they mean different things and some guidance treats them differently.</p>
 </section>
 <section id="evaluation-date" class="level3">
 <h3>Evaluation date</h3>
-<p>Every recommendation request has an evaluation date: the clinical date for which recommendations are calculated. In routine use this is normally the current date. Contextual Condition values are asserted as applicable to the evaluation performed for that date.</p>
-<p>The evaluation date may be changed for testing or simulation. It is not:</p>
-<ul>
+<p data-anchor="evaluation-date" data-block-index="0">Every recommendation request has an evaluation date: the clinical date for which recommendations are calculated. In routine use this is normally the current date. Contextual Condition values are asserted as applicable to the evaluation performed for that date.</p>
+<div id="simulation-date-limits" class="guide-anchor" data-guide-anchor="simulation-date-limits">
+
+</div>
+<p data-anchor="simulation-date-limits" data-block-index="0">The evaluation date may be changed for testing or simulation. It is not:</p>
+<ul data-anchor="simulation-date-limits" data-block-index="1">
 <li>a way to select a historical Knowledge Base;</li>
 <li>a request to reconstruct the patient’s historical clinical context;</li>
 <li>a way to discover future guidance that has not been published; or</li>
 <li>a request to determine which conditions applied when each past immunization was given.</li>
 </ul>
-<p>Knowledge Base identity and version are separate from the evaluation date.</p>
-<p>The model is intentionally prospective. Its primary purpose is to improve guidance about what the patient should receive next, not to explain or re-evaluate every past immunization decision. Reconstructing historical context, such as whether a patient was pregnant when a dose was given years earlier, would need far more information and modeling. CDS engines already evaluate histories without knowing every reason earlier doses were given, delayed, or omitted.</p>
+<p data-anchor="simulation-date-limits" data-block-index="2">Knowledge Base identity and version are separate from the evaluation date.</p>
+<div id="prospective-model" class="guide-anchor" data-guide-anchor="prospective-model">
+
+</div>
+<p data-anchor="prospective-model" data-block-index="0">The model is intentionally prospective. Its primary purpose is to improve guidance about what the patient should receive next, not to explain or re-evaluate every past immunization decision. Reconstructing historical context, such as whether a patient was pregnant when a dose was given years earlier, would need far more information and modeling. CDS engines already evaluate histories without knowing every reason earlier doses were given, delayed, or omitted.</p>
 </section>
 <section id="what-applies-means" class="level3">
 <h3>What “applies” means</h3>
-<p>A Contextual Condition does not necessarily describe a present clinical state. Its meaning may concern:</p>
-<ul>
+<p data-anchor="what-applies-means" data-block-index="0">A Contextual Condition does not necessarily describe a present clinical state. Its meaning may concern:</p>
+<ul data-anchor="what-applies-means" data-block-index="1">
 <li>a past event: “Patient has had varicella disease”;</li>
 <li>a present state: “Patient is pregnant”;</li>
 <li>a future intention: “Patient plans to travel to Nigeria”; or</li>
 <li>another person: “Birth mother received RSV vaccine during the relevant pregnancy.”</li>
 </ul>
-<p>What they share is that the requesting system asserts the value as applicable to the evaluation date. The relationship or temporal meaning the engine needs is contained in the definition of the condition. The engine does not receive a separate model of the related person, pregnancy, travel event, or underlying evidence.</p>
-<p>This is deliberate. For maternal RSV vaccination, the engine may need only one or two assertions from the mother’s history. Requiring the mother’s identity and record would add complexity and disclose more than the evaluation requires. The same principle applies to any relationship a Schedule Authority identifies as relevant. Whether a factor is clinically appropriate is the Schedule Authority’s decision, not the framework’s.</p>
+<div id="applicability-in-definition" class="guide-anchor" data-guide-anchor="applicability-in-definition">
+
+</div>
+<p data-anchor="applicability-in-definition" data-block-index="0">What they share is that the requesting system asserts the value as applicable to the evaluation date. The relationship or temporal meaning the engine needs is contained in the definition of the condition. The engine does not receive a separate model of the related person, pregnancy, travel event, or underlying evidence.</p>
+<div id="minimum-related-information" class="guide-anchor" data-guide-anchor="minimum-related-information">
+
+</div>
+<p data-anchor="minimum-related-information" data-block-index="0">This is deliberate. For maternal RSV vaccination, the engine may need only one or two assertions from the mother’s history. Requiring the mother’s identity and record would add complexity and disclose more than the evaluation requires. The same principle applies to any relationship a Schedule Authority identifies as relevant. Whether a factor is clinically appropriate is the Schedule Authority’s decision, not the framework’s.</p>
 </section>
 <section id="dates-are-conditions" class="level3">
 <h3>Dates are conditions</h3>
-<p>When guidance needs a date, such as the start of a pregnancy or the date of a transplant, that date is its own Contextual Condition with a date value. It is not inferred from, or carried in, a representation’s own timestamp fields. Those fields describe the record or the message, not the meaning of the condition.</p>
+<p data-anchor="dates-are-conditions" data-block-index="0">When guidance needs a date, such as the start of a pregnancy or the date of a transplant, that date is its own Contextual Condition with a date value. It is not inferred from, or carried in, a representation’s own timestamp fields. Those fields describe the record or the message, not the meaning of the condition.</p>
 </section>
 </section>
 <section id="authorities" class="level2">
 <h2>Schedule Authorities, Knowledge Bases, and Code Systems</h2>
 <section id="schedule-authorities" class="level3">
 <h3>Schedule Authorities</h3>
-<p>A <strong>Schedule Authority</strong> is an organization or expert body that publishes immunization recommendations for clinical or public health use.</p>
-<p>The Schedule Authority defines the meaning of the Contextual Conditions its recommendations require. It decides:</p>
-<ul>
+<p data-anchor="schedule-authorities" data-block-index="0">A <strong>Schedule Authority</strong> is an organization or expert body that publishes immunization recommendations for clinical or public health use.</p>
+<p data-anchor="schedule-authorities" data-block-index="1">The Schedule Authority defines the meaning of the Contextual Conditions its recommendations require. It decides:</p>
+<ul data-anchor="schedule-authorities" data-block-index="2">
 <li>which factors influence its guidance;</li>
 <li>what each condition means;</li>
 <li>what datatype each condition requires; and</li>
@@ -3174,37 +3246,52 @@ html {
 </section>
 <section id="knowledge-bases" class="level3">
 <h3>Knowledge Bases</h3>
-<p>A <strong>Knowledge Base</strong> is an identifiable, executable operationalization of guidance from one or more Schedule Authorities, possibly including jurisdictional or local adaptations.</p>
-<p>A forecast applies one Knowledge Base as a coherent unit. The Knowledge Base identifies the Contextual Conditions, and their versions, that it supports. The CDS engine does not redefine a Schedule Authority’s conditions; it applies the rules in its selected Knowledge Base. How a Knowledge Base declares support, and how an engine reports whether a submitted condition was recognized, are defined by the CDS interface, such as ImmDS + HALO, not by this concept.</p>
+<p data-anchor="knowledge-bases" data-block-index="0">A <strong>Knowledge Base</strong> is an identifiable, executable operationalization of guidance from one or more Schedule Authorities, possibly including jurisdictional or local adaptations.</p>
+<p data-anchor="knowledge-bases" data-block-index="1">A forecast applies one Knowledge Base as a coherent unit. The Knowledge Base identifies the Contextual Conditions, and their versions, that it supports. The CDS engine does not redefine a Schedule Authority’s conditions; it applies the rules in its selected Knowledge Base. How a Knowledge Base declares support, and how an engine reports whether a submitted condition was recognized, are defined by the CDS interface, such as ImmDS + HALO, not by this concept.</p>
 </section>
 <section id="authority-specific-code-systems" class="level3">
 <h3>Authority-specific code systems</h3>
-<p>The concept does not require a single, internationally harmonized list of Contextual Conditions. Each Schedule Authority may publish its own definitive, versioned code system, so it can express exactly the concepts its guidance needs without first reconciling language, policy, clinical definitions, or implementation criteria with other authorities.</p>
-<p>For example, French and American Schedule Authorities may define conditions that look similar but differ in subtle and important ways. Forcing them into one concept would risk hiding those differences, or letting an interoperability project reinterpret clinical policy.</p>
-<p>Future work may identify relationships or mappings between conditions from different authorities. A mapping must not imply equivalence unless equivalence has been established. Similar labels are not evidence of equivalence.</p>
-<p>Published identifiers and definitions must remain stable. A material change in meaning results in a new version or a new concept, not a silent change to an existing code.</p>
+<p data-anchor="authority-specific-code-systems" data-block-index="0">The concept does not require a single, internationally harmonized list of Contextual Conditions. Each Schedule Authority may publish its own definitive, versioned code system, so it can express exactly the concepts its guidance needs without first reconciling language, policy, clinical definitions, or implementation criteria with other authorities.</p>
+<div id="authority-differences-matter" class="guide-anchor" data-guide-anchor="authority-differences-matter">
+
+</div>
+<p data-anchor="authority-differences-matter" data-block-index="0">For example, French and American Schedule Authorities may define conditions that look similar but differ in subtle and important ways. Forcing them into one concept would risk hiding those differences, or letting an interoperability project reinterpret clinical policy.</p>
+<div id="mapping-not-equivalence" class="guide-anchor" data-guide-anchor="mapping-not-equivalence">
+
+</div>
+<p data-anchor="mapping-not-equivalence" data-block-index="0">Future work may identify relationships or mappings between conditions from different authorities. A mapping must not imply equivalence unless equivalence has been established. Similar labels are not evidence of equivalence.</p>
+<div id="stable-published-meaning" class="guide-anchor" data-guide-anchor="stable-published-meaning">
+
+</div>
+<p data-anchor="stable-published-meaning" data-block-index="0">Published identifiers and definitions must remain stable. A material change in meaning results in a new version or a new concept, not a silent change to an existing code.</p>
 </section>
 <section id="publication-and-stewardship" class="level3">
 <h3>Publication and stewardship</h3>
-<p>Schedule Authorities own the clinical meaning of their Contextual Conditions.</p>
-<p>A terminology steward may provide the technical publication framework: stable identifiers, namespace management, versioning, and distribution, so that those definitions are computable and exchangeable. The steward does not create clinical guidance or reinterpret the authority’s intent.</p>
-<p>The Immunization Vocabularies Collaborative (IVC) may serve as a publication and coordination mechanism for these code systems, and may support future work on relationships between authority-specific concepts. IVC is not part of the clinical decision-making process and is not required by the Contextual Conditions architecture. How code systems are actually published is outside this document. <!-- CONFIRM: Role vocabulary. Earlier sources describe four roles (Code System, Publishing, Namespace, and CDS Authority); this section follows the September 2026 concept page. See OQ-4. --></p>
+<p data-anchor="publication-and-stewardship" data-block-index="0">Schedule Authorities own the clinical meaning of their Contextual Conditions.</p>
+<div id="terminology-steward-role" class="guide-anchor" data-guide-anchor="terminology-steward-role">
+
+</div>
+<p data-anchor="terminology-steward-role" data-block-index="0">A terminology steward may provide the technical publication framework: stable identifiers, namespace management, versioning, and distribution, so that those definitions are computable and exchangeable. The steward does not create clinical guidance or reinterpret the authority’s intent.</p>
+<div id="publication-outside-architecture" class="guide-anchor" data-guide-anchor="publication-outside-architecture">
+
+</div>
+<p data-anchor="publication-outside-architecture" data-block-index="0">The Immunization Vocabularies Collaborative (IVC) may serve as a publication and coordination mechanism for these code systems, and may support future work on relationships between authority-specific concepts. IVC is not part of the clinical decision-making process and is not required by the Contextual Conditions architecture. How code systems are actually published is outside this document. <!-- CONFIRM: Role vocabulary. Earlier sources describe four roles (Code System, Publishing, Namespace, and CDS Authority); this section follows the September 2026 concept page. See OQ-4. --></p>
 </section>
 </section>
 <section id="representations" class="level2">
 <h2>Representing Contextual Conditions</h2>
-<p>Contextual Conditions are a concept, not a message format. They can be represented in more than one standard, and HL7 v2 and FHIR are the two in current use. This section describes, at a general level, what any representation must convey and which principles it must preserve. Detailed specifications belong to the <a href="#related-work">related topics</a>.</p>
+<p data-anchor="representations" data-block-index="0">Contextual Conditions are a concept, not a message format. They can be represented in more than one standard, and HL7 v2 and FHIR are the two in current use. This section describes, at a general level, what any representation must convey and which principles it must preserve. Detailed specifications belong to the <a href="#related-work">related topics</a>.</p>
 <section id="what-every-representation-conveys" class="level3">
 <h3>What every representation conveys</h3>
-<p>For each asserted Contextual Condition, a representation conveys:</p>
-<ul>
+<p data-anchor="what-every-representation-conveys" data-block-index="0">For each asserted Contextual Condition, a representation conveys:</p>
+<ul data-anchor="what-every-representation-conveys" data-block-index="1">
 <li><strong>the condition</strong>, identified by its code and by the code system of the Schedule Authority that defines it, so that the authority is always explicit;</li>
 <li><strong>the asserted value</strong>, in the condition’s datatype: Yes or No for a Boolean condition, or a date or number where the condition defines one.</li>
 </ul>
 </section>
 <section id="principles-every-representation-preserves" class="level3">
 <h3>Principles every representation preserves</h3>
-<ul>
+<ul data-anchor="principles-every-representation-preserves" data-block-index="0">
 <li><strong>Sparse.</strong> Only asserted conditions are sent. A condition that is not known is not sent; there is no “unknown” value to transmit.</li>
 <li><strong>Absence is unknown.</strong> A receiver never treats a missing condition as No.</li>
 <li><strong>Dates are conditions.</strong> A date meaningful to a condition is sent as its own Contextual Condition with a date value. It is never carried in a representation’s own date fields, such as HL7 v2 OBX-14 or the date elements of a FHIR Observation, which describe the record or message rather than the condition.</li>
@@ -3214,40 +3301,46 @@ html {
 </section>
 <section id="hl7-v2" class="level3">
 <h3>HL7 v2</h3>
-<p>In HL7 v2, each Contextual Condition is a standard OBX observation. OBX-3 identifies the condition, using the Schedule Authority’s code system, and OBX-5 carries the asserted value. No new segments or message structures are introduced. Use in immunization updates (VXU) and queries (QBP), including what an IIS may do with the conditions it receives, is defined by <a href="#related-work">topics 137, 140, and 141</a>.</p>
+<p data-anchor="hl7-v2" data-block-index="0">In HL7 v2, each Contextual Condition is a standard OBX observation. OBX-3 identifies the condition, using the Schedule Authority’s code system, and OBX-5 carries the asserted value. No new segments or message structures are introduced. Use in immunization updates (VXU) and queries (QBP), including what an IIS may do with the conditions it receives, is defined by <a href="#related-work">topics 137, 140, and 141</a>.</p>
 </section>
 <section id="fhir" class="level3">
 <h3>FHIR</h3>
-<p>In FHIR, Contextual Conditions are supplied as inputs to the immunization CDS interface defined by the ImmDS + HALO work, where they are known as HALO factors. The FHIR representation, including how an engine reports supported conditions, is defined by <a href="https://informatics.immregistries.org/hub/es/topic/1">topic 1</a>.</p>
+<p data-anchor="fhir" data-block-index="0">In FHIR, Contextual Conditions are supplied as inputs to the immunization CDS interface defined by the ImmDS + HALO work, where they are known as HALO factors. The FHIR representation, including how an engine reports supported conditions, is defined by <a href="https://informatics.immregistries.org/hub/es/topic/1">topic 1</a>.</p>
 </section>
 </section>
 <section id="adoption-and-boundaries" class="level2">
 <h2>Adoption, Boundaries, and Intended Outcome</h2>
 <section id="incremental-support" class="level3">
 <h3>Incremental support</h3>
-<p>Publishing a Contextual Condition does not mean every requesting system can determine its value or every CDS engine can use it. Partial support is expected, especially early on:</p>
-<ul>
+<p data-anchor="incremental-support" data-block-index="0">Publishing a Contextual Condition does not mean every requesting system can determine its value or every CDS engine can use it. Partial support is expected, especially early on:</p>
+<ul data-anchor="incremental-support" data-block-index="1">
 <li>A requesting system may support only some of the conditions an authority defines.</li>
 <li>A CDS engine or Knowledge Base may support only some of them.</li>
 <li>An unsupported condition may become supported without redesigning the interface.</li>
 <li>New conditions may be added as guidance evolves.</li>
 </ul>
-<p>The benefit of the framework is not immediate universal support. It is a consistent mechanism through which support can grow.</p>
+<div id="support-can-grow" class="guide-anchor" data-guide-anchor="support-can-grow">
+
+</div>
+<p data-anchor="support-can-grow" data-block-index="0">The benefit of the framework is not immediate universal support. It is a consistent mechanism through which support can grow.</p>
 </section>
 <section id="architectural-boundary" class="level3">
 <h3>Architectural boundary</h3>
-<p>Contextual Conditions set a boundary among three responsibilities:</p>
-<ol type="1">
+<p data-anchor="architectural-boundary" data-block-index="0">Contextual Conditions set a boundary among three responsibilities:</p>
+<ol type="1" data-anchor="architectural-boundary" data-block-index="1">
 <li><strong>Clinical and public health systems</strong> collect information, maintain longitudinal records, and determine the values supplied to CDS.</li>
 <li><strong>The CDS interface</strong> conveys evaluation-scoped demographics, immunization history, and Contextual Condition values.</li>
 <li><strong>The CDS engine and its selected Knowledge Base</strong> apply immunization guidance and return evaluations and recommendations.</li>
 </ol>
-<p>This boundary lets each layer evolve without requiring the CDS engine to interpret the full clinical record, and without requiring the clinical record to adopt a schedule-specific information model.</p>
+<div id="layers-evolve-independently" class="guide-anchor" data-guide-anchor="layers-evolve-independently">
+
+</div>
+<p data-anchor="layers-evolve-independently" data-block-index="0">This boundary lets each layer evolve without requiring the CDS engine to interpret the full clinical record, and without requiring the clinical record to adopt a schedule-specific information model.</p>
 </section>
 <section id="non-goals" class="level3">
 <h3>Non-goals</h3>
-<p>This concept does not define:</p>
-<ul>
+<p data-anchor="non-goals" data-block-index="0">This concept does not define:</p>
+<ul data-anchor="non-goals" data-block-index="1">
 <li>how clinical or nonclinical information is collected;</li>
 <li>how a requesting system derives a Contextual Condition;</li>
 <li>who creates, determines, or stores Contextual Conditions in a workflow;</li>
@@ -3262,20 +3355,23 @@ html {
 <li>capability negotiation or response behavior; or</li>
 <li>detailed HL7 v2, FHIR, or other transport specifications, beyond the general principles in <a href="#representations">Representing Contextual Conditions</a>.</li>
 </ul>
-<p>These subjects belong to related terminology, implementation-guide, transport, and IIS work.</p>
+<p data-anchor="non-goals" data-block-index="2">These subjects belong to related terminology, implementation-guide, transport, and IIS work.</p>
 </section>
 <section id="intended-outcome" class="level3">
 <h3>Intended outcome</h3>
-<p>Success does not mean every system immediately supports every Contextual Condition. Success means immunization CDS has a bounded, explicitly defined input layer. Schedule Authorities can identify the factors their guidance requires, Knowledge Bases can declare which inputs they implement, and requesting systems can add support incrementally.</p>
-<p>As guidance evolves, new factors can be introduced mainly as vocabulary and Knowledge Base additions rather than as new proprietary interface designs. Clinical systems remain free to represent and derive the underlying information in ways suited to patient care, while CDS engines receive only the inputs they need to answer the recommendation question.</p>
+<p data-anchor="intended-outcome" data-block-index="0">Success does not mean every system immediately supports every Contextual Condition. Success means immunization CDS has a bounded, explicitly defined input layer. Schedule Authorities can identify the factors their guidance requires, Knowledge Bases can declare which inputs they implement, and requesting systems can add support incrementally.</p>
+<div id="vocabulary-led-growth" class="guide-anchor" data-guide-anchor="vocabulary-led-growth">
+
+</div>
+<p data-anchor="vocabulary-led-growth" data-block-index="0">As guidance evolves, new factors can be introduced mainly as vocabulary and Knowledge Base additions rather than as new proprietary interface designs. Clinical systems remain free to represent and derive the underlying information in ways suited to patient care, while CDS engines receive only the inputs they need to answer the recommendation question.</p>
 </section>
 </section>
 <section id="applying-the-concept" class="level2">
 <h2>Applying the Concept</h2>
 <section id="evaluating-a-candidate-condition" class="level3">
 <h3>Evaluating a candidate condition</h3>
-<p>A proposed concept is a good Contextual Condition candidate when most of these questions have clear answers:</p>
-<ul>
+<p data-anchor="evaluating-a-candidate-condition" data-block-index="0">A proposed concept is a good Contextual Condition candidate when most of these questions have clear answers:</p>
+<ul data-anchor="evaluating-a-candidate-condition" data-block-index="1">
 <li>Does immunization guidance need this information to evaluate or recommend vaccination?</li>
 <li>Can its meaning be expressed as a bounded assertion?</li>
 <li>Is it distinct from patient identity and immunization history?</li>
@@ -3287,11 +3383,14 @@ html {
 <li>Can it be defined without embedding a particular CDS engine’s internal rule?</li>
 <li>Is its temporal meaning, relative to the evaluation date, clear?</li>
 </ul>
-<p>A proposal that tries to carry a clinical narrative, reproduce a problem list, or encode a recommendation probably belongs elsewhere.</p>
+<div id="candidate-boundary" class="guide-anchor" data-guide-anchor="candidate-boundary">
+
+</div>
+<p data-anchor="candidate-boundary" data-block-index="0">A proposal that tries to carry a clinical narrative, reproduce a problem list, or encode a recommendation probably belongs elsewhere.</p>
 </section>
 <section id="common-pitfalls" class="level3">
 <h3>Common pitfalls</h3>
-<ol type="1">
+<ol type="1" data-anchor="common-pitfalls" data-block-index="0">
 <li><strong>Treating omission as No.</strong> Omitted means unknown.</li>
 <li><strong>Sending raw diagnoses as if they were Contextual Conditions.</strong> Evidence and the assertion are related but distinct.</li>
 <li><strong>Making the CDS engine infer the condition.</strong> Determination happens in the requesting system.</li>
@@ -3306,10 +3405,10 @@ html {
 </section>
 <section id="working-decisions" class="level2">
 <h2>Appendix: Working Decisions and Open Questions</h2>
-<p>This appendix consolidates the working decisions on the concept and the questions still open. A working decision is the current position for discussion, not a final or approved decision. Each records where it came from so it can be revisited.</p>
+<p data-anchor="working-decisions" data-block-index="0">This appendix consolidates the working decisions on the concept and the questions still open. A working decision is the current position for discussion, not a final or approved decision. Each records where it came from so it can be revisited.</p>
 <section id="working-decisions-1" class="level3">
 <h3>Working decisions</h3>
-<div class="aira-table-wrap"><table class="aira-table">
+<div class="aira-table-wrap" data-anchor="working-decisions-1" data-block-index="0"><table class="aira-table">
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -3368,8 +3467,8 @@ html {
 </section>
 <section id="open-questions" class="level3">
 <h3>Open questions</h3>
-<p>These were identified by comparing existing sources; see the <a href="https://github.com/immregistries/contextual-conditions/blob/main/review/2026-10-29-initial-source-review.md">initial source review</a> for detail. Each needs discussion before the affected text is settled. Questions that belong to a related topic are referred there rather than answered here.</p>
-<div class="aira-table-wrap"><table class="aira-table">
+<p data-anchor="open-questions" data-block-index="0">These were identified by comparing existing sources; see the <a href="https://github.com/immregistries/contextual-conditions/blob/main/review/2026-10-29-initial-source-review.md">initial source review</a> for detail. Each needs discussion before the affected text is settled. Questions that belong to a related topic are referred there rather than answered here.</p>
+<div class="aira-table-wrap" data-anchor="open-questions" data-block-index="1"><table class="aira-table">
 <colgroup>
 <col style="width: 25%" />
 <col style="width: 25%" />
@@ -3456,10 +3555,10 @@ html {
   </main>
   <footer class="aira-footer" aria-label="Document information">
     <p><a href="https://www.immregistries.org/">American Immunization Registry Association (AIRA)</a> supports collaboration, standards, and shared solutions that strengthen immunization information systems and improve the use of vaccination data to protect public health.</p>
-    <p>Contextual Conditions for Immunization Decision Support &middot; version main (3612075) &middot; generated 2026-10-30 &middot; Content licensed CC BY 4.0</p>
+    <p>Contextual Conditions for Immunization Decision Support &middot; version main (97b36c9) &middot; generated 2026-10-30 &middot; Content licensed CC BY 4.0</p>
   </footer>
 </div>
-<script type="application/json" id="guide-data">{"id": "contextual-conditions", "title": "Contextual Conditions for Immunization Decision Support", "version": "main (3612075)", "built": "2026-10-30"}</script>
+<script type="application/json" id="guide-data">{"id": "contextual-conditions", "title": "Contextual Conditions for Immunization Decision Support", "version": "main (97b36c9)", "built": "2026-10-30"}</script>
 <script>
 /* Content guide: section tracking and browser-only comments. */
 (function () {
@@ -3627,6 +3726,14 @@ html {
     return (text || "").replace(/\s+/g, " ").trim();
   }
 
+  function blockSnippet(block) {
+    var copy = block.cloneNode(true);
+    Array.prototype.forEach.call(copy.querySelectorAll(".guide-comment-button"), function (button) {
+      button.remove();
+    });
+    return normalize(copy.textContent).slice(0, 120);
+  }
+
   function newId() {
     if (window.crypto && window.crypto.randomUUID) {
       return window.crypto.randomUUID();
@@ -3634,8 +3741,8 @@ html {
     return "c-" + Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 10);
   }
 
-  // Commentable blocks: outermost paragraphs, list items, quotes, tables, code.
-  var BLOCK_SELECTOR = "p, li, blockquote, .aira-table-wrap, pre";
+  // Commentable blocks are annotated by the build with their anchor area.
+  var BLOCK_SELECTOR = "[data-anchor][data-block-index]";
   var blocks = Array.prototype.filter.call(
     content.querySelectorAll(BLOCK_SELECTOR),
     function (element) {
@@ -3650,14 +3757,10 @@ html {
     }
   );
 
-  var counters = {};
   blocks.forEach(function (block) {
     var section = block.closest("section");
-    var sectionId = section ? section.id : "top";
-    counters[sectionId] = (counters[sectionId] || 0) + 1;
-    block.dataset.guideSection = sectionId;
-    block.dataset.guideIndex = String(counters[sectionId]);
-    block.dataset.guideText = normalize(block.textContent).slice(0, 160);
+    block.dataset.guideSection = section ? section.id : "top";
+    block.dataset.guideText = blockSnippet(block);
     block.classList.add("guide-block");
 
     var button = document.createElement("button");
@@ -3687,10 +3790,10 @@ html {
     return normalize(selection.toString()).slice(0, 500);
   }
 
-  function findBlock(comment) {
+  function legacyBlock(comment) {
     var exact = blocks.filter(function (block) {
       return block.dataset.guideSection === comment.sectionId &&
-        block.dataset.guideIndex === String(comment.blockIndex);
+        Number(block.dataset.blockIndex) + 1 === Number(comment.blockIndex);
     })[0];
     var snippet = normalize(comment.blockText).slice(0, 60);
     if (exact && exact.dataset.guideText.slice(0, 60) === snippet) {
@@ -3711,6 +3814,64 @@ html {
       }
     }
     return null;
+  }
+
+  function snippetSimilarity(left, right) {
+    left = normalize(left).toLowerCase();
+    right = normalize(right).toLowerCase();
+    if (left === right) {
+      return 1;
+    }
+    if (!left || !right) {
+      return 0;
+    }
+    var leftWords = left.split(/\s+/);
+    var rightWords = right.split(/\s+/);
+    var seen = {};
+    var shared = 0;
+    leftWords.forEach(function (word) {
+      seen[word] = true;
+    });
+    rightWords.forEach(function (word) {
+      if (seen[word]) {
+        shared += 1;
+        delete seen[word];
+      }
+    });
+    return shared / Math.max(leftWords.length, rightWords.length);
+  }
+
+  function anchorElement(name) {
+    return document.getElementById(name);
+  }
+
+  function areaStart(anchor) {
+    if (anchor.matches("section")) {
+      return anchor.querySelector(":scope > h1, :scope > h2, :scope > h3, :scope > h4, :scope > h5, :scope > h6") || anchor;
+    }
+    return anchor;
+  }
+
+  function placement(comment) {
+    if (!comment.anchor) {
+      var legacy = legacyBlock(comment);
+      return legacy ? { block: legacy, target: legacy, orphaned: false } : null;
+    }
+    var anchor = anchorElement(comment.anchor);
+    if (!anchor) {
+      return null;
+    }
+    var areaBlocks = blocks.filter(function (block) {
+      return block.dataset.anchor === comment.anchor;
+    });
+    var matches = areaBlocks.filter(function (block) {
+      return snippetSimilarity(blockSnippet(block), comment.snippet) >= 0.75;
+    });
+    var preferred = matches.filter(function (block) {
+      return block.dataset.blockIndex === String(comment.blockIndex);
+    })[0];
+    var block = preferred || matches[0] || null;
+    return { block: block, target: block || areaStart(anchor), orphaned: false };
   }
 
   function threadFor(block) {
@@ -3756,7 +3917,8 @@ html {
     edit.type = "button";
     edit.textContent = "Edit";
     edit.addEventListener("click", function () {
-      var block = findBlock(comment);
+      var placed = placement(comment);
+      var block = placed && placed.block;
       if (block) {
         openForm(block, comment.quote, comment);
       }
@@ -3799,41 +3961,53 @@ html {
       }
     );
     index.textContent = "";
+    var oldOrphans = content.querySelector(".guide-orphans");
+    if (oldOrphans) {
+      oldOrphans.remove();
+    }
     comments.sort(function (a, b) {
       return (a.created || "").localeCompare(b.created || "");
     });
     var unplaced = [];
     comments.forEach(function (comment) {
-      var block = findBlock(comment);
-      if (block) {
-        threadFor(block).appendChild(commentElement(comment));
+      var placed = placement(comment);
+      var block = placed && placed.block;
+      if (placed) {
+        threadFor(placed.target).appendChild(commentElement(comment));
       } else {
         unplaced.push(comment);
       }
       var entry = document.createElement("li");
       var link = document.createElement("a");
-      link.href = block ? "#comment-" + comment.id : "#guide-comments-panel";
+      link.href = "#comment-" + comment.id;
       link.textContent = (comment.author || "Anonymous") + ": " +
         normalize(comment.text).slice(0, 60) +
         (normalize(comment.text).length > 60 ? "…" : "");
       entry.appendChild(link);
       var where = document.createElement("span");
       where.className = "aira-meta";
-      where.textContent = block
-        ? comment.sectionTitle || comment.sectionId
-        : "Not placed: the text it refers to has changed";
+      where.textContent = placed
+        ? comment.anchor || comment.sectionTitle || comment.sectionId
+        : "Orphaned comment";
       entry.appendChild(where);
       index.appendChild(entry);
     });
     countBadge.textContent = String(comments.length);
     if (unplaced.length) {
+      var orphanGroup = document.createElement("section");
+      orphanGroup.className = "guide-orphans";
+      var orphanHeading = document.createElement("h2");
+      orphanHeading.textContent = "Orphaned comments";
+      orphanGroup.appendChild(orphanHeading);
       unplaced.forEach(function (comment) {
         var holder = document.createElement("div");
         holder.className = "guide-thread";
         holder.appendChild(commentElement(comment));
-        index.appendChild(holder);
+        orphanGroup.appendChild(holder);
       });
+      content.appendChild(orphanGroup);
     }
+    followHash();
   }
 
   function closeForms() {
@@ -3902,7 +4076,9 @@ html {
           documentVersion: data.version,
           sectionId: block.dataset.guideSection,
           sectionTitle: sectionTitle(block),
-          blockIndex: Number(block.dataset.guideIndex),
+          anchor: block.dataset.anchor,
+          blockIndex: Number(block.dataset.blockIndex),
+          snippet: blockSnippet(block),
           blockText: block.dataset.guideText,
           quote: quote || "",
           author: author,
@@ -4007,6 +4183,27 @@ html {
       render();
     }
   });
+
+  function followHash() {
+    Array.prototype.forEach.call(content.querySelectorAll(".guide-comment--target"), function (item) {
+      item.classList.remove("guide-comment--target");
+    });
+    var match = window.location.hash.match(/^#comment-(.+)$/);
+    if (!match) {
+      return;
+    }
+    var comment = document.getElementById("comment-" + match[1]);
+    if (!comment) {
+      return;
+    }
+    document.body.classList.remove("guide-comments-hidden");
+    toggle.setAttribute("aria-pressed", "true");
+    toggle.textContent = "Hide comments";
+    comment.classList.add("guide-comment--target");
+    comment.scrollIntoView({ block: "center" });
+  }
+
+  window.addEventListener("hashchange", followHash);
 
   render();
 })();
