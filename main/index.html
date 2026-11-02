@@ -2969,7 +2969,7 @@ html {
           </div>
           <div class="aira-topic-actions guide-status">
             <span class="aira-tag aira-tag--warning guide-status-tag">DRAFT</span>
-            <span class="aira-meta">Version main (9fac298)</span>
+            <span class="aira-meta">Version main (51b71e7)</span>
           </div>
         </div>
       </header>
@@ -3039,29 +3039,29 @@ html {
 <col style="width: 50%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Topic</th>
 <th>Relationship to this work</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td><a href="https://informatics.immregistries.org/hub/es/topic/1">Immunization CDS (ImmDS + HALO), topic 1</a></td>
 <td>The FHIR-based CDS interface work that created the need for Contextual Conditions. HALO factors are Contextual Conditions as defined here. Defines the FHIR representation, including how a CDS engine reports which conditions it supports.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><a href="https://informatics.immregistries.org/hub/es/topic/137">HL7 v2 Contextual Conditions Exchange, topic 137</a></td>
 <td>The overall HL7 v2 representation, using coded OBX observations. Parent of topics 140 and 141.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><a href="https://informatics.immregistries.org/hub/es/topic/140">HL7 v2 Contextual Conditions in Immunization Updates, topic 140</a></td>
 <td>Submission of conditions in VXU messages, including whether and how an IIS may retain or use them. IIS storage rules belong here.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><a href="https://informatics.immregistries.org/hub/es/topic/141">HL7 v2 Contextual Conditions in Immunization Queries, topic 141</a></td>
 <td>Conditions supplied with a QBP query to influence the forecast returned in the RSP. Also touches on storage, and is likely to prohibit storing conditions supplied in a query.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><a href="https://informatics.immregistries.org/hub/es/topic/7">CDS Contextual Conditions, topic 7</a></td>
 <td>This work: the concept itself.</td>
 </tr>
@@ -3110,24 +3110,24 @@ html {
 <col style="width: 33%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Input</th>
 <th>Question answered</th>
 <th>Typical content</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>Patient identification</td>
 <td>Who is the patient?</td>
 <td>Identifiers and demographics</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Immunization history</td>
 <td>What immunizations has the patient received?</td>
 <td>Administered and historical vaccination events</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Contextual Conditions</td>
 <td>What other context, defined by the Schedule Authority, affects this evaluation?</td>
 <td>Asserted conditions such as risk, status, prior disease, exposure, relationship, travel, or occupation, with their values</td>
@@ -3488,49 +3488,49 @@ html {
 <col style="width: 33%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>ID</th>
 <th>Working decision</th>
 <th>Basis</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>WD-1</td>
 <td>This project covers the concept of Contextual Conditions. Publication of code systems and values is operational and is handled separately, currently as an IVC proposal.</td>
 <td>Project scope, October 2026</td>
 </tr>
-<tr class="even">
+<tr>
 <td>WD-2</td>
 <td>This repository is the authoritative source for the concept. Confluence pages are regenerated from it for sharing and feedback.</td>
 <td>Project scope, October 2026</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>WD-3</td>
 <td>Community coordination, meetings, and discussion notes are tracked on InteropHub, <a href="https://informatics.immregistries.org/hub/es/topic/7">topic 7</a>.</td>
 <td>Project scope, October 2026</td>
 </tr>
-<tr class="even">
+<tr>
 <td>WD-4</td>
 <td>Disagreements among sources, and critiques of the concept, are kept visible in this repository rather than resolved privately.</td>
 <td>Project scope, October 2026</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>WD-5</td>
 <td>This document describes the HL7 v2 and FHIR representations at a general level: what a representation must convey and which principles it must preserve. Detailed specifications belong to the related InteropHub topics (1, 137, 140, and 141), which depend on this concept and may develop their own documentation. Resolves OQ-1.</td>
 <td>Project direction, October 2026</td>
 </tr>
-<tr class="even">
+<tr>
 <td>WD-6</td>
 <td>HALO factors, from the Immunization CDS (ImmDS + HALO) work, are Contextual Conditions as defined in this document.</td>
 <td>Project direction, October 2026</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>WD-7</td>
 <td>This document describes what a Contextual Condition is conceptually. It does not set rules for who creates, determines, or stores Contextual Conditions, or for how they are included in messages and workflows. IIS storage rules belong to topic 140; topic 141 also touches on storage and is likely to prohibit storing conditions supplied in a query. Resolves OQ-2.</td>
 <td>Project direction, October 2026</td>
 </tr>
-<tr class="even">
+<tr>
 <td>WD-8</td>
 <td>When a date is meaningful to a Contextual Condition, it is modeled as a separate Contextual Condition with a date value. It is not conveyed through a representation’s own date fields, such as HL7 v2 OBX-14 or the date elements of a FHIR Observation. This modeling rule applies to every representation and is in scope.</td>
 <td>Project direction, October 2026</td>
@@ -3549,7 +3549,7 @@ html {
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>ID</th>
 <th>Question</th>
 <th>Sources in tension</th>
@@ -3557,37 +3557,37 @@ html {
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>OQ-1</td>
 <td>Does this document include an HL7 v2 representation, or only the transport-neutral concept, with HL7 v2 and other representations documented elsewhere?</td>
 <td>The Confluence concept page lists transport representations as a non-goal; the HL7 v2 Confluence page is a child of it.</td>
 <td>Resolved by WD-5</td>
 </tr>
-<tr class="even">
+<tr>
 <td>OQ-2</td>
 <td>May an IIS store Contextual Conditions received in a VXU?</td>
 <td>The Confluence concept page (September 2026) describes conditions as evaluation-scoped and leaves longitudinal storage to separate work; the HL7 v2 page (June 2026) and the primer allow optional storage under local policy.</td>
 <td>Resolved by WD-7; storage rules belong to topic 140</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>OQ-3</td>
 <td>Which OBX-2 value type carries a Boolean Contextual Condition?</td>
 <td>The primer’s example uses <code>ID</code>; the HL7 v2 Confluence page uses <code>CE</code>.</td>
 <td>Referred to topic 137 under WD-5</td>
 </tr>
-<tr class="even">
+<tr>
 <td>OQ-4</td>
 <td>What are the current names for the governance roles?</td>
 <td>The primer names four roles (Code System, Publishing, Namespace, and CDS Authority); the Confluence concept page uses Schedule Authority, terminology steward, and Knowledge Base.</td>
 <td>Open</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>OQ-5</td>
 <td>Is there a nullified state that removes a previously stored assertion?</td>
 <td>The primer describes one; the Confluence concept page’s stateless model has none. Depends on OQ-2.</td>
 <td>Referred to topic 140 under WD-7</td>
 </tr>
-<tr class="even">
+<tr>
 <td>OQ-6</td>
 <td>Is the numeric datatype an integer, or any number?</td>
 <td>The Confluence concept page names date or integer values; the draft French inventory includes Number values such as laboratory results, height, and weight.</td>
@@ -3628,10 +3628,10 @@ html {
   </main>
   <footer class="aira-footer" aria-label="Document information">
     <p><a href="https://www.immregistries.org/">American Immunization Registry Association (AIRA)</a> supports collaboration, standards, and shared solutions that strengthen immunization information systems and improve the use of vaccination data to protect public health.</p>
-    <p>Contextual Conditions for Immunization Decision Support &middot; version main (9fac298) &middot; generated 2026-10-31 &middot; Content licensed CC BY 4.0</p>
+    <p>Contextual Conditions for Immunization Decision Support &middot; version main (51b71e7) &middot; generated 2026-11-02 &middot; Content licensed CC BY 4.0</p>
   </footer>
 </div>
-<script type="application/json" id="guide-data">{"id": "contextual-conditions", "title": "Contextual Conditions for Immunization Decision Support", "version": "main (9fac298)", "built": "2026-10-31"}</script>
+<script type="application/json" id="guide-data">{"id": "contextual-conditions", "title": "Contextual Conditions for Immunization Decision Support", "version": "main (51b71e7)", "built": "2026-11-02", "comments": {"mode": "interophub", "hub": "https://informatics.immregistries.org/hub", "document": "contextual-conditions"}}</script>
 <script>
 /* Content guide: section tracking and browser-only comments. */
 (function () {
