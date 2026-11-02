@@ -17,5 +17,10 @@
     "adoption-and-boundaries": "Boundaries",
     "applying-the-concept": "Applying",
     "working-decisions": "Decisions"
+  },
+  "comments": {
+    "mode": "interophub",
+    "hub": "https://informatics.immregistries.org/hub",
+    "document": "contextual-conditions"
   }
 }
