@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Contextual Conditions for Immunization Decision Support</title>
+<title>Contextual Conditions for Immunization Decision Support - Topic Reference</title>
 <style>
 /*
  * AIRA Web Theme
@@ -2494,6 +2494,11 @@ html {
   scroll-padding-top: 4.5rem;
 }
 
+/* AIRA Web buttons set display, which would override the hidden attribute. */
+.guide-layout [hidden] {
+  display: none !important;
+}
+
 .guide-page,
 .guide-context .aira-context-inner {
   width: min(100% - 2rem, 72rem);
@@ -2692,6 +2697,12 @@ html {
   position: relative;
 }
 
+.guide-anchor {
+  display: block;
+  position: relative;
+  scroll-margin-top: 4.5rem;
+}
+
 .guide-comment-button {
   position: absolute;
   top: 0;
@@ -2742,6 +2753,17 @@ html {
   line-height: 1.45;
 }
 
+.guide-comment--target {
+  outline: 3px solid var(--aira-blue);
+  outline-offset: 2px;
+}
+
+.guide-orphans {
+  margin-top: var(--aira-space-8);
+  padding-top: var(--aira-space-4);
+  border-top: 1px solid var(--aira-border-subtle);
+}
+
 .guide-comment__meta {
   display: flex;
   flex-wrap: wrap;
@@ -2787,6 +2809,64 @@ html {
   cursor: pointer;
 }
 
+.guide-comment__state {
+  margin: var(--aira-space-1) 0 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.guide-comment__disposition {
+  margin: var(--aira-space-1) 0;
+  padding: var(--aira-space-2);
+  border-left: 3px solid var(--aira-green);
+  background: var(--aira-surface-selected);
+}
+
+.guide-comment--closed {
+  border-color: var(--aira-border-strong);
+  border-left-color: var(--aira-text-secondary);
+  background: var(--aira-surface-muted);
+}
+
+.guide-confirmation,
+.guide-author-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--aira-space-2);
+  align-items: center;
+  margin-top: var(--aira-space-2);
+  padding: var(--aira-space-2);
+  border: 1px solid var(--aira-border);
+  border-radius: var(--aira-radius-control);
+  background: var(--aira-surface);
+}
+
+.guide-confirmation p {
+  flex-basis: 100%;
+  margin: 0;
+}
+
+.guide-author-form textarea {
+  flex-basis: 100%;
+}
+
+.guide-review-flagged {
+  outline: 3px solid var(--aira-yellow);
+  outline-offset: 3px;
+  background: var(--aira-warning-surface);
+}
+
+.guide-flag-control {
+  margin: 0 0 var(--aira-space-2) var(--aira-space-2);
+  font-size: 0.8rem;
+}
+
+.guide-review-flag-entry {
+  padding-left: var(--aira-space-2);
+  border-left: 3px solid var(--aira-yellow);
+}
+
 .guide-comment-form textarea {
   width: 100%;
   min-height: 5rem;
@@ -2795,6 +2875,16 @@ html {
 
 .guide-comment-form .guide-comment-actions {
   margin: 0;
+}
+
+.guide-reply {
+  margin: var(--aira-space-2) 0 0 var(--aira-space-4);
+  background: var(--aira-surface);
+}
+
+.guide-form-error {
+  color: var(--aira-danger, #a11);
+  font-weight: 600;
 }
 
 .guide-flash {
@@ -2828,6 +2918,12 @@ html {
   .guide-context {
     display: none;
   }
+}
+
+.guide-document-type {
+  margin: 0 0 var(--aira-space-1);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 </style>
@@ -2867,35 +2963,37 @@ html {
       <header class="aira-topic-header guide-header">
         <div class="aira-topic-header__top">
           <div>
+            <p class="aira-meta guide-document-type">Topic Reference</p>
             <h1 class="aira-topic-title">Contextual Conditions for Immunization Decision Support</h1>
             <p class="aira-topic-summary">Working Proposal for Community Discussion — Not a Standard or Final Decision</p>
           </div>
           <div class="aira-topic-actions guide-status">
             <span class="aira-tag aira-tag--warning guide-status-tag">DRAFT</span>
-            <span class="aira-meta">Version v0.1.0</span>
+            <span class="aira-meta">Version v0.2.0</span>
           </div>
         </div>
       </header>
       <div class="aira-right-rail-layout guide-layout">
         <article class="aira-prose guide-content" id="guide-content">
+<div id="document-start" class="guide-anchor" data-guide-anchor="document-start"></div>
 <section id="status-and-scope" class="level2">
 <h2>Status and Scope</h2>
-<blockquote>
+<blockquote data-anchor="status-and-scope" data-block-index="0">
 <p><strong>Status:</strong> Working proposal for community discussion. Nothing in this document is a published standard, an HL7 ballot, or a final decision. Working decisions are recorded so the community can see, question, and improve them, and any of them may change.</p>
 </blockquote>
 <section id="in-brief" class="level3">
 <h3>In brief</h3>
-<p>A Contextual Condition is an input to immunization clinical decision support, defined by a Schedule Authority with a specific meaning and datatype, such as “patient is pregnant” or “birth mother received RSV vaccine during pregnancy.” A requesting system determines whether the condition applies and supplies that assertion with its recommendation request. The CDS engine uses the assertion without reinterpreting the clinical record behind it. A condition that is not supplied is unknown, not No.</p>
-<p>Contextual Conditions give immunization CDS a bounded, stable input layer, so that new guidance can be supported by adding vocabulary rather than redesigning interfaces.</p>
+<p data-anchor="in-brief" data-block-index="0">A Contextual Condition is an input to immunization clinical decision support, defined by a Schedule Authority with a specific meaning and datatype, such as “patient is pregnant” or “birth mother received RSV vaccine during pregnancy.” A requesting system determines whether the condition applies and supplies that assertion with its recommendation request. The CDS engine uses the assertion without reinterpreting the clinical record behind it. A condition that is not supplied is unknown, not No.</p>
+<p data-anchor="in-brief" data-block-index="1">Contextual Conditions give immunization CDS a bounded, stable input layer, so that new guidance can be supported by adding vocabulary rather than redesigning interfaces.</p>
 </section>
 <section id="purpose" class="level3">
 <h3>Purpose</h3>
-<p>This document develops the concept of Contextual Conditions: the bounded set of inputs, defined by immunization Schedule Authorities, that a requesting system can supply to immunization clinical decision support (CDS) alongside patient demographics and immunization history.</p>
-<p>The goal is to make the concept clear, well reasoned, and strong enough for others to build on, through open discussion with the immunization interoperability community.</p>
+<p data-anchor="purpose" data-block-index="0">This document develops the concept of Contextual Conditions: the bounded set of inputs, defined by immunization Schedule Authorities, that a requesting system can supply to immunization clinical decision support (CDS) alongside patient demographics and immunization history.</p>
+<p data-anchor="purpose" data-block-index="1">The goal is to make the concept clear, well reasoned, and strong enough for others to build on, through open discussion with the immunization interoperability community.</p>
 </section>
 <section id="what-this-project-covers" class="level3">
 <h3>What this project covers</h3>
-<ul>
+<ul data-anchor="what-this-project-covers" data-block-index="0">
 <li>The definition of a Contextual Condition and a Contextual Condition assertion.</li>
 <li>The concept’s principles and boundaries: what it is, what it is not, and how it relates to clinical information, Schedule Authorities, Knowledge Bases, and CDS engines.</li>
 <li>What any representation of the concept, such as HL7 v2 or FHIR, needs to convey, described at a general level, including modeling principles that apply to every representation.</li>
@@ -2904,7 +3002,7 @@ html {
 </section>
 <section id="what-this-project-does-not-cover" class="level3">
 <h3>What this project does not cover</h3>
-<ul>
+<ul data-anchor="what-this-project-does-not-cover" data-block-index="0">
 <li><strong>Publishing Contextual Condition codes.</strong> Code systems and their values are operational publications. The Immunization Vocabularies Collaborative (IVC) is exploring how to publish them at <a href="https://ivci.org/contextual-conditions/" class="uri">https://ivci.org/contextual-conditions/</a>. That publication is itself a proposal under discussion.</li>
 <li><strong>Clinical policy.</strong> Schedule Authorities decide which factors affect their guidance and what each condition means.</li>
 <li><strong>Who creates, determines, or stores Contextual Conditions,</strong> and how they are included in messages and workflows.</li>
@@ -2914,128 +3012,143 @@ html {
 </section>
 <section id="how-this-document-is-maintained" class="level3">
 <h3>How this document is maintained</h3>
-<p>The Markdown source in this repository is the authoritative record of the concept. The HL7 Public Health Work Group Confluence pages are copies made from it for sharing and feedback:</p>
-<ul>
+<div id="authoritative-source" class="guide-anchor" data-guide-anchor="authoritative-source">
+
+</div>
+<p data-anchor="authoritative-source" data-block-index="0">The Markdown source in this repository is the authoritative record of the concept. The HL7 Public Health Work Group Confluence pages are copies made from it for sharing and feedback:</p>
+<ul data-anchor="authoritative-source" data-block-index="1">
 <li><a href="https://confluence.hl7.org/spaces/PHWG/pages/453920359/CDS+Contextual+Conditions">CDS Contextual Conditions</a></li>
 <li><a href="https://confluence.hl7.org/spaces/PHWG/pages/468260886/CDS+Contextual+Conditions+in+HL7+v2">CDS Contextual Conditions in HL7 v2</a></li>
 </ul>
-<p>Community coordination, meetings, and discussion notes are tracked on InteropHub as <a href="https://informatics.immregistries.org/hub/es/topic/7">CDS Contextual Conditions, topic 7</a>.</p>
-<p>The concept is still being worked out, and its earlier descriptions do not all agree. Those disagreements, and critiques of the concept, are recorded openly in this repository as review inputs and open questions.</p>
-<p>Feedback is welcome as a GitHub issue, a Confluence comment, or in community meetings. Accepted changes are made here first, then the Confluence pages are regenerated.</p>
+<p data-anchor="authoritative-source" data-block-index="2">Community coordination, meetings, and discussion notes are tracked on InteropHub as <a href="https://informatics.immregistries.org/hub/es/topic/7">CDS Contextual Conditions, topic 7</a>.</p>
+<p data-anchor="authoritative-source" data-block-index="3">The concept is still being worked out, and its earlier descriptions do not all agree. Those disagreements, and critiques of the concept, are recorded openly in this repository as review inputs and open questions.</p>
+<div id="feedback-adjudication" class="guide-anchor" data-guide-anchor="feedback-adjudication">
+
+</div>
+<p data-anchor="feedback-adjudication" data-block-index="0">Feedback is welcome as a GitHub issue, a Confluence comment, or in community meetings. Accepted changes are made here first, then the Confluence pages are regenerated.</p>
 </section>
 </section>
 <section id="related-work" class="level2">
 <h2>Related Work and Representations</h2>
-<p>Contextual Conditions began as a need within immunization CDS interface work and are now relied on by several related efforts. This document covers the concept those efforts share. It describes how the concept is represented in HL7 v2 and FHIR only at a general level and does not repeat their detailed specifications. Each related effort is tracked as its own InteropHub topic and may develop documentation of its own.</p>
+<p data-anchor="related-work" data-block-index="0">Contextual Conditions began as a need within immunization CDS interface work and are now relied on by several related efforts. This document covers the concept those efforts share. It describes how the concept is represented in HL7 v2 and FHIR only at a general level and does not repeat their detailed specifications. Each related effort is tracked as its own InteropHub topic and may develop documentation of its own.</p>
 <section id="related-topics" class="level3">
 <h3>Related topics</h3>
-<div class="aira-table-wrap"><table class="aira-table">
+<div class="aira-table-wrap" data-anchor="related-topics" data-block-index="0"><table class="aira-table">
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Topic</th>
 <th>Relationship to this work</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td><a href="https://informatics.immregistries.org/hub/es/topic/1">Immunization CDS (ImmDS + HALO), topic 1</a></td>
 <td>The FHIR-based CDS interface work that created the need for Contextual Conditions. HALO factors are Contextual Conditions as defined here. Defines the FHIR representation, including how a CDS engine reports which conditions it supports.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><a href="https://informatics.immregistries.org/hub/es/topic/137">HL7 v2 Contextual Conditions Exchange, topic 137</a></td>
 <td>The overall HL7 v2 representation, using coded OBX observations. Parent of topics 140 and 141.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><a href="https://informatics.immregistries.org/hub/es/topic/140">HL7 v2 Contextual Conditions in Immunization Updates, topic 140</a></td>
 <td>Submission of conditions in VXU messages, including whether and how an IIS may retain or use them. IIS storage rules belong here.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><a href="https://informatics.immregistries.org/hub/es/topic/141">HL7 v2 Contextual Conditions in Immunization Queries, topic 141</a></td>
 <td>Conditions supplied with a QBP query to influence the forecast returned in the RSP. Also touches on storage, and is likely to prohibit storing conditions supplied in a query.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><a href="https://informatics.immregistries.org/hub/es/topic/7">CDS Contextual Conditions, topic 7</a></td>
 <td>This work: the concept itself.</td>
 </tr>
 </tbody>
 </table></div>
-<p>Publication of the code systems that define individual conditions is handled separately, currently as an Immunization Vocabularies Collaborative proposal at <a href="https://ivci.org/contextual-conditions/" class="uri">https://ivci.org/contextual-conditions/</a>.</p>
+<p data-anchor="related-topics" data-block-index="1">Publication of the code systems that define individual conditions is handled separately, currently as an Immunization Vocabularies Collaborative proposal at <a href="https://ivci.org/contextual-conditions/" class="uri">https://ivci.org/contextual-conditions/</a>.</p>
 </section>
-<section id="representations" class="level3">
+<section id="related-representations" class="level3">
 <h3>Representations</h3>
-<p>HL7 v2 and FHIR are two representations of the same concept. This document describes, in <a href="#representations">Representing Contextual Conditions</a>, what any representation needs to convey and the principles it must preserve, such as modeling a meaningful date as its own Contextual Condition, so that the representations stay consistent with each other and with the concept.</p>
-<p>Out of scope here are the rules for who creates, determines, or stores Contextual Conditions, and how they are included in messages and workflows. Message structures, field-level rules, conformance requirements, storage, and workflow behavior belong to the related topics above.</p>
+<p data-anchor="related-representations" data-block-index="0">HL7 v2 and FHIR are two representations of the same concept. This document describes, in <a href="#representations">Representing Contextual Conditions</a>, what any representation needs to convey and the principles it must preserve, such as modeling a meaningful date as its own Contextual Condition, so that the representations stay consistent with each other and with the concept.</p>
+<p data-anchor="related-representations" data-block-index="1">Out of scope here are the rules for who creates, determines, or stores Contextual Conditions, and how they are included in messages and workflows. Message structures, field-level rules, conformance requirements, storage, and workflow behavior belong to the related topics above.</p>
 </section>
 </section>
 <section id="the-problem" class="level2">
 <h2>The Problem</h2>
-<p>Immunization clinical decision support (CDS) depends on more than patient demographics and vaccination history. Recommendations may also depend on pregnancy, immune status, prior disease, travel plans, occupational exposure, living circumstances, maternal vaccination, and other factors identified by immunization Schedule Authorities.</p>
-<p>This information may be represented in clinical systems through diagnoses, observations, immunizations, laboratory results, questionnaires, patient reports, clinician assessments, or local business rules. These representations appropriately support the broader needs of clinical care, but they do not give immunization CDS engines a bounded and consistent set of inputs.</p>
-<p>Without an intermediate abstraction, a CDS engine must either:</p>
-<ol type="1">
+<p data-anchor="the-problem" data-block-index="0">Immunization clinical decision support (CDS) depends on more than patient demographics and vaccination history. Recommendations may also depend on pregnancy, immune status, prior disease, travel plans, occupational exposure, living circumstances, maternal vaccination, and other factors identified by immunization Schedule Authorities.</p>
+<p data-anchor="the-problem" data-block-index="1">This information may be represented in clinical systems through diagnoses, observations, immunizations, laboratory results, questionnaires, patient reports, clinician assessments, or local business rules. These representations appropriately support the broader needs of clinical care, but they do not give immunization CDS engines a bounded and consistent set of inputs.</p>
+<div id="intermediate-abstraction" class="guide-anchor" data-guide-anchor="intermediate-abstraction">
+
+</div>
+<p data-anchor="intermediate-abstraction" data-block-index="0">Without an intermediate abstraction, a CDS engine must either:</p>
+<ol type="1" data-anchor="intermediate-abstraction" data-block-index="1">
 <li>receive only demographics and immunization history, leaving important factors unknown;</li>
 <li>interpret an increasingly broad range of clinical information; or</li>
 <li>depend on proprietary inputs negotiated separately between implementations.</li>
 </ol>
-<p>The second approach would require an immunization CDS engine to become expert not only in immunization guidance but in interpreting information from many other clinical and nonclinical domains. The third causes interface designs to change whenever new guidance introduces another relevant factor, and leads to local fields, proprietary extensions, inconsistent use of contraindication and allergy fields, and repeated mappings among electronic health records (EHRs), immunization information systems (IIS), and CDS engines.</p>
+<p data-anchor="intermediate-abstraction" data-block-index="2">The second approach would require an immunization CDS engine to become expert not only in immunization guidance but in interpreting information from many other clinical and nonclinical domains. The third causes interface designs to change whenever new guidance introduces another relevant factor, and leads to local fields, proprietary extensions, inconsistent use of contraindication and allergy fields, and repeated mappings among electronic health records (EHRs), immunization information systems (IIS), and CDS engines.</p>
 <section id="a-motivating-example-maternal-rsv-vaccination" class="level3">
 <h3>A motivating example: maternal RSV vaccination</h3>
-<p>The need became concrete with maternal respiratory syncytial virus (RSV) vaccination. When a birth mother receives RSV vaccine during pregnancy, her infant generally does not need RSV monoclonal antibody. To recommend correctly for the infant, the CDS engine needs to know about a vaccination recorded on another person’s record.</p>
-<p>Sending the mother’s clinical record, or enough of it to establish the fact, is complex for both sender and receiver and discloses more than the evaluation needs. What the infant’s evaluation actually needs is a single assertion:</p>
-<blockquote>
+<p data-anchor="a-motivating-example-maternal-rsv-vaccination" data-block-index="0">The need became concrete with maternal respiratory syncytial virus (RSV) vaccination. When a birth mother receives RSV vaccine during pregnancy, her infant generally does not need RSV monoclonal antibody. To recommend correctly for the infant, the CDS engine needs to know about a vaccination recorded on another person’s record.</p>
+<div id="minimum-needed-assertion" class="guide-anchor" data-guide-anchor="minimum-needed-assertion">
+
+</div>
+<p data-anchor="minimum-needed-assertion" data-block-index="0">Sending the mother’s clinical record, or enough of it to establish the fact, is complex for both sender and receiver and discloses more than the evaluation needs. What the infant’s evaluation actually needs is a single assertion:</p>
+<blockquote data-anchor="minimum-needed-assertion" data-block-index="1">
 <p>Birth mother received RSV vaccine during pregnancy: Yes.</p>
 </blockquote>
 </section>
 <section id="a-third-input-to-immunization-cds" class="level3">
 <h3>A third input to immunization CDS</h3>
-<p>Immunization exchange has traditionally answered two questions: who the patient is, and what immunizations the patient has received. Contextual Conditions add a third:</p>
-<div class="aira-table-wrap"><table class="aira-table">
+<p data-anchor="a-third-input-to-immunization-cds" data-block-index="0">Immunization exchange has traditionally answered two questions: who the patient is, and what immunizations the patient has received. Contextual Conditions add a third:</p>
+<div class="aira-table-wrap" data-anchor="a-third-input-to-immunization-cds" data-block-index="1"><table class="aira-table">
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
 <col style="width: 33%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Input</th>
 <th>Question answered</th>
 <th>Typical content</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>Patient identification</td>
 <td>Who is the patient?</td>
 <td>Identifiers and demographics</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Immunization history</td>
 <td>What immunizations has the patient received?</td>
 <td>Administered and historical vaccination events</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Contextual Conditions</td>
 <td>What other context, defined by the Schedule Authority, affects this evaluation?</td>
 <td>Asserted conditions such as risk, status, prior disease, exposure, relationship, travel, or occupation, with their values</td>
 </tr>
 </tbody>
 </table></div>
-<p>Contextual Conditions provide a tractable layer between detailed source information and immunization forecasting logic.</p>
+<p data-anchor="a-third-input-to-immunization-cds" data-block-index="2">Contextual Conditions provide a tractable layer between detailed source information and immunization forecasting logic.</p>
 </section>
 </section>
 <section id="the-concept" class="level2">
 <h2>The Concept</h2>
 <section id="definitions" class="level3">
 <h3>Definitions</h3>
-<p>A <strong>Contextual Condition</strong> is a Schedule Authority-defined input, with an assigned meaning and datatype, that may influence an immunization evaluation or recommendation.</p>
-<p>A <strong>Contextual Condition assertion</strong> is the value that a requesting system supplies for that input as part of a particular recommendation request.</p>
-<p>Keeping the two apart matters. The Contextual Condition is a stable, published definition. The assertion is one system’s statement, for one evaluation, that the condition does or does not apply, or has a particular value.</p>
-<p>Examples of Contextual Conditions:</p>
-<ul>
+<p data-anchor="definitions" data-block-index="0">A <strong>Contextual Condition</strong> is a Schedule Authority-defined input, with an assigned meaning and datatype, that may influence an immunization evaluation or recommendation.</p>
+<p data-anchor="definitions" data-block-index="1">A <strong>Contextual Condition assertion</strong> is the value that a requesting system supplies for that input as part of a particular recommendation request.</p>
+<div id="definition-vs-assertion" class="guide-anchor" data-guide-anchor="definition-vs-assertion">
+
+</div>
+<p data-anchor="definition-vs-assertion" data-block-index="0">Keeping the two apart matters. The Contextual Condition is a stable, published definition. The assertion is one system’s statement, for one evaluation, that the condition does or does not apply, or has a particular value.</p>
+<p data-anchor="definition-vs-assertion" data-block-index="1">Examples of Contextual Conditions:</p>
+<ul data-anchor="definition-vs-assertion" data-block-index="2">
 <li>Patient has had varicella disease.</li>
 <li>Patient is pregnant.</li>
 <li>Patient is severely immunocompromised, as defined by the Schedule Authority.</li>
@@ -3046,13 +3159,16 @@ html {
 </section>
 <section id="datatypes" class="level3">
 <h3>Datatypes</h3>
-<p>Most Contextual Conditions are Boolean: the assertion is Yes or No. Some take a date or a number, such as a pregnancy start date or a number of weeks of gestation. A Schedule Authority may define other datatypes when its guidance requires them. An assertion must use the datatype the condition defines; a date or number is not reduced to Yes or No. <!-- CONFIRM: Numeric datatype. The Confluence concept page says "integer"; the draft French inventory includes "Number" values such as laboratory results, height, and weight, which may need decimals. See OQ-6. --></p>
-<p>When a date is meaningful to a condition, the date is modeled as a Contextual Condition of its own, with a date value. It is not carried in a representation’s own date fields; see <a href="#representations">Representing Contextual Conditions</a>.</p>
+<p data-anchor="datatypes" data-block-index="0">Most Contextual Conditions are Boolean: the assertion is Yes or No. Some take a date or a number, such as a pregnancy start date or a number of weeks of gestation. A Schedule Authority may define other datatypes when its guidance requires them. An assertion must use the datatype the condition defines; a date or number is not reduced to Yes or No. <!-- CONFIRM: Numeric datatype. The Confluence concept page says "integer"; the draft French inventory includes "Number" values such as laboratory results, height, and weight, which may need decimals. See OQ-6. --></p>
+<div id="date-as-own-condition" class="guide-anchor" data-guide-anchor="date-as-own-condition">
+
+</div>
+<p data-anchor="date-as-own-condition" data-block-index="0">When a date is meaningful to a condition, the date is modeled as a Contextual Condition of its own, with a date value. It is not carried in a representation’s own date fields; see <a href="#representations">Representing Contextual Conditions</a>.</p>
 </section>
 <section id="properties-of-a-contextual-condition" class="level3">
 <h3>Properties of a Contextual Condition</h3>
-<p>A Contextual Condition is:</p>
-<ul>
+<p data-anchor="properties-of-a-contextual-condition" data-block-index="0">A Contextual Condition is:</p>
+<ul data-anchor="properties-of-a-contextual-condition" data-block-index="1">
 <li><strong>Defined by an authority.</strong> A Schedule Authority assigns its meaning, its datatype, and a stable identifier.</li>
 <li><strong>Operational.</strong> It exists because immunization guidance needs it to evaluate or recommend. It engages CDS logic; it does not reproduce the clinical record.</li>
 <li><strong>Bounded.</strong> Its definition states what is, and is not, being asserted.</li>
@@ -3062,8 +3178,8 @@ html {
 </section>
 <section id="what-a-contextual-condition-is-not" class="level3">
 <h3>What a Contextual Condition is not</h3>
-<p>A Contextual Condition is not, by itself:</p>
-<ul>
+<p data-anchor="what-a-contextual-condition-is-not" data-block-index="0">A Contextual Condition is not, by itself:</p>
+<ul data-anchor="what-a-contextual-condition-is-not" data-block-index="1">
 <li>a diagnosis code or problem-list entry;</li>
 <li>a general-purpose clinical observation;</li>
 <li>a complete allergy, precaution, or contraindication record;</li>
@@ -3072,93 +3188,129 @@ html {
 <li>an inference algorithm; or</li>
 <li>a requirement that any particular condition be collected.</li>
 </ul>
-<p>For example, diagnoses, medications, laboratory results, and a clinician’s assessment may together support the conclusion that a patient is severely immunocompromised. Those facts remain important in their proper systems. The Contextual Condition is the assertion that the patient meets the Schedule Authority’s definition.</p>
-<p>This is also why a clinical terminology such as SNOMED CT is not used directly as the Contextual Condition vocabulary. Clinical terminologies describe evidence and may be related to Contextual Conditions, but a Contextual Condition is defined from immunization guidance and keeps its meaning as evidence mappings and local determination logic improve.</p>
+<div id="assertion-not-evidence" class="guide-anchor" data-guide-anchor="assertion-not-evidence">
+
+</div>
+<p data-anchor="assertion-not-evidence" data-block-index="0">For example, diagnoses, medications, laboratory results, and a clinician’s assessment may together support the conclusion that a patient is severely immunocompromised. Those facts remain important in their proper systems. The Contextual Condition is the assertion that the patient meets the Schedule Authority’s definition.</p>
+<p data-anchor="assertion-not-evidence" data-block-index="1">This is also why a clinical terminology such as SNOMED CT is not used directly as the Contextual Condition vocabulary. Clinical terminologies describe evidence and may be related to Contextual Conditions, but a Contextual Condition is defined from immunization guidance and keeps its meaning as evidence mappings and local determination logic improve.</p>
 </section>
 <section id="formalizing-an-existing-abstraction" class="level3">
 <h3>Formalizing an existing abstraction</h3>
-<p>Contextual Conditions formalize an abstraction that immunization CDS engines already require. At some point, complex clinical and nonclinical information must be reduced to the inputs that forecasting rules use. This concept exposes and standardizes that input layer so other systems have a consistent target.</p>
-<p>It is not a complete end-to-end solution. Systems must still determine Contextual Condition values from the information available to them.</p>
+<p data-anchor="formalizing-an-existing-abstraction" data-block-index="0">Contextual Conditions formalize an abstraction that immunization CDS engines already require. At some point, complex clinical and nonclinical information must be reduced to the inputs that forecasting rules use. This concept exposes and standardizes that input layer so other systems have a consistent target.</p>
+<div id="determination-still-required" class="guide-anchor" data-guide-anchor="determination-still-required">
+
+</div>
+<p data-anchor="determination-still-required" data-block-index="0">It is not a complete end-to-end solution. Systems must still determine Contextual Condition values from the information available to them.</p>
 </section>
 </section>
 <section id="clinical-information" class="level2">
 <h2>Relationship to Clinical Information</h2>
-<p>Contextual Conditions are not intended to replace or reorganize the clinical information model. They do not replace FHIR Observation, Condition, Immunization, or QuestionnaireResponse resources, SNOMED CT, diagnosis codes, problem lists, or other clinical representations.</p>
-<p>Clinical systems represent information in relation to the patient and the broader needs of care. Contextual Conditions represent information in relation to an immunization recommendation evaluation and the guidance published by a Schedule Authority.</p>
-<p>For example, a clinical system may represent immune status through diagnoses, medications, laboratory results, procedures, and clinician assessments. An immunization schedule may need only the resulting determination:</p>
-<blockquote>
+<p data-anchor="clinical-information" data-block-index="0">Contextual Conditions are not intended to replace or reorganize the clinical information model. They do not replace FHIR Observation, Condition, Immunization, or QuestionnaireResponse resources, SNOMED CT, diagnosis codes, problem lists, or other clinical representations.</p>
+<div id="clinical-vs-evaluation-context" class="guide-anchor" data-guide-anchor="clinical-vs-evaluation-context">
+
+</div>
+<p data-anchor="clinical-vs-evaluation-context" data-block-index="0">Clinical systems represent information in relation to the patient and the broader needs of care. Contextual Conditions represent information in relation to an immunization recommendation evaluation and the guidance published by a Schedule Authority.</p>
+<p data-anchor="clinical-vs-evaluation-context" data-block-index="1">For example, a clinical system may represent immune status through diagnoses, medications, laboratory results, procedures, and clinician assessments. An immunization schedule may need only the resulting determination:</p>
+<blockquote data-anchor="clinical-vs-evaluation-context" data-block-index="2">
 <p>Patient meets this Schedule Authority’s definition of severely immunocompromised.</p>
 </blockquote>
 <section id="separation-of-responsibilities" class="level3">
 <h3>Separation of responsibilities</h3>
-<p>The concept separates four activities:</p>
-<ol type="1">
+<p data-anchor="separation-of-responsibilities" data-block-index="0">The concept separates four activities:</p>
+<ol type="1" data-anchor="separation-of-responsibilities" data-block-index="1">
 <li><strong>Clinical data capture:</strong> recording diagnoses, observations, treatments, questionnaire answers, patient reports, and other evidence.</li>
 <li><strong>Determination:</strong> deciding, under appropriate policy, that a Contextual Condition applies or what its value is.</li>
 <li><strong>Assertion:</strong> supplying the Contextual Condition and its value to CDS.</li>
 <li><strong>Decision support:</strong> applying immunization guidance to the assertion.</li>
 </ol>
-<p>The requesting system is responsible for determination. The CDS engine accepts the supplied assertion as authoritative for the evaluation. It does not independently interpret the underlying clinical record or decide whether the assertion was correctly derived.</p>
-<p>Collection, derivation, validation, and provenance remain the responsibility of the requesting system. A clinical system or IIS may keep the underlying information and its provenance for clinical, audit, or operational purposes. Who creates, determines, or stores Contextual Conditions in a given workflow is outside this concept and is addressed by the <a href="#related-work">related topics</a>.</p>
-<p>This separation lets a source organization improve how it determines a condition without changing the interface, and lets a Schedule Authority or Knowledge Base change recommendation logic without redefining the clinical data.</p>
+<div id="engine-consumes-assertion" class="guide-anchor" data-guide-anchor="engine-consumes-assertion">
+
+</div>
+<p data-anchor="engine-consumes-assertion" data-block-index="0">The requesting system is responsible for determination. The CDS engine accepts the supplied assertion as authoritative for the evaluation. It does not independently interpret the underlying clinical record or decide whether the assertion was correctly derived.</p>
+<p data-anchor="engine-consumes-assertion" data-block-index="1">Collection, derivation, validation, and provenance remain the responsibility of the requesting system. A clinical system or IIS may keep the underlying information and its provenance for clinical, audit, or operational purposes. Who creates, determines, or stores Contextual Conditions in a given workflow is outside this concept and is addressed by the <a href="#related-work">related topics</a>.</p>
+<div id="responsibilities-evolve-independently" class="guide-anchor" data-guide-anchor="responsibilities-evolve-independently">
+
+</div>
+<p data-anchor="responsibilities-evolve-independently" data-block-index="0">This separation lets a source organization improve how it determines a condition without changing the interface, and lets a Schedule Authority or Knowledge Base change recommendation logic without redefining the clinical data.</p>
 </section>
 </section>
 <section id="evaluation-and-time" class="level2">
 <h2>Evaluation Scope, Absence, and Time</h2>
 <section id="evaluation-scoped-and-stateless" class="level3">
 <h3>Evaluation-scoped and stateless</h3>
-<p>Contextual Conditions are supplied as part of a single recommendation request. Each request is a complete and independent evaluation snapshot. The CDS engine:</p>
-<ul>
+<p data-anchor="evaluation-scoped-and-stateless" data-block-index="0">Contextual Conditions are supplied as part of a single recommendation request. Each request is a complete and independent evaluation snapshot. The CDS engine:</p>
+<ul data-anchor="evaluation-scoped-and-stateless" data-block-index="1">
 <li>considers only the information supplied in that request;</li>
 <li>retains no patient-specific information between requests;</li>
 <li>does not retrieve values from previous evaluations; and</li>
 <li>does not treat omission as an instruction to keep an earlier value.</li>
 </ul>
-<p>After the engine returns its evaluations and recommendations, the supplied Contextual Conditions have no continuing role within the engine. A later request is evaluated solely from the information supplied with it.</p>
-<p>Typical immunization CDS installations contain an embedded Knowledge Base but no patient, immunization, or longitudinal clinical database. Maintaining a longitudinal record is the responsibility of a clinical system or IIS, not the CDS engine. Whether and how an IIS stores Contextual Conditions for later requests is outside this concept; it would need rules for provenance, effective time, correction, expiration, and retraction, and is addressed by <a href="https://informatics.immregistries.org/hub/es/topic/140">topic 140</a>.</p>
+<div id="independent-evaluation-snapshot" class="guide-anchor" data-guide-anchor="independent-evaluation-snapshot">
+
+</div>
+<p data-anchor="independent-evaluation-snapshot" data-block-index="0">After the engine returns its evaluations and recommendations, the supplied Contextual Conditions have no continuing role within the engine. A later request is evaluated solely from the information supplied with it.</p>
+<div id="longitudinal-record-boundary" class="guide-anchor" data-guide-anchor="longitudinal-record-boundary">
+
+</div>
+<p data-anchor="longitudinal-record-boundary" data-block-index="0">Typical immunization CDS installations contain an embedded Knowledge Base but no patient, immunization, or longitudinal clinical database. Maintaining a longitudinal record is the responsibility of a clinical system or IIS, not the CDS engine. Whether and how an IIS stores Contextual Conditions for later requests is outside this concept; it would need rules for provenance, effective time, correction, expiration, and retraction, and is addressed by <a href="https://informatics.immregistries.org/hub/es/topic/140">topic 140</a>.</p>
 </section>
 <section id="absence-means-unknown" class="level3">
 <h3>Absence means unknown</h3>
-<p>Omission means the requesting system makes no assertion about a Contextual Condition. The value is unknown to the CDS engine. Absence is never a No.</p>
-<p>A requesting system may explicitly supply No when it knows that a Boolean condition does not apply. False and unknown sometimes produce the same recommendation, but they mean different things and some guidance treats them differently.</p>
+<p data-anchor="absence-means-unknown" data-block-index="0">Omission means the requesting system makes no assertion about a Contextual Condition. The value is unknown to the CDS engine. Absence is never a No.</p>
+<div id="explicit-no-vs-unknown" class="guide-anchor" data-guide-anchor="explicit-no-vs-unknown">
+
+</div>
+<p data-anchor="explicit-no-vs-unknown" data-block-index="0">A requesting system may explicitly supply No when it knows that a Boolean condition does not apply. False and unknown sometimes produce the same recommendation, but they mean different things and some guidance treats them differently.</p>
 </section>
 <section id="evaluation-date" class="level3">
 <h3>Evaluation date</h3>
-<p>Every recommendation request has an evaluation date: the clinical date for which recommendations are calculated. In routine use this is normally the current date. Contextual Condition values are asserted as applicable to the evaluation performed for that date.</p>
-<p>The evaluation date may be changed for testing or simulation. It is not:</p>
-<ul>
+<p data-anchor="evaluation-date" data-block-index="0">Every recommendation request has an evaluation date: the clinical date for which recommendations are calculated. In routine use this is normally the current date. Contextual Condition values are asserted as applicable to the evaluation performed for that date.</p>
+<div id="simulation-date-limits" class="guide-anchor" data-guide-anchor="simulation-date-limits">
+
+</div>
+<p data-anchor="simulation-date-limits" data-block-index="0">The evaluation date may be changed for testing or simulation. It is not:</p>
+<ul data-anchor="simulation-date-limits" data-block-index="1">
 <li>a way to select a historical Knowledge Base;</li>
 <li>a request to reconstruct the patient’s historical clinical context;</li>
 <li>a way to discover future guidance that has not been published; or</li>
 <li>a request to determine which conditions applied when each past immunization was given.</li>
 </ul>
-<p>Knowledge Base identity and version are separate from the evaluation date.</p>
-<p>The model is intentionally prospective. Its primary purpose is to improve guidance about what the patient should receive next, not to explain or re-evaluate every past immunization decision. Reconstructing historical context, such as whether a patient was pregnant when a dose was given years earlier, would need far more information and modeling. CDS engines already evaluate histories without knowing every reason earlier doses were given, delayed, or omitted.</p>
+<p data-anchor="simulation-date-limits" data-block-index="2">Knowledge Base identity and version are separate from the evaluation date.</p>
+<div id="prospective-model" class="guide-anchor" data-guide-anchor="prospective-model">
+
+</div>
+<p data-anchor="prospective-model" data-block-index="0">The model is intentionally prospective. Its primary purpose is to improve guidance about what the patient should receive next, not to explain or re-evaluate every past immunization decision. Reconstructing historical context, such as whether a patient was pregnant when a dose was given years earlier, would need far more information and modeling. CDS engines already evaluate histories without knowing every reason earlier doses were given, delayed, or omitted.</p>
 </section>
 <section id="what-applies-means" class="level3">
 <h3>What “applies” means</h3>
-<p>A Contextual Condition does not necessarily describe a present clinical state. Its meaning may concern:</p>
-<ul>
+<p data-anchor="what-applies-means" data-block-index="0">A Contextual Condition does not necessarily describe a present clinical state. Its meaning may concern:</p>
+<ul data-anchor="what-applies-means" data-block-index="1">
 <li>a past event: “Patient has had varicella disease”;</li>
 <li>a present state: “Patient is pregnant”;</li>
 <li>a future intention: “Patient plans to travel to Nigeria”; or</li>
 <li>another person: “Birth mother received RSV vaccine during the relevant pregnancy.”</li>
 </ul>
-<p>What they share is that the requesting system asserts the value as applicable to the evaluation date. The relationship or temporal meaning the engine needs is contained in the definition of the condition. The engine does not receive a separate model of the related person, pregnancy, travel event, or underlying evidence.</p>
-<p>This is deliberate. For maternal RSV vaccination, the engine may need only one or two assertions from the mother’s history. Requiring the mother’s identity and record would add complexity and disclose more than the evaluation requires. The same principle applies to any relationship a Schedule Authority identifies as relevant. Whether a factor is clinically appropriate is the Schedule Authority’s decision, not the framework’s.</p>
+<div id="applicability-in-definition" class="guide-anchor" data-guide-anchor="applicability-in-definition">
+
+</div>
+<p data-anchor="applicability-in-definition" data-block-index="0">What they share is that the requesting system asserts the value as applicable to the evaluation date. The relationship or temporal meaning the engine needs is contained in the definition of the condition. The engine does not receive a separate model of the related person, pregnancy, travel event, or underlying evidence.</p>
+<div id="minimum-related-information" class="guide-anchor" data-guide-anchor="minimum-related-information">
+
+</div>
+<p data-anchor="minimum-related-information" data-block-index="0">This is deliberate. For maternal RSV vaccination, the engine may need only one or two assertions from the mother’s history. Requiring the mother’s identity and record would add complexity and disclose more than the evaluation requires. The same principle applies to any relationship a Schedule Authority identifies as relevant. Whether a factor is clinically appropriate is the Schedule Authority’s decision, not the framework’s.</p>
 </section>
 <section id="dates-are-conditions" class="level3">
 <h3>Dates are conditions</h3>
-<p>When guidance needs a date, such as the start of a pregnancy or the date of a transplant, that date is its own Contextual Condition with a date value. It is not inferred from, or carried in, a representation’s own timestamp fields. Those fields describe the record or the message, not the meaning of the condition.</p>
+<p data-anchor="dates-are-conditions" data-block-index="0">When guidance needs a date, such as the start of a pregnancy or the date of a transplant, that date is its own Contextual Condition with a date value. It is not inferred from, or carried in, a representation’s own timestamp fields. Those fields describe the record or the message, not the meaning of the condition.</p>
 </section>
 </section>
 <section id="authorities" class="level2">
 <h2>Schedule Authorities, Knowledge Bases, and Code Systems</h2>
 <section id="schedule-authorities" class="level3">
 <h3>Schedule Authorities</h3>
-<p>A <strong>Schedule Authority</strong> is an organization or expert body that publishes immunization recommendations for clinical or public health use.</p>
-<p>The Schedule Authority defines the meaning of the Contextual Conditions its recommendations require. It decides:</p>
-<ul>
+<p data-anchor="schedule-authorities" data-block-index="0">A <strong>Schedule Authority</strong> is an organization or expert body that publishes immunization recommendations for clinical or public health use.</p>
+<p data-anchor="schedule-authorities" data-block-index="1">The Schedule Authority defines the meaning of the Contextual Conditions its recommendations require. It decides:</p>
+<ul data-anchor="schedule-authorities" data-block-index="2">
 <li>which factors influence its guidance;</li>
 <li>what each condition means;</li>
 <li>what datatype each condition requires; and</li>
@@ -3167,37 +3319,52 @@ html {
 </section>
 <section id="knowledge-bases" class="level3">
 <h3>Knowledge Bases</h3>
-<p>A <strong>Knowledge Base</strong> is an identifiable, executable operationalization of guidance from one or more Schedule Authorities, possibly including jurisdictional or local adaptations.</p>
-<p>A forecast applies one Knowledge Base as a coherent unit. The Knowledge Base identifies the Contextual Conditions, and their versions, that it supports. The CDS engine does not redefine a Schedule Authority’s conditions; it applies the rules in its selected Knowledge Base. How a Knowledge Base declares support, and how an engine reports whether a submitted condition was recognized, are defined by the CDS interface, such as ImmDS + HALO, not by this concept.</p>
+<p data-anchor="knowledge-bases" data-block-index="0">A <strong>Knowledge Base</strong> is an identifiable, executable operationalization of guidance from one or more Schedule Authorities, possibly including jurisdictional or local adaptations.</p>
+<p data-anchor="knowledge-bases" data-block-index="1">A forecast applies one Knowledge Base as a coherent unit. The Knowledge Base identifies the Contextual Conditions, and their versions, that it supports. The CDS engine does not redefine a Schedule Authority’s conditions; it applies the rules in its selected Knowledge Base. How a Knowledge Base declares support, and how an engine reports whether a submitted condition was recognized, are defined by the CDS interface, such as ImmDS + HALO, not by this concept.</p>
 </section>
 <section id="authority-specific-code-systems" class="level3">
 <h3>Authority-specific code systems</h3>
-<p>The concept does not require a single, internationally harmonized list of Contextual Conditions. Each Schedule Authority may publish its own definitive, versioned code system, so it can express exactly the concepts its guidance needs without first reconciling language, policy, clinical definitions, or implementation criteria with other authorities.</p>
-<p>For example, French and American Schedule Authorities may define conditions that look similar but differ in subtle and important ways. Forcing them into one concept would risk hiding those differences, or letting an interoperability project reinterpret clinical policy.</p>
-<p>Future work may identify relationships or mappings between conditions from different authorities. A mapping must not imply equivalence unless equivalence has been established. Similar labels are not evidence of equivalence.</p>
-<p>Published identifiers and definitions must remain stable. A material change in meaning results in a new version or a new concept, not a silent change to an existing code.</p>
+<p data-anchor="authority-specific-code-systems" data-block-index="0">The concept does not require a single, internationally harmonized list of Contextual Conditions. Each Schedule Authority may publish its own definitive, versioned code system, so it can express exactly the concepts its guidance needs without first reconciling language, policy, clinical definitions, or implementation criteria with other authorities.</p>
+<div id="authority-differences-matter" class="guide-anchor" data-guide-anchor="authority-differences-matter">
+
+</div>
+<p data-anchor="authority-differences-matter" data-block-index="0">For example, French and American Schedule Authorities may define conditions that look similar but differ in subtle and important ways. Forcing them into one concept would risk hiding those differences, or letting an interoperability project reinterpret clinical policy.</p>
+<div id="mapping-not-equivalence" class="guide-anchor" data-guide-anchor="mapping-not-equivalence">
+
+</div>
+<p data-anchor="mapping-not-equivalence" data-block-index="0">Future work may identify relationships or mappings between conditions from different authorities. A mapping must not imply equivalence unless equivalence has been established. Similar labels are not evidence of equivalence.</p>
+<div id="stable-published-meaning" class="guide-anchor" data-guide-anchor="stable-published-meaning">
+
+</div>
+<p data-anchor="stable-published-meaning" data-block-index="0">Published identifiers and definitions must remain stable. A material change in meaning results in a new version or a new concept, not a silent change to an existing code.</p>
 </section>
 <section id="publication-and-stewardship" class="level3">
 <h3>Publication and stewardship</h3>
-<p>Schedule Authorities own the clinical meaning of their Contextual Conditions.</p>
-<p>A terminology steward may provide the technical publication framework: stable identifiers, namespace management, versioning, and distribution, so that those definitions are computable and exchangeable. The steward does not create clinical guidance or reinterpret the authority’s intent.</p>
-<p>The Immunization Vocabularies Collaborative (IVC) may serve as a publication and coordination mechanism for these code systems, and may support future work on relationships between authority-specific concepts. IVC is not part of the clinical decision-making process and is not required by the Contextual Conditions architecture. How code systems are actually published is outside this document. <!-- CONFIRM: Role vocabulary. Earlier sources describe four roles (Code System, Publishing, Namespace, and CDS Authority); this section follows the September 2026 concept page. See OQ-4. --></p>
+<p data-anchor="publication-and-stewardship" data-block-index="0">Schedule Authorities own the clinical meaning of their Contextual Conditions.</p>
+<div id="terminology-steward-role" class="guide-anchor" data-guide-anchor="terminology-steward-role">
+
+</div>
+<p data-anchor="terminology-steward-role" data-block-index="0">A terminology steward may provide the technical publication framework: stable identifiers, namespace management, versioning, and distribution, so that those definitions are computable and exchangeable. The steward does not create clinical guidance or reinterpret the authority’s intent.</p>
+<div id="publication-outside-architecture" class="guide-anchor" data-guide-anchor="publication-outside-architecture">
+
+</div>
+<p data-anchor="publication-outside-architecture" data-block-index="0">The Immunization Vocabularies Collaborative (IVC) may serve as a publication and coordination mechanism for these code systems, and may support future work on relationships between authority-specific concepts. IVC is not part of the clinical decision-making process and is not required by the Contextual Conditions architecture. How code systems are actually published is outside this document. <!-- CONFIRM: Role vocabulary. Earlier sources describe four roles (Code System, Publishing, Namespace, and CDS Authority); this section follows the September 2026 concept page. See OQ-4. --></p>
 </section>
 </section>
 <section id="representations" class="level2">
 <h2>Representing Contextual Conditions</h2>
-<p>Contextual Conditions are a concept, not a message format. They can be represented in more than one standard, and HL7 v2 and FHIR are the two in current use. This section describes, at a general level, what any representation must convey and which principles it must preserve. Detailed specifications belong to the <a href="#related-work">related topics</a>.</p>
+<p data-anchor="representations" data-block-index="0">Contextual Conditions are a concept, not a message format. They can be represented in more than one standard, and HL7 v2 and FHIR are the two in current use. This section describes, at a general level, what any representation must convey and which principles it must preserve. Detailed specifications belong to the <a href="#related-work">related topics</a>.</p>
 <section id="what-every-representation-conveys" class="level3">
 <h3>What every representation conveys</h3>
-<p>For each asserted Contextual Condition, a representation conveys:</p>
-<ul>
+<p data-anchor="what-every-representation-conveys" data-block-index="0">For each asserted Contextual Condition, a representation conveys:</p>
+<ul data-anchor="what-every-representation-conveys" data-block-index="1">
 <li><strong>the condition</strong>, identified by its code and by the code system of the Schedule Authority that defines it, so that the authority is always explicit;</li>
 <li><strong>the asserted value</strong>, in the condition’s datatype: Yes or No for a Boolean condition, or a date or number where the condition defines one.</li>
 </ul>
 </section>
 <section id="principles-every-representation-preserves" class="level3">
 <h3>Principles every representation preserves</h3>
-<ul>
+<ul data-anchor="principles-every-representation-preserves" data-block-index="0">
 <li><strong>Sparse.</strong> Only asserted conditions are sent. A condition that is not known is not sent; there is no “unknown” value to transmit.</li>
 <li><strong>Absence is unknown.</strong> A receiver never treats a missing condition as No.</li>
 <li><strong>Dates are conditions.</strong> A date meaningful to a condition is sent as its own Contextual Condition with a date value. It is never carried in a representation’s own date fields, such as HL7 v2 OBX-14 or the date elements of a FHIR Observation, which describe the record or message rather than the condition.</li>
@@ -3207,40 +3374,46 @@ html {
 </section>
 <section id="hl7-v2" class="level3">
 <h3>HL7 v2</h3>
-<p>In HL7 v2, each Contextual Condition is a standard OBX observation. OBX-3 identifies the condition, using the Schedule Authority’s code system, and OBX-5 carries the asserted value. No new segments or message structures are introduced. Use in immunization updates (VXU) and queries (QBP), including what an IIS may do with the conditions it receives, is defined by <a href="#related-work">topics 137, 140, and 141</a>.</p>
+<p data-anchor="hl7-v2" data-block-index="0">In HL7 v2, each Contextual Condition is a standard OBX observation. OBX-3 identifies the condition, using the Schedule Authority’s code system, and OBX-5 carries the asserted value. No new segments or message structures are introduced. Use in immunization updates (VXU) and queries (QBP), including what an IIS may do with the conditions it receives, is defined by <a href="#related-work">topics 137, 140, and 141</a>.</p>
 </section>
 <section id="fhir" class="level3">
 <h3>FHIR</h3>
-<p>In FHIR, Contextual Conditions are supplied as inputs to the immunization CDS interface defined by the ImmDS + HALO work, where they are known as HALO factors. The FHIR representation, including how an engine reports supported conditions, is defined by <a href="https://informatics.immregistries.org/hub/es/topic/1">topic 1</a>.</p>
+<p data-anchor="fhir" data-block-index="0">In FHIR, Contextual Conditions are supplied as inputs to the immunization CDS interface defined by the ImmDS + HALO work, where they are known as HALO factors. The FHIR representation, including how an engine reports supported conditions, is defined by <a href="https://informatics.immregistries.org/hub/es/topic/1">topic 1</a>.</p>
 </section>
 </section>
 <section id="adoption-and-boundaries" class="level2">
 <h2>Adoption, Boundaries, and Intended Outcome</h2>
 <section id="incremental-support" class="level3">
 <h3>Incremental support</h3>
-<p>Publishing a Contextual Condition does not mean every requesting system can determine its value or every CDS engine can use it. Partial support is expected, especially early on:</p>
-<ul>
+<p data-anchor="incremental-support" data-block-index="0">Publishing a Contextual Condition does not mean every requesting system can determine its value or every CDS engine can use it. Partial support is expected, especially early on:</p>
+<ul data-anchor="incremental-support" data-block-index="1">
 <li>A requesting system may support only some of the conditions an authority defines.</li>
 <li>A CDS engine or Knowledge Base may support only some of them.</li>
 <li>An unsupported condition may become supported without redesigning the interface.</li>
 <li>New conditions may be added as guidance evolves.</li>
 </ul>
-<p>The benefit of the framework is not immediate universal support. It is a consistent mechanism through which support can grow.</p>
+<div id="support-can-grow" class="guide-anchor" data-guide-anchor="support-can-grow">
+
+</div>
+<p data-anchor="support-can-grow" data-block-index="0">The benefit of the framework is not immediate universal support. It is a consistent mechanism through which support can grow.</p>
 </section>
 <section id="architectural-boundary" class="level3">
 <h3>Architectural boundary</h3>
-<p>Contextual Conditions set a boundary among three responsibilities:</p>
-<ol type="1">
+<p data-anchor="architectural-boundary" data-block-index="0">Contextual Conditions set a boundary among three responsibilities:</p>
+<ol type="1" data-anchor="architectural-boundary" data-block-index="1">
 <li><strong>Clinical and public health systems</strong> collect information, maintain longitudinal records, and determine the values supplied to CDS.</li>
 <li><strong>The CDS interface</strong> conveys evaluation-scoped demographics, immunization history, and Contextual Condition values.</li>
 <li><strong>The CDS engine and its selected Knowledge Base</strong> apply immunization guidance and return evaluations and recommendations.</li>
 </ol>
-<p>This boundary lets each layer evolve without requiring the CDS engine to interpret the full clinical record, and without requiring the clinical record to adopt a schedule-specific information model.</p>
+<div id="layers-evolve-independently" class="guide-anchor" data-guide-anchor="layers-evolve-independently">
+
+</div>
+<p data-anchor="layers-evolve-independently" data-block-index="0">This boundary lets each layer evolve without requiring the CDS engine to interpret the full clinical record, and without requiring the clinical record to adopt a schedule-specific information model.</p>
 </section>
 <section id="non-goals" class="level3">
 <h3>Non-goals</h3>
-<p>This concept does not define:</p>
-<ul>
+<p data-anchor="non-goals" data-block-index="0">This concept does not define:</p>
+<ul data-anchor="non-goals" data-block-index="1">
 <li>how clinical or nonclinical information is collected;</li>
 <li>how a requesting system derives a Contextual Condition;</li>
 <li>who creates, determines, or stores Contextual Conditions in a workflow;</li>
@@ -3255,20 +3428,23 @@ html {
 <li>capability negotiation or response behavior; or</li>
 <li>detailed HL7 v2, FHIR, or other transport specifications, beyond the general principles in <a href="#representations">Representing Contextual Conditions</a>.</li>
 </ul>
-<p>These subjects belong to related terminology, implementation-guide, transport, and IIS work.</p>
+<p data-anchor="non-goals" data-block-index="2">These subjects belong to related terminology, implementation-guide, transport, and IIS work.</p>
 </section>
 <section id="intended-outcome" class="level3">
 <h3>Intended outcome</h3>
-<p>Success does not mean every system immediately supports every Contextual Condition. Success means immunization CDS has a bounded, explicitly defined input layer. Schedule Authorities can identify the factors their guidance requires, Knowledge Bases can declare which inputs they implement, and requesting systems can add support incrementally.</p>
-<p>As guidance evolves, new factors can be introduced mainly as vocabulary and Knowledge Base additions rather than as new proprietary interface designs. Clinical systems remain free to represent and derive the underlying information in ways suited to patient care, while CDS engines receive only the inputs they need to answer the recommendation question.</p>
+<p data-anchor="intended-outcome" data-block-index="0">Success does not mean every system immediately supports every Contextual Condition. Success means immunization CDS has a bounded, explicitly defined input layer. Schedule Authorities can identify the factors their guidance requires, Knowledge Bases can declare which inputs they implement, and requesting systems can add support incrementally.</p>
+<div id="vocabulary-led-growth" class="guide-anchor" data-guide-anchor="vocabulary-led-growth">
+
+</div>
+<p data-anchor="vocabulary-led-growth" data-block-index="0">As guidance evolves, new factors can be introduced mainly as vocabulary and Knowledge Base additions rather than as new proprietary interface designs. Clinical systems remain free to represent and derive the underlying information in ways suited to patient care, while CDS engines receive only the inputs they need to answer the recommendation question.</p>
 </section>
 </section>
 <section id="applying-the-concept" class="level2">
 <h2>Applying the Concept</h2>
 <section id="evaluating-a-candidate-condition" class="level3">
 <h3>Evaluating a candidate condition</h3>
-<p>A proposed concept is a good Contextual Condition candidate when most of these questions have clear answers:</p>
-<ul>
+<p data-anchor="evaluating-a-candidate-condition" data-block-index="0">A proposed concept is a good Contextual Condition candidate when most of these questions have clear answers:</p>
+<ul data-anchor="evaluating-a-candidate-condition" data-block-index="1">
 <li>Does immunization guidance need this information to evaluate or recommend vaccination?</li>
 <li>Can its meaning be expressed as a bounded assertion?</li>
 <li>Is it distinct from patient identity and immunization history?</li>
@@ -3280,11 +3456,14 @@ html {
 <li>Can it be defined without embedding a particular CDS engine’s internal rule?</li>
 <li>Is its temporal meaning, relative to the evaluation date, clear?</li>
 </ul>
-<p>A proposal that tries to carry a clinical narrative, reproduce a problem list, or encode a recommendation probably belongs elsewhere.</p>
+<div id="candidate-boundary" class="guide-anchor" data-guide-anchor="candidate-boundary">
+
+</div>
+<p data-anchor="candidate-boundary" data-block-index="0">A proposal that tries to carry a clinical narrative, reproduce a problem list, or encode a recommendation probably belongs elsewhere.</p>
 </section>
 <section id="common-pitfalls" class="level3">
 <h3>Common pitfalls</h3>
-<ol type="1">
+<ol type="1" data-anchor="common-pitfalls" data-block-index="0">
 <li><strong>Treating omission as No.</strong> Omitted means unknown.</li>
 <li><strong>Sending raw diagnoses as if they were Contextual Conditions.</strong> Evidence and the assertion are related but distinct.</li>
 <li><strong>Making the CDS engine infer the condition.</strong> Determination happens in the requesting system.</li>
@@ -3299,59 +3478,59 @@ html {
 </section>
 <section id="working-decisions" class="level2">
 <h2>Appendix: Working Decisions and Open Questions</h2>
-<p>This appendix consolidates the working decisions on the concept and the questions still open. A working decision is the current position for discussion, not a final or approved decision. Each records where it came from so it can be revisited.</p>
+<p data-anchor="working-decisions" data-block-index="0">This appendix consolidates the working decisions on the concept and the questions still open. A working decision is the current position for discussion, not a final or approved decision. Each records where it came from so it can be revisited.</p>
 <section id="working-decisions-1" class="level3">
 <h3>Working decisions</h3>
-<div class="aira-table-wrap"><table class="aira-table">
+<div class="aira-table-wrap" data-anchor="working-decisions-1" data-block-index="0"><table class="aira-table">
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
 <col style="width: 33%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>ID</th>
 <th>Working decision</th>
 <th>Basis</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>WD-1</td>
 <td>This project covers the concept of Contextual Conditions. Publication of code systems and values is operational and is handled separately, currently as an IVC proposal.</td>
 <td>Project scope, October 2026</td>
 </tr>
-<tr class="even">
+<tr>
 <td>WD-2</td>
 <td>This repository is the authoritative source for the concept. Confluence pages are regenerated from it for sharing and feedback.</td>
 <td>Project scope, October 2026</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>WD-3</td>
 <td>Community coordination, meetings, and discussion notes are tracked on InteropHub, <a href="https://informatics.immregistries.org/hub/es/topic/7">topic 7</a>.</td>
 <td>Project scope, October 2026</td>
 </tr>
-<tr class="even">
+<tr>
 <td>WD-4</td>
 <td>Disagreements among sources, and critiques of the concept, are kept visible in this repository rather than resolved privately.</td>
 <td>Project scope, October 2026</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>WD-5</td>
 <td>This document describes the HL7 v2 and FHIR representations at a general level: what a representation must convey and which principles it must preserve. Detailed specifications belong to the related InteropHub topics (1, 137, 140, and 141), which depend on this concept and may develop their own documentation. Resolves OQ-1.</td>
 <td>Project direction, October 2026</td>
 </tr>
-<tr class="even">
+<tr>
 <td>WD-6</td>
 <td>HALO factors, from the Immunization CDS (ImmDS + HALO) work, are Contextual Conditions as defined in this document.</td>
 <td>Project direction, October 2026</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>WD-7</td>
 <td>This document describes what a Contextual Condition is conceptually. It does not set rules for who creates, determines, or stores Contextual Conditions, or for how they are included in messages and workflows. IIS storage rules belong to topic 140; topic 141 also touches on storage and is likely to prohibit storing conditions supplied in a query. Resolves OQ-2.</td>
 <td>Project direction, October 2026</td>
 </tr>
-<tr class="even">
+<tr>
 <td>WD-8</td>
 <td>When a date is meaningful to a Contextual Condition, it is modeled as a separate Contextual Condition with a date value. It is not conveyed through a representation’s own date fields, such as HL7 v2 OBX-14 or the date elements of a FHIR Observation. This modeling rule applies to every representation and is in scope.</td>
 <td>Project direction, October 2026</td>
@@ -3361,8 +3540,8 @@ html {
 </section>
 <section id="open-questions" class="level3">
 <h3>Open questions</h3>
-<p>These were identified by comparing existing sources; see the <a href="https://github.com/immregistries/contextual-conditions/blob/main/review/2026-10-29-initial-source-review.md">initial source review</a> for detail. Each needs discussion before the affected text is settled. Questions that belong to a related topic are referred there rather than answered here.</p>
-<div class="aira-table-wrap"><table class="aira-table">
+<p data-anchor="open-questions" data-block-index="0">These were identified by comparing existing sources; see the <a href="https://github.com/immregistries/contextual-conditions/blob/v0.2.0/review/2026-10-29-initial-source-review.md">initial source review</a> for detail. Each needs discussion before the affected text is settled. Questions that belong to a related topic are referred there rather than answered here.</p>
+<div class="aira-table-wrap" data-anchor="open-questions" data-block-index="1"><table class="aira-table">
 <colgroup>
 <col style="width: 25%" />
 <col style="width: 25%" />
@@ -3370,7 +3549,7 @@ html {
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>ID</th>
 <th>Question</th>
 <th>Sources in tension</th>
@@ -3378,37 +3557,37 @@ html {
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>OQ-1</td>
 <td>Does this document include an HL7 v2 representation, or only the transport-neutral concept, with HL7 v2 and other representations documented elsewhere?</td>
 <td>The Confluence concept page lists transport representations as a non-goal; the HL7 v2 Confluence page is a child of it.</td>
 <td>Resolved by WD-5</td>
 </tr>
-<tr class="even">
+<tr>
 <td>OQ-2</td>
 <td>May an IIS store Contextual Conditions received in a VXU?</td>
 <td>The Confluence concept page (September 2026) describes conditions as evaluation-scoped and leaves longitudinal storage to separate work; the HL7 v2 page (June 2026) and the primer allow optional storage under local policy.</td>
 <td>Resolved by WD-7; storage rules belong to topic 140</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>OQ-3</td>
 <td>Which OBX-2 value type carries a Boolean Contextual Condition?</td>
 <td>The primer’s example uses <code>ID</code>; the HL7 v2 Confluence page uses <code>CE</code>.</td>
 <td>Referred to topic 137 under WD-5</td>
 </tr>
-<tr class="even">
+<tr>
 <td>OQ-4</td>
 <td>What are the current names for the governance roles?</td>
 <td>The primer names four roles (Code System, Publishing, Namespace, and CDS Authority); the Confluence concept page uses Schedule Authority, terminology steward, and Knowledge Base.</td>
 <td>Open</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>OQ-5</td>
 <td>Is there a nullified state that removes a previously stored assertion?</td>
 <td>The primer describes one; the Confluence concept page’s stateless model has none. Depends on OQ-2.</td>
 <td>Referred to topic 140 under WD-7</td>
 </tr>
-<tr class="even">
+<tr>
 <td>OQ-6</td>
 <td>Is the numeric datatype an integer, or any number?</td>
 <td>The Confluence concept page names date or integer values; the draft French inventory includes Number values such as laboratory results, height, and weight.</td>
@@ -3427,14 +3606,14 @@ html {
           </section>
           <section class="aira-sidebar-section guide-comments-panel" id="guide-comments-panel" hidden>
             <h2 class="aira-sidebar-title">Comments <span class="aira-badge" id="guide-comment-count">0</span></h2>
-            <p class="aira-meta">Comments are saved only in this browser. Download them to share.</p>
-            <label class="aira-label" for="guide-commenter">Your name</label>
-            <input class="aira-input" id="guide-commenter" type="text" autocomplete="name">
+            <div id="guide-comments-status"><p class="aira-meta">Comments are saved only in this browser. Download them to share.</p></div>
+            <div id="guide-local-identity"><label class="aira-label" for="guide-commenter">Your name</label>
+            <input class="aira-input" id="guide-commenter" type="text" autocomplete="name"></div>
             <div class="guide-comment-actions">
               <button type="button" class="aira-button aira-button--secondary aira-button--small" id="guide-comments-toggle" aria-pressed="true">Hide comments</button>
-              <button type="button" class="aira-button aira-button--secondary aira-button--small" id="guide-comments-download">Download</button>
-              <label class="aira-button aira-button--secondary aira-button--small guide-file-button">Load<input type="file" id="guide-comments-load" accept="application/json,.json" multiple hidden></label>
-              <button type="button" class="aira-button aira-button--ghost aira-button--small" id="guide-comments-clear">Clear all</button>
+              <button type="button" class="aira-button aira-button--secondary aira-button--small guide-local-control" id="guide-comments-download">Download</button>
+              <label class="aira-button aira-button--secondary aira-button--small guide-file-button guide-local-control">Load<input type="file" id="guide-comments-load" accept="application/json,.json" multiple hidden></label>
+              <button type="button" class="aira-button aira-button--ghost aira-button--small guide-local-control" id="guide-comments-clear">Clear all</button>
             </div>
             <ol class="guide-comment-index" id="guide-comment-index"></ol>
           </section>
@@ -3449,10 +3628,10 @@ html {
   </main>
   <footer class="aira-footer" aria-label="Document information">
     <p><a href="https://www.immregistries.org/">American Immunization Registry Association (AIRA)</a> supports collaboration, standards, and shared solutions that strengthen immunization information systems and improve the use of vaccination data to protect public health.</p>
-    <p>Contextual Conditions for Immunization Decision Support &middot; version v0.1.0 &middot; generated 2026-10-29 &middot; Content licensed CC BY 4.0</p>
+    <p>Contextual Conditions for Immunization Decision Support &middot; version v0.2.0 &middot; generated 2026-11-02 &middot; Content licensed CC BY 4.0</p>
   </footer>
 </div>
-<script type="application/json" id="guide-data">{"id": "contextual-conditions", "title": "Contextual Conditions for Immunization Decision Support", "version": "v0.1.0", "built": "2026-10-29"}</script>
+<script type="application/json" id="guide-data">{"id": "contextual-conditions", "title": "Contextual Conditions for Immunization Decision Support", "version": "v0.2.0", "built": "2026-11-02", "comments": {"mode": "interophub", "hub": "https://informatics.immregistries.org/hub", "document": "contextual-conditions"}}</script>
 <script>
 /* Content guide: section tracking and browser-only comments. */
 (function () {
@@ -3461,9 +3640,11 @@ html {
   var data = JSON.parse(document.getElementById("guide-data").textContent);
   var content = document.getElementById("guide-content");
   var sectionLinks = Array.prototype.slice.call(
-    document.querySelectorAll(".guide-context .aira-context-nav a")
+    document.querySelectorAll(".guide-context .aira-context-nav a"),
   );
-  var sections = Array.prototype.slice.call(content.querySelectorAll("section.level2"));
+  var sections = Array.prototype.slice.call(
+    content.querySelectorAll("section.level2"),
+  );
   var subnav = document.getElementById("guide-subnav");
   var railTitle = document.getElementById("guide-rail-title");
   var context = document.querySelector(".guide-context");
@@ -3498,7 +3679,9 @@ html {
   function renderSubnav(section) {
     subnav.textContent = "";
     railTitle.textContent = section ? headingText(section) : "On this page";
-    var subsections = section ? section.querySelectorAll(":scope > section.level3") : [];
+    var subsections = section
+      ? section.querySelectorAll(":scope > section.level3")
+      : [];
     if (!subsections.length) {
       var empty = document.createElement("li");
       empty.className = "guide-subnav-empty";
@@ -3535,7 +3718,7 @@ html {
       return;
     }
     var subsections = Array.prototype.slice.call(
-      section.querySelectorAll(":scope > section.level3")
+      section.querySelectorAll(":scope > section.level3"),
     );
     var limit = offset();
     var sub = null;
@@ -3546,30 +3729,42 @@ html {
     });
     if (sub !== currentSubsection) {
       currentSubsection = sub;
-      Array.prototype.forEach.call(subnav.querySelectorAll("a"), function (link) {
-        if (sub && link.getAttribute("href") === "#" + sub.id) {
-          link.setAttribute("aria-current", "true");
-        } else {
-          link.removeAttribute("aria-current");
-        }
-      });
+      Array.prototype.forEach.call(
+        subnav.querySelectorAll("a"),
+        function (link) {
+          if (sub && link.getAttribute("href") === "#" + sub.id) {
+            link.setAttribute("aria-current", "true");
+          } else {
+            link.removeAttribute("aria-current");
+          }
+        },
+      );
     }
   }
 
   var pending = false;
-  window.addEventListener("scroll", function () {
-    if (!pending) {
-      pending = true;
-      window.requestAnimationFrame(function () {
-        pending = false;
-        update();
-      });
-    }
-  }, { passive: true });
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (!pending) {
+        pending = true;
+        window.requestAnimationFrame(function () {
+          pending = false;
+          update();
+        });
+      }
+    },
+    { passive: true },
+  );
   window.addEventListener("resize", update);
   update();
 
   // ---- Comments ----
+
+  if (data.comments && data.comments.mode === "interophub") {
+    startInteropHubComments();
+    return;
+  }
 
   var STORAGE_KEY = "content-guide-comments:" + data.id;
   var NAME_KEY = "content-guide-commenter";
@@ -3595,11 +3790,51 @@ html {
   }
 
   var comments = [];
-  try {
-    comments = JSON.parse(load(STORAGE_KEY) || "[]");
-  } catch (error) {
-    comments = [];
-  }
+  var localSubscribers = [];
+  var localStore = {
+    load: function () {
+      try {
+        return JSON.parse(load(STORAGE_KEY) || "[]");
+      } catch (error) {
+        return [];
+      }
+    },
+    add: function (comment) {
+      comments.push(comment);
+      localStore.persist();
+      return comment;
+    },
+    reply: function (comment) {
+      return localStore.add(comment);
+    },
+    edit: function (comment, text) {
+      comment.text = text;
+      comment.updated = new Date().toISOString();
+      localStore.persist();
+      return comment;
+    },
+    withdraw: function (comment) {
+      comments = comments.filter(function (other) {
+        return other.id !== comment.id;
+      });
+      localStore.persist();
+    },
+    subscribe: function (listener) {
+      localSubscribers.push(listener);
+      return function () {
+        localSubscribers = localSubscribers.filter(function (item) {
+          return item !== listener;
+        });
+      };
+    },
+    persist: function () {
+      store(STORAGE_KEY, JSON.stringify(comments));
+      localSubscribers.forEach(function (listener) {
+        listener(comments);
+      });
+    },
+  };
+  comments = localStore.load();
 
   var panel = document.getElementById("guide-comments-panel");
   var nameInput = document.getElementById("guide-commenter");
@@ -3613,22 +3848,38 @@ html {
   });
 
   function save() {
-    store(STORAGE_KEY, JSON.stringify(comments));
+    localStore.persist();
   }
 
   function normalize(text) {
     return (text || "").replace(/\s+/g, " ").trim();
   }
 
+  function blockSnippet(block) {
+    var copy = block.cloneNode(true);
+    Array.prototype.forEach.call(
+      copy.querySelectorAll(".guide-comment-button"),
+      function (button) {
+        button.remove();
+      },
+    );
+    return normalize(copy.textContent).slice(0, 120);
+  }
+
   function newId() {
     if (window.crypto && window.crypto.randomUUID) {
       return window.crypto.randomUUID();
     }
-    return "c-" + Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 10);
+    return (
+      "c-" +
+      Date.now().toString(36) +
+      "-" +
+      Math.random().toString(36).slice(2, 10)
+    );
   }
 
-  // Commentable blocks: outermost paragraphs, list items, quotes, tables, code.
-  var BLOCK_SELECTOR = "p, li, blockquote, .aira-table-wrap, pre";
+  // Commentable blocks are annotated by the build with their anchor area.
+  var BLOCK_SELECTOR = "[data-anchor][data-block-index]";
   var blocks = Array.prototype.filter.call(
     content.querySelectorAll(BLOCK_SELECTOR),
     function (element) {
@@ -3640,17 +3891,13 @@ html {
         parent = parent.parentElement;
       }
       return true;
-    }
+    },
   );
 
-  var counters = {};
   blocks.forEach(function (block) {
     var section = block.closest("section");
-    var sectionId = section ? section.id : "top";
-    counters[sectionId] = (counters[sectionId] || 0) + 1;
-    block.dataset.guideSection = sectionId;
-    block.dataset.guideIndex = String(counters[sectionId]);
-    block.dataset.guideText = normalize(block.textContent).slice(0, 160);
+    block.dataset.guideSection = section ? section.id : "top";
+    block.dataset.guideText = blockSnippet(block);
     block.classList.add("guide-block");
 
     var button = document.createElement("button");
@@ -3680,10 +3927,12 @@ html {
     return normalize(selection.toString()).slice(0, 500);
   }
 
-  function findBlock(comment) {
+  function legacyBlock(comment) {
     var exact = blocks.filter(function (block) {
-      return block.dataset.guideSection === comment.sectionId &&
-        block.dataset.guideIndex === String(comment.blockIndex);
+      return (
+        block.dataset.guideSection === comment.sectionId &&
+        Number(block.dataset.blockIndex) + 1 === Number(comment.blockIndex)
+      );
     })[0];
     var snippet = normalize(comment.blockText).slice(0, 60);
     if (exact && exact.dataset.guideText.slice(0, 60) === snippet) {
@@ -3706,6 +3955,72 @@ html {
     return null;
   }
 
+  function snippetSimilarity(left, right) {
+    left = normalize(left).toLowerCase();
+    right = normalize(right).toLowerCase();
+    if (left === right) {
+      return 1;
+    }
+    if (!left || !right) {
+      return 0;
+    }
+    var leftWords = left.split(/\s+/);
+    var rightWords = right.split(/\s+/);
+    var seen = {};
+    var shared = 0;
+    leftWords.forEach(function (word) {
+      seen[word] = true;
+    });
+    rightWords.forEach(function (word) {
+      if (seen[word]) {
+        shared += 1;
+        delete seen[word];
+      }
+    });
+    return shared / Math.max(leftWords.length, rightWords.length);
+  }
+
+  function anchorElement(name) {
+    return document.getElementById(name);
+  }
+
+  function areaStart(anchor) {
+    if (anchor.matches("section")) {
+      return (
+        anchor.querySelector(
+          ":scope > h1, :scope > h2, :scope > h3, :scope > h4, :scope > h5, :scope > h6",
+        ) || anchor
+      );
+    }
+    return anchor;
+  }
+
+  function placement(comment) {
+    if (!comment.anchor) {
+      var legacy = legacyBlock(comment);
+      return legacy ? { block: legacy, target: legacy, orphaned: false } : null;
+    }
+    var anchor = anchorElement(comment.anchor);
+    if (!anchor) {
+      return null;
+    }
+    var areaBlocks = blocks.filter(function (block) {
+      return block.dataset.anchor === comment.anchor;
+    });
+    var matches = areaBlocks.filter(function (block) {
+      return snippetSimilarity(blockSnippet(block), comment.snippet) >= 0.75;
+    });
+    var preferred = matches.filter(function (block) {
+      return block.dataset.blockIndex === String(comment.blockIndex);
+    })[0];
+    var block = preferred || matches[0] || null;
+    return {
+      block: block,
+      target: block || areaStart(anchor),
+      orphaned: false,
+    };
+  }
+
   function threadFor(block) {
     var next = block.nextElementSibling;
     if (next && next.classList.contains("guide-thread")) {
@@ -3721,7 +4036,7 @@ html {
     try {
       return new Date(iso).toLocaleString([], {
         dateStyle: "medium",
-        timeStyle: "short"
+        timeStyle: "short",
       });
     } catch (error) {
       return iso;
@@ -3739,7 +4054,8 @@ html {
     author.className = "guide-comment__author";
     author.textContent = comment.author || "Anonymous";
     var when = document.createElement("span");
-    when.textContent = formatTime(comment.created) +
+    when.textContent =
+      formatTime(comment.created) +
       (comment.documentVersion && comment.documentVersion !== data.version
         ? " · on " + comment.documentVersion
         : "");
@@ -3749,7 +4065,8 @@ html {
     edit.type = "button";
     edit.textContent = "Edit";
     edit.addEventListener("click", function () {
-      var block = findBlock(comment);
+      var placed = placement(comment);
+      var block = placed && placed.block;
       if (block) {
         openForm(block, comment.quote, comment);
       }
@@ -3758,10 +4075,7 @@ html {
     remove.type = "button";
     remove.textContent = "Delete";
     remove.addEventListener("click", function () {
-      comments = comments.filter(function (other) {
-        return other.id !== comment.id;
-      });
-      save();
+      localStore.withdraw(comment);
       render();
     });
     tools.appendChild(edit);
@@ -3789,44 +4103,58 @@ html {
       content.querySelectorAll(".guide-thread"),
       function (thread) {
         thread.remove();
-      }
+      },
     );
     index.textContent = "";
+    var oldOrphans = content.querySelector(".guide-orphans");
+    if (oldOrphans) {
+      oldOrphans.remove();
+    }
     comments.sort(function (a, b) {
       return (a.created || "").localeCompare(b.created || "");
     });
     var unplaced = [];
     comments.forEach(function (comment) {
-      var block = findBlock(comment);
-      if (block) {
-        threadFor(block).appendChild(commentElement(comment));
+      var placed = placement(comment);
+      var block = placed && placed.block;
+      if (placed) {
+        threadFor(placed.target).appendChild(commentElement(comment));
       } else {
         unplaced.push(comment);
       }
       var entry = document.createElement("li");
       var link = document.createElement("a");
-      link.href = block ? "#comment-" + comment.id : "#guide-comments-panel";
-      link.textContent = (comment.author || "Anonymous") + ": " +
+      link.href = "#comment-" + comment.id;
+      link.textContent =
+        (comment.author || "Anonymous") +
+        ": " +
         normalize(comment.text).slice(0, 60) +
         (normalize(comment.text).length > 60 ? "…" : "");
       entry.appendChild(link);
       var where = document.createElement("span");
       where.className = "aira-meta";
-      where.textContent = block
-        ? comment.sectionTitle || comment.sectionId
-        : "Not placed: the text it refers to has changed";
+      where.textContent = placed
+        ? comment.anchor || comment.sectionTitle || comment.sectionId
+        : "Orphaned comment";
       entry.appendChild(where);
       index.appendChild(entry);
     });
     countBadge.textContent = String(comments.length);
     if (unplaced.length) {
+      var orphanGroup = document.createElement("section");
+      orphanGroup.className = "guide-orphans";
+      var orphanHeading = document.createElement("h2");
+      orphanHeading.textContent = "Orphaned comments";
+      orphanGroup.appendChild(orphanHeading);
       unplaced.forEach(function (comment) {
         var holder = document.createElement("div");
         holder.className = "guide-thread";
         holder.appendChild(commentElement(comment));
-        index.appendChild(holder);
+        orphanGroup.appendChild(holder);
       });
+      content.appendChild(orphanGroup);
     }
+    followHash();
   }
 
   function closeForms() {
@@ -3834,7 +4162,7 @@ html {
       content.querySelectorAll(".guide-comment-form"),
       function (form) {
         form.remove();
-      }
+      },
     );
   }
 
@@ -3886,24 +4214,24 @@ html {
       var author = nameInput.value.trim();
       store(NAME_KEY, author);
       if (existing) {
-        existing.text = text;
-        existing.updated = new Date().toISOString();
+        localStore.edit(existing, text);
       } else {
-        comments.push({
+        localStore.add({
           id: newId(),
           documentId: data.id,
           documentVersion: data.version,
           sectionId: block.dataset.guideSection,
           sectionTitle: sectionTitle(block),
-          blockIndex: Number(block.dataset.guideIndex),
+          anchor: block.dataset.anchor,
+          blockIndex: Number(block.dataset.blockIndex),
+          snippet: blockSnippet(block),
           blockText: block.dataset.guideText,
           quote: quote || "",
           author: author,
           created: new Date().toISOString(),
-          text: text
+          text: text,
         });
       }
-      save();
       closeForms();
       render();
     });
@@ -3929,79 +4257,1304 @@ html {
     toggle.textContent = hidden ? "Show comments" : "Hide comments";
   });
 
-  document.getElementById("guide-comments-download").addEventListener("click", function () {
-    var author = nameInput.value.trim() || "comments";
-    var payload = {
-      format: FORMAT,
-      formatVersion: 1,
-      documentId: data.id,
-      documentTitle: data.title,
-      documentVersion: data.version,
-      exported: new Date().toISOString(),
-      exportedBy: nameInput.value.trim(),
-      comments: comments
-    };
-    var blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
-    var link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.download = data.id + "-comments-" +
-      author.toLowerCase().replace(/[^a-z0-9]+/g, "-") + "-" +
-      new Date().toISOString().slice(0, 10) + ".json";
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
-    window.setTimeout(function () {
-      URL.revokeObjectURL(link.href);
-    }, 1000);
-  });
-
-  document.getElementById("guide-comments-load").addEventListener("change", function (event) {
-    var files = Array.prototype.slice.call(event.target.files || []);
-    var known = {};
-    comments.forEach(function (comment) {
-      known[comment.id] = comment;
-    });
-    var remaining = files.length;
-    files.forEach(function (file) {
-      var reader = new FileReader();
-      reader.onload = function () {
-        try {
-          var payload = JSON.parse(reader.result);
-          if (payload.format === FORMAT && Array.isArray(payload.comments)) {
-            payload.comments.forEach(function (comment) {
-              if (comment && comment.id && comment.text) {
-                known[comment.id] = comment;
-              }
-            });
-          }
-        } catch (error) {
-          /* Ignore files that are not comment exports. */
-        }
-        remaining -= 1;
-        if (remaining === 0) {
-          comments = Object.keys(known).map(function (key) {
-            return known[key];
-          });
-          save();
-          render();
-        }
+  document
+    .getElementById("guide-comments-download")
+    .addEventListener("click", function () {
+      var author = nameInput.value.trim() || "comments";
+      var payload = {
+        format: FORMAT,
+        formatVersion: 1,
+        documentId: data.id,
+        documentTitle: data.title,
+        documentVersion: data.version,
+        exported: new Date().toISOString(),
+        exportedBy: nameInput.value.trim(),
+        comments: comments,
       };
-      reader.readAsText(file);
+      var blob = new Blob([JSON.stringify(payload, null, 2)], {
+        type: "application/json",
+      });
+      var link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download =
+        data.id +
+        "-comments-" +
+        author.toLowerCase().replace(/[^a-z0-9]+/g, "-") +
+        "-" +
+        new Date().toISOString().slice(0, 10) +
+        ".json";
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      window.setTimeout(function () {
+        URL.revokeObjectURL(link.href);
+      }, 1000);
     });
-    event.target.value = "";
-  });
 
-  document.getElementById("guide-comments-clear").addEventListener("click", function () {
-    if (comments.length && window.confirm(
-      "Remove all " + comments.length + " comments from this browser? Download them first if you need them."
-    )) {
-      comments = [];
-      save();
-      render();
+  document
+    .getElementById("guide-comments-load")
+    .addEventListener("change", function (event) {
+      var files = Array.prototype.slice.call(event.target.files || []);
+      var known = {};
+      comments.forEach(function (comment) {
+        known[comment.id] = comment;
+      });
+      var remaining = files.length;
+      files.forEach(function (file) {
+        var reader = new FileReader();
+        reader.onload = function () {
+          try {
+            var payload = JSON.parse(reader.result);
+            if (payload.format === FORMAT && Array.isArray(payload.comments)) {
+              payload.comments.forEach(function (comment) {
+                if (comment && comment.id && comment.text) {
+                  known[comment.id] = comment;
+                }
+              });
+            }
+          } catch (error) {
+            /* Ignore files that are not comment exports. */
+          }
+          remaining -= 1;
+          if (remaining === 0) {
+            comments = Object.keys(known).map(function (key) {
+              return known[key];
+            });
+            save();
+            render();
+          }
+        };
+        reader.readAsText(file);
+      });
+      event.target.value = "";
+    });
+
+  document
+    .getElementById("guide-comments-clear")
+    .addEventListener("click", function () {
+      var control = this;
+      if (
+        !comments.length ||
+        (control.nextElementSibling &&
+          control.nextElementSibling.classList.contains("guide-confirmation"))
+      ) {
+        return;
+      }
+      var prompt = document.createElement("div");
+      prompt.className = "guide-confirmation";
+      prompt.textContent =
+        "Remove all " +
+        comments.length +
+        " comments from this browser? Download them first if you need them. ";
+      var remove = document.createElement("button");
+      remove.type = "button";
+      remove.textContent = "Clear all";
+      remove.addEventListener("click", function () {
+        comments = [];
+        save();
+        render();
+        prompt.remove();
+      });
+      prompt.appendChild(remove);
+      var cancel = document.createElement("button");
+      cancel.type = "button";
+      cancel.textContent = "Cancel";
+      cancel.addEventListener("click", function () {
+        prompt.remove();
+      });
+      prompt.appendChild(cancel);
+      control.insertAdjacentElement("afterend", prompt);
+    });
+
+  function followHash() {
+    Array.prototype.forEach.call(
+      content.querySelectorAll(".guide-comment--target"),
+      function (item) {
+        item.classList.remove("guide-comment--target");
+      },
+    );
+    var match = window.location.hash.match(/^#comment-(.+)$/);
+    if (!match) {
+      return;
     }
-  });
+    var comment = document.getElementById("comment-" + match[1]);
+    if (!comment) {
+      return;
+    }
+    document.body.classList.remove("guide-comments-hidden");
+    toggle.setAttribute("aria-pressed", "true");
+    toggle.textContent = "Hide comments";
+    comment.classList.add("guide-comment--target");
+    comment.scrollIntoView({ block: "center" });
+  }
+
+  window.addEventListener("hashchange", followHash);
 
   render();
+
+  /* Remote comments use the same placement model but keep all persistence and
+     change notifications behind this store-shaped client. */
+  function startInteropHubComments() {
+    var settings = data.comments;
+    var hub = settings.hub;
+    var documentKey = settings.document;
+    var tokenKey = "content-guide-token:" + hub + ":" + documentKey;
+    var authKey = "content-guide-signin:" + hub + ":" + documentKey;
+    var noticePrefix = "content-guide-comment-notice:" + hub + ":";
+    var panel = document.getElementById("guide-comments-panel");
+    var status = document.getElementById("guide-comments-status");
+    var count = document.getElementById("guide-comment-count");
+    var remoteIndex = document.getElementById("guide-comment-index");
+    var remoteToggle = document.getElementById("guide-comments-toggle");
+    var remoteBlocks = Array.prototype.slice.call(
+      content.querySelectorAll("[data-anchor][data-block-index]"),
+    );
+    var threads = [];
+    var reviewFlags = [];
+    var showClosed = false;
+    var documentInfo = null;
+    var serverTime = null;
+    var pollTimer = null;
+    var pollStep = 0;
+    var pollDelays = [30000, 60000, 600000, 1800000];
+    var auth = readJson(window.localStorage, tokenKey);
+
+    document.getElementById("guide-local-identity").hidden = true;
+    Array.prototype.forEach.call(
+      document.querySelectorAll(".guide-local-control"),
+      function (item) {
+        item.hidden = true;
+      },
+    );
+    panel.hidden = false;
+
+    function normalizeRemote(value) {
+      return (value || "").replace(/\s+/g, " ").trim();
+    }
+
+    function readJson(storage, key) {
+      try {
+        return JSON.parse(storage.getItem(key) || "null");
+      } catch (error) {
+        return null;
+      }
+    }
+
+    function writeJson(storage, key, value) {
+      try {
+        if (value === null) {
+          storage.removeItem(key);
+        } else {
+          storage.setItem(key, JSON.stringify(value));
+        }
+      } catch (error) {
+        /* Storage may be disabled; the page still works for this visit. */
+      }
+    }
+
+    function validAuth() {
+      if (auth && auth.accessToken && Date.parse(auth.expiresAt) > Date.now()) {
+        return auth;
+      }
+      auth = null;
+      writeJson(window.localStorage, tokenKey, null);
+      return null;
+    }
+
+    function errorMessage(error) {
+      return error && error.message
+        ? error.message
+        : "The comment service could not complete the request.";
+    }
+
+    function request(path, options) {
+      options = options || {};
+      var headers = { "Content-Type": "application/json" };
+      if (options.token !== false && validAuth()) {
+        headers.Authorization = "Bearer " + auth.accessToken;
+      }
+      return window
+        .fetch(hub + path, {
+          method: options.method || "GET",
+          headers: headers,
+          body:
+            options.body === undefined
+              ? undefined
+              : JSON.stringify(options.body),
+        })
+        .then(function (response) {
+          if (response.status === 401) {
+            auth = null;
+            writeJson(window.localStorage, tokenKey, null);
+            stopPolling();
+            threads = [];
+            renderRemote();
+            renderIdentity();
+            throw { handled: true, message: "Sign in to comment" };
+          }
+          if (response.status === 204) {
+            return null;
+          }
+          return response
+            .json()
+            .catch(function () {
+              return {};
+            })
+            .then(function (body) {
+              if (!response.ok) {
+                throw {
+                  status: response.status,
+                  message: body.message || "The request failed.",
+                  body: body,
+                };
+              }
+              return body;
+            });
+        });
+    }
+
+    var store = {
+      load: function () {
+        return request("/api/guide/" + encodeURIComponent(documentKey)).then(
+          function (info) {
+            documentInfo = info;
+            serverTime = info.serverTime;
+            if (!info.permissions.canView) {
+              threads = [];
+              return null;
+            }
+            return request(
+              "/api/guide/" +
+                encodeURIComponent(documentKey) +
+                "/comments" +
+                (showClosed ? "?state=all" : ""),
+            ).then(function (result) {
+              threads = result.comments || [];
+              reviewFlags = result.reviewFlags || [];
+              serverTime = result.serverTime;
+            });
+          },
+        );
+      },
+      add: function (block, text) {
+        return request(
+          "/api/guide/" + encodeURIComponent(documentKey) + "/comments",
+          {
+            method: "POST",
+            body: {
+              anchor: block.dataset.anchor,
+              blockIndex: Number(block.dataset.blockIndex),
+              snippet: remoteSnippet(block),
+              text: text,
+            },
+          },
+        );
+      },
+      reply: function (thread, text) {
+        return request(
+          "/api/guide/" + encodeURIComponent(documentKey) + "/comments",
+          {
+            method: "POST",
+            body: {
+              parentCommentId: thread.id,
+              text: text,
+            },
+          },
+        );
+      },
+      edit: function (item, text) {
+        return request("/api/guide/comments/" + item.id, {
+          method: "PATCH",
+          body: { text: text, expectedUpdatedAt: item.updatedAt },
+        });
+      },
+      withdraw: function (item) {
+        return request("/api/guide/comments/" + item.id + "/withdraw", {
+          method: "POST",
+          body: {},
+        });
+      },
+      patch: function (item, values) {
+        values.expectedUpdatedAt = item.updatedAt;
+        return request("/api/guide/comments/" + item.id, {
+          method: "PATCH",
+          body: values,
+        });
+      },
+      remove: function (item) {
+        return request("/api/guide/comments/" + item.id, { method: "DELETE" });
+      },
+      flag: function (anchor, note) {
+        return request(
+          "/api/guide/" + encodeURIComponent(documentKey) + "/review-flags",
+          { method: "POST", body: { anchor: anchor, note: note } },
+        );
+      },
+      clearFlag: function (flag) {
+        return request(
+          "/api/guide/" +
+            encodeURIComponent(documentKey) +
+            "/review-flags/" +
+            flag.id,
+          { method: "DELETE" },
+        );
+      },
+      subscribe: function () {
+        schedulePoll(0);
+        return stopPolling;
+      },
+    };
+
+    function remoteSnippet(block) {
+      var copy = block.cloneNode(true);
+      Array.prototype.forEach.call(
+        copy.querySelectorAll(".guide-comment-button,.guide-thread"),
+        function (node) {
+          node.remove();
+        },
+      );
+      return normalizeRemote(copy.textContent).slice(0, 120);
+    }
+
+    function remotePlacement(thread) {
+      var anchor = document.getElementById(thread.anchor);
+      if (!anchor) {
+        return null;
+      }
+      var candidates = remoteBlocks.filter(function (block) {
+        return block.dataset.anchor === thread.anchor;
+      });
+      var exact = candidates.filter(function (block) {
+        return Number(block.dataset.blockIndex) === Number(thread.blockIndex);
+      })[0];
+      var textMatch = candidates.filter(function (block) {
+        var snippet = normalizeRemote(thread.snippet).toLowerCase();
+        return (
+          snippet &&
+          remoteSnippet(block).toLowerCase().indexOf(snippet.slice(0, 50)) === 0
+        );
+      })[0];
+      return textMatch || exact || anchor;
+    }
+
+    function threadHolder(target) {
+      var next = target.nextElementSibling;
+      if (next && next.classList.contains("guide-thread")) {
+        return next;
+      }
+      var holder = document.createElement("div");
+      holder.className = "guide-thread";
+      target.insertAdjacentElement("afterend", holder);
+      return holder;
+    }
+
+    function person(user) {
+      if (!user) {
+        return "Unknown commenter";
+      }
+      return (
+        user.displayName + (user.organization ? ", " + user.organization : "")
+      );
+    }
+
+    function itemElement(item, parent) {
+      var element = document.createElement("article");
+      element.className = "guide-comment" + (parent ? " guide-reply" : "");
+      element.id = "comment-" + item.id;
+      var meta = document.createElement("div");
+      meta.className = "guide-comment__meta";
+      var author = document.createElement("span");
+      author.className = "guide-comment__author";
+      author.textContent = person(item.author);
+      meta.appendChild(author);
+      var when = document.createElement("time");
+      when.textContent =
+        new Date(item.createdAt).toLocaleString() +
+        (item.editedAt ? " · edited" : "");
+      meta.appendChild(when);
+      element.appendChild(meta);
+      var body = document.createElement("p");
+      body.className = "guide-comment__text";
+      body.textContent =
+        item.state === "WITHDRAWN" || item.withdrawn
+          ? "Withdrawn by the commenter."
+          : item.text;
+      element.appendChild(body);
+      if (!parent) {
+        var state = document.createElement("p");
+        state.className = "guide-comment__state";
+        state.textContent = "State: " + item.state.toLowerCase();
+        element.appendChild(state);
+        if (item.disposition) {
+          var disposition = document.createElement("p");
+          disposition.className = "guide-comment__disposition";
+          disposition.textContent =
+            item.disposition.label + ": " + item.changeNote;
+          element.appendChild(disposition);
+          var disposed = document.createElement("p");
+          disposed.className = "aira-meta";
+          disposed.textContent =
+            "Disposed by " +
+            person(item.disposedBy) +
+            " on " +
+            new Date(item.disposedAt).toLocaleString();
+          element.appendChild(disposed);
+        }
+        if (item.state === "CLOSED") {
+          element.classList.add("guide-comment--closed");
+        }
+      }
+      var permissions = item.permissions || {};
+      if (
+        permissions.canEdit ||
+        permissions.canWithdraw ||
+        permissions.canDelete ||
+        (!parent &&
+          (permissions.canReply ||
+            permissions.canDispose ||
+            permissions.canClose ||
+            permissions.canReattach))
+      ) {
+        var tools = document.createElement("div");
+        tools.className = "guide-comment__tools";
+        if (
+          permissions.canReply &&
+          !parent &&
+          documentInfo &&
+          documentInfo.isActive
+        ) {
+          addTool(tools, "Reply", function () {
+            openRemoteForm(
+              element,
+              "Reply",
+              function (text) {
+                return store.reply(item, text);
+              },
+              "",
+              true,
+            );
+          });
+        }
+        if (permissions.canEdit) {
+          addTool(tools, "Edit", function () {
+            openRemoteForm(
+              element,
+              "Save",
+              function (text) {
+                return store.edit(item, text);
+              },
+              item.text,
+              false,
+            );
+          });
+        }
+        if (permissions.canWithdraw) {
+          addTool(tools, "Withdraw", function () {
+            openConfirmation(
+              element,
+              "Withdraw this comment?",
+              "Withdraw",
+              function () {
+                return store.withdraw(item).then(acceptThread);
+              },
+            );
+          });
+        }
+        if (!parent && permissions.canDispose) {
+          addTool(
+            tools,
+            item.disposition ? "Change disposition" : "Dispose",
+            function () {
+              openDispositionForm(element, item);
+            },
+          );
+          if (item.disposition) {
+            addTool(tools, "Clear disposition", function () {
+              store
+                .patch(item, { dispositionCode: null })
+                .then(acceptThread)
+                .catch(showConflict);
+            });
+          }
+        }
+        if (!parent && permissions.canClose) {
+          addTool(
+            tools,
+            item.state === "CLOSED" ? "Reopen" : "Close",
+            function () {
+              store
+                .patch(item, {
+                  state: item.state === "CLOSED" ? "OPEN" : "CLOSED",
+                })
+                .then(acceptThread)
+                .catch(showConflict);
+            },
+          );
+        }
+        if (!parent && permissions.canReattach && !remotePlacement(item)) {
+          addTool(tools, "Re-attach", function () {
+            openReattachForm(element, item);
+          });
+        }
+        if (permissions.canDelete) {
+          addTool(tools, "Delete", function () {
+            openConfirmation(
+              element,
+              "Delete this for inappropriate content?",
+              "Delete",
+              function () {
+                return store.remove(item).then(function () {
+                  if (parent) {
+                    parent.replies = parent.replies.filter(function (reply) {
+                      return reply.id !== item.id;
+                    });
+                    acceptThread(parent);
+                  } else {
+                    threads = threads.filter(function (thread) {
+                      return thread.id !== item.id;
+                    });
+                    renderRemote();
+                  }
+                });
+              },
+            );
+          });
+        }
+        element.appendChild(tools);
+      }
+      if (!parent) {
+        (item.replies || []).forEach(function (reply) {
+          element.appendChild(itemElement(reply, item));
+        });
+      }
+      return element;
+    }
+
+    function addTool(holder, label, action) {
+      var button = document.createElement("button");
+      button.type = "button";
+      button.textContent = label;
+      button.addEventListener("click", action);
+      holder.appendChild(button);
+    }
+
+    function showConflict(error) {
+      if (error.status === 409 && error.body && error.body.current) {
+        acceptThread(error.body.current);
+        renderIdentity(
+          "Someone else changed this comment. The current version is shown.",
+        );
+      } else {
+        showStatusError(error);
+      }
+    }
+
+    function openConfirmation(target, message, label, operation) {
+      var old = target.querySelector(":scope > .guide-confirmation");
+      if (old) {
+        old.remove();
+      }
+      var prompt = document.createElement("div");
+      prompt.className = "guide-confirmation";
+      var text = document.createElement("p");
+      text.textContent = message;
+      prompt.appendChild(text);
+      var yes = document.createElement("button");
+      yes.type = "button";
+      yes.textContent = label;
+      yes.addEventListener("click", function () {
+        operation()
+          .then(function () {
+            prompt.remove();
+          })
+          .catch(showConflict);
+      });
+      prompt.appendChild(yes);
+      var cancel = document.createElement("button");
+      cancel.type = "button";
+      cancel.textContent = "Cancel";
+      cancel.addEventListener("click", function () {
+        prompt.remove();
+      });
+      prompt.appendChild(cancel);
+      target.appendChild(prompt);
+    }
+
+    function openDispositionForm(target, item) {
+      var form = document.createElement("form");
+      form.className = "guide-comment-form guide-author-form";
+      var select = document.createElement("select");
+      select.required = true;
+      (documentInfo.dispositions || []).forEach(function (choice) {
+        var option = document.createElement("option");
+        option.value = choice.code;
+        option.textContent = choice.label;
+        option.selected =
+          item.disposition && item.disposition.code === choice.code;
+        select.appendChild(option);
+      });
+      form.appendChild(select);
+      var note = document.createElement("textarea");
+      note.required = true;
+      note.maxLength = 500;
+      note.placeholder = "Change note (required)";
+      note.value = item.changeNote || "";
+      form.appendChild(note);
+      var save = document.createElement("button");
+      save.type = "submit";
+      save.textContent = "Save disposition";
+      form.appendChild(save);
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        store
+          .patch(item, {
+            dispositionCode: select.value,
+            changeNote: note.value.trim(),
+          })
+          .then(acceptThread)
+          .catch(showConflict);
+      });
+      target.appendChild(form);
+      note.focus();
+    }
+
+    function anchorChoices() {
+      var seen = {};
+      return remoteBlocks.filter(function (block) {
+        if (seen[block.dataset.anchor]) {
+          return false;
+        }
+        seen[block.dataset.anchor] = true;
+        return true;
+      });
+    }
+
+    function openReattachForm(target, item) {
+      var form = document.createElement("form");
+      form.className = "guide-comment-form guide-author-form";
+      var select = document.createElement("select");
+      anchorChoices().forEach(function (block) {
+        var option = document.createElement("option");
+        option.value = block.dataset.anchor;
+        var anchor = document.getElementById(block.dataset.anchor);
+        option.textContent =
+          (anchor && anchor.textContent.trim().slice(0, 80)) ||
+          block.dataset.anchor;
+        select.appendChild(option);
+      });
+      form.appendChild(select);
+      var save = document.createElement("button");
+      save.type = "submit";
+      save.textContent = "Save attachment";
+      form.appendChild(save);
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        var block = remoteBlocks.filter(function (candidate) {
+          return candidate.dataset.anchor === select.value;
+        })[0];
+        store
+          .patch(item, {
+            anchor: select.value,
+            blockIndex: Number(block.dataset.blockIndex),
+            snippet: remoteSnippet(block),
+          })
+          .then(acceptThread)
+          .catch(showConflict);
+      });
+      target.appendChild(form);
+    }
+
+    function renderRemote() {
+      Array.prototype.forEach.call(
+        content.querySelectorAll(".guide-thread,.guide-orphans"),
+        function (node) {
+          node.remove();
+        },
+      );
+      remoteIndex.textContent = "";
+      var orphans = [];
+      threads = threads.filter(function (thread) {
+        return !thread.deleted;
+      });
+      threads.forEach(function (thread) {
+        if (thread.state === "CLOSED" && !showClosed) {
+          return;
+        }
+        var target = remotePlacement(thread);
+        if (target) {
+          threadHolder(target).appendChild(itemElement(thread, null));
+        } else {
+          orphans.push(thread);
+        }
+        var entry = document.createElement("li");
+        var link = document.createElement("a");
+        link.href = "#comment-" + thread.id;
+        link.textContent =
+          person(thread.author) +
+          ": " +
+          normalizeRemote(thread.text || "Withdrawn by the commenter.").slice(
+            0,
+            60,
+          );
+        entry.appendChild(link);
+        remoteIndex.appendChild(entry);
+      });
+      if (orphans.length) {
+        var group = document.createElement("section");
+        group.className = "guide-orphans";
+        var heading = document.createElement("h2");
+        heading.textContent = "Orphaned comments";
+        group.appendChild(heading);
+        orphans.forEach(function (thread) {
+          var holder = document.createElement("div");
+          holder.className = "guide-thread";
+          holder.appendChild(itemElement(thread, null));
+          group.appendChild(holder);
+        });
+        content.appendChild(group);
+      }
+      count.textContent = String(threads.length);
+      renderReviewFlags();
+      followRemoteHash();
+    }
+
+    function renderReviewFlags() {
+      remoteBlocks.forEach(function (block) {
+        block.classList.remove("guide-review-flagged");
+        var old = block.querySelector(":scope > .guide-flag-control");
+        if (old) {
+          old.remove();
+        }
+      });
+      reviewFlags.forEach(function (flag) {
+        remoteBlocks
+          .filter(function (block) {
+            return block.dataset.anchor === flag.anchor;
+          })
+          .forEach(function (block) {
+            block.classList.add("guide-review-flagged");
+            block.title = flag.note;
+          });
+        var entry = document.createElement("li");
+        entry.className = "guide-review-flag-entry";
+        var link = document.createElement("a");
+        link.href = "#" + flag.anchor;
+        link.textContent = "Flagged for review: " + flag.note;
+        entry.appendChild(link);
+        if (documentInfo && documentInfo.permissions.isAuthor) {
+          addTool(entry, "Clear", function () {
+            store
+              .clearFlag(flag)
+              .then(function () {
+                reviewFlags = reviewFlags.filter(function (current) {
+                  return current.id !== flag.id;
+                });
+                renderRemote();
+              })
+              .catch(showStatusError);
+          });
+        }
+        remoteIndex.appendChild(entry);
+      });
+      if (documentInfo && documentInfo.permissions.isAuthor) {
+        anchorChoices().forEach(function (block) {
+          var button = document.createElement("button");
+          button.type = "button";
+          button.className = "guide-flag-control";
+          button.textContent = reviewFlags.some(function (flag) {
+            return flag.anchor === block.dataset.anchor;
+          })
+            ? "Edit review flag"
+            : "Flag for review";
+          button.addEventListener("click", function () {
+            var existing = reviewFlags.filter(function (flag) {
+              return flag.anchor === block.dataset.anchor;
+            })[0];
+            openRemoteForm(
+              block,
+              "Save review flag",
+              function (note) {
+                return store
+                  .flag(block.dataset.anchor, note)
+                  .then(function (flag) {
+                    reviewFlags = reviewFlags.filter(function (current) {
+                      return current.anchor !== flag.anchor;
+                    });
+                    reviewFlags.push(flag);
+                    renderRemote();
+                    return null;
+                  });
+              },
+              existing ? existing.note : "",
+              false,
+            );
+          });
+          block.appendChild(button);
+        });
+      }
+    }
+
+    function renderIdentity(message) {
+      status.textContent = "";
+      remoteToggle.hidden = !validAuth();
+      if (message) {
+        var note = document.createElement("p");
+        note.className = "guide-form-error";
+        note.textContent = message;
+        status.appendChild(note);
+      }
+      if (!validAuth()) {
+        remoteBlocks.forEach(function (block) {
+          var button = block.querySelector(":scope > .guide-comment-button");
+          if (button) {
+            button.hidden = true;
+          }
+        });
+        var signIn = document.createElement("button");
+        signIn.type = "button";
+        signIn.className =
+          "aira-button aira-button--primary aira-button--small";
+        signIn.textContent = "Sign in to comment";
+        signIn.addEventListener("click", function () {
+          beginSignIn(false);
+        });
+        status.appendChild(signIn);
+        return;
+      }
+      remoteBlocks.forEach(function (block) {
+        var button = block.querySelector(":scope > .guide-comment-button");
+        if (button) {
+          button.hidden = !(
+            documentInfo &&
+            documentInfo.isActive &&
+            documentInfo.permissions.canComment
+          );
+        }
+      });
+      var identity = document.createElement("p");
+      identity.className = "aira-meta";
+      identity.textContent = "Signed in as " + person(auth.user);
+      status.appendChild(identity);
+      var actions = document.createElement("div");
+      actions.className = "guide-comment-actions";
+      var closedLabel = document.createElement("label");
+      var closedToggle = document.createElement("input");
+      closedToggle.type = "checkbox";
+      closedToggle.checked = showClosed;
+      closedToggle.addEventListener("change", function () {
+        showClosed = closedToggle.checked;
+        store
+          .load()
+          .then(function () {
+            renderRemote();
+            restartPolling();
+          })
+          .catch(showStatusError);
+      });
+      closedLabel.appendChild(closedToggle);
+      closedLabel.appendChild(document.createTextNode(" Show closed"));
+      actions.appendChild(closedLabel);
+      var signOut = document.createElement("button");
+      signOut.type = "button";
+      signOut.className =
+        "aira-button aira-button--secondary aira-button--small";
+      signOut.textContent = "Sign out";
+      signOut.addEventListener("click", function () {
+        revoke(false);
+      });
+      actions.appendChild(signOut);
+      var switchUser = document.createElement("button");
+      switchUser.type = "button";
+      switchUser.className =
+        "aira-button aira-button--ghost aira-button--small";
+      switchUser.textContent = "Not you?";
+      switchUser.addEventListener("click", function () {
+        revoke(true);
+      });
+      actions.appendChild(switchUser);
+      status.appendChild(actions);
+      if (documentInfo && !documentInfo.permissions.canView) {
+        var denied = document.createElement("p");
+        denied.textContent =
+          "Your account cannot see comments on this document.";
+        status.appendChild(denied);
+      }
+      if (documentInfo && !documentInfo.isActive) {
+        var inactive = document.createElement("p");
+        inactive.textContent = "Comments on this document are read-only.";
+        status.appendChild(inactive);
+      }
+    }
+
+    function beginSignIn(promptLogin) {
+      var chars =
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-._~";
+      var bytes = new Uint8Array(64);
+      window.crypto.getRandomValues(bytes);
+      var verifier = Array.prototype.map
+        .call(bytes, function (value) {
+          return chars[value % chars.length];
+        })
+        .join("");
+      var stateBytes = new Uint8Array(24);
+      window.crypto.getRandomValues(stateBytes);
+      var state = base64url(stateBytes);
+      var returnTo = window.location.origin + window.location.pathname;
+      var returnLocation = new URL(window.location.href);
+      returnLocation.searchParams.delete("interophub");
+      writeJson(window.sessionStorage, authKey, {
+        codeVerifier: verifier,
+        state: state,
+        returnLocation: returnLocation.href,
+      });
+      window.crypto.subtle
+        .digest("SHA-256", new TextEncoder().encode(verifier))
+        .then(function (digest) {
+          var query = new URLSearchParams({
+            app_code: "topic-reference",
+            return_to: returnTo,
+            state: state,
+            code_challenge: base64url(new Uint8Array(digest)),
+            code_challenge_method: "S256",
+            response_mode: "fragment",
+            requested_url: returnTo,
+          });
+          if (promptLogin) {
+            query.set("prompt", "login");
+          }
+          window.top.location.href = hub + "/home?" + query.toString();
+        });
+    }
+
+    function base64url(bytes) {
+      var binary = "";
+      bytes.forEach(function (value) {
+        binary += String.fromCharCode(value);
+      });
+      return window
+        .btoa(binary)
+        .replace(/\+/g, "-")
+        .replace(/\//g, "_")
+        .replace(/=+$/, "");
+    }
+
+    function finishSignIn() {
+      var params = new URLSearchParams(window.location.hash.slice(1));
+      if (!params.has("code")) {
+        return Promise.resolve(false);
+      }
+      var pendingAuth = readJson(window.sessionStorage, authKey);
+      if (!pendingAuth || params.get("state") !== pendingAuth.state) {
+        writeJson(window.sessionStorage, authKey, null);
+        history.replaceState(
+          null,
+          "",
+          window.location.pathname + window.location.search,
+        );
+        renderIdentity("Sign-in did not complete. Try again.");
+        return Promise.resolve(true);
+      }
+      var returnTo = window.location.origin + window.location.pathname;
+      return request("/api/guide/token", {
+        token: false,
+        method: "POST",
+        body: {
+          code: params.get("code"),
+          codeVerifier: pendingAuth.codeVerifier,
+          returnTo: returnTo,
+        },
+      })
+        .then(function (result) {
+          auth = {
+            accessToken: result.accessToken,
+            expiresAt: result.expiresAt,
+            user: result.user,
+          };
+          writeJson(window.localStorage, tokenKey, auth);
+          writeJson(window.sessionStorage, authKey, null);
+          history.replaceState(null, "", pendingAuth.returnLocation);
+          return true;
+        })
+        .catch(function (error) {
+          writeJson(window.sessionStorage, authKey, null);
+          history.replaceState(
+            null,
+            "",
+            window.location.pathname + window.location.search,
+          );
+          renderIdentity(errorMessage(error));
+          return true;
+        });
+    }
+
+    function revoke(switchAccount) {
+      request("/api/guide/token", { method: "DELETE" })
+        .catch(function () {})
+        .then(function () {
+          auth = null;
+          writeJson(window.localStorage, tokenKey, null);
+          threads = [];
+          renderRemote();
+          renderIdentity();
+          if (switchAccount) {
+            beginSignIn(true);
+          }
+        });
+    }
+
+    function acknowledged() {
+      var key = noticePrefix + auth.user.userId;
+      if (window.localStorage.getItem(key)) {
+        return true;
+      }
+      return false;
+    }
+
+    function openRemoteForm(target, label, operation, initial, needsNotice) {
+      var old = target.querySelector(":scope > .guide-comment-form");
+      if (old) {
+        old.remove();
+      }
+      var form = document.createElement("form");
+      form.className = "guide-comment-form";
+      var textarea = document.createElement("textarea");
+      textarea.className = "aira-textarea";
+      textarea.required = true;
+      textarea.maxLength = 4000;
+      textarea.value = initial || "";
+      form.appendChild(textarea);
+      var notice = null;
+      if (needsNotice && !acknowledged()) {
+        var noticeLabel = document.createElement("label");
+        notice = document.createElement("input");
+        notice.type = "checkbox";
+        notice.required = true;
+        noticeLabel.appendChild(notice);
+        noticeLabel.appendChild(
+          document.createTextNode(
+            " Other signed-in users will see this comment with your name and organization.",
+          ),
+        );
+        form.appendChild(noticeLabel);
+      }
+      var error = document.createElement("p");
+      error.className = "guide-form-error";
+      form.appendChild(error);
+      var submit = document.createElement("button");
+      submit.type = "submit";
+      submit.className = "aira-button aira-button--primary aira-button--small";
+      submit.textContent = label;
+      form.appendChild(submit);
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        var value = textarea.value.trim();
+        if (!value || (notice && !notice.checked)) {
+          return;
+        }
+        if (notice) {
+          try {
+            window.localStorage.setItem(noticePrefix + auth.user.userId, "yes");
+          } catch (storageError) {}
+        }
+        submit.disabled = true;
+        error.textContent = "";
+        operation(value)
+          .then(function (thread) {
+            if (thread) {
+              acceptThread(thread);
+            }
+            form.remove();
+          })
+          .catch(function (failure) {
+            submit.disabled = false;
+            error.textContent = errorMessage(failure);
+          });
+      });
+      target.appendChild(form);
+      textarea.focus();
+    }
+
+    function acceptThread(thread) {
+      var found = false;
+      threads = threads.map(function (current) {
+        if (current.id === thread.id) {
+          found = true;
+          return thread;
+        }
+        return current;
+      });
+      if (!found) {
+        threads.push(thread);
+      }
+      renderRemote();
+      restartPolling();
+    }
+
+    function showStatusError(error) {
+      if (!error.handled) {
+        renderIdentity(errorMessage(error));
+      }
+    }
+
+    function mergeChanges(changes) {
+      var changed = false;
+      (changes || []).forEach(function (incoming) {
+        var index = threads.findIndex(function (thread) {
+          return thread.id === incoming.id;
+        });
+        if (incoming.deleted) {
+          if (index >= 0) {
+            threads.splice(index, 1);
+            changed = true;
+          }
+          return;
+        }
+        if (index >= 0) {
+          threads[index] = incoming;
+        } else {
+          threads.push(incoming);
+        }
+        changed = true;
+      });
+      if (changed) {
+        renderRemote();
+      }
+      return changed;
+    }
+
+    function poll() {
+      if (
+        document.hidden ||
+        !validAuth() ||
+        !serverTime ||
+        !documentInfo ||
+        !documentInfo.permissions.canView
+      ) {
+        return;
+      }
+      request(
+        "/api/guide/" +
+          encodeURIComponent(documentKey) +
+          "/comments?since=" +
+          encodeURIComponent(serverTime),
+      )
+        .then(function (result) {
+          serverTime = result.serverTime;
+          reviewFlags = result.reviewFlags || [];
+          var changed = mergeChanges(result.comments);
+          renderRemote();
+          pollStep = changed
+            ? 0
+            : Math.min(pollStep + 1, pollDelays.length - 1);
+          schedulePoll(pollDelays[pollStep]);
+        })
+        .catch(function (error) {
+          if (!error.handled) {
+            schedulePoll(
+              pollDelays[Math.min(++pollStep, pollDelays.length - 1)],
+            );
+          }
+        });
+    }
+
+    function schedulePoll(delay) {
+      stopPolling();
+      if (!document.hidden) {
+        pollTimer = window.setTimeout(poll, delay === 0 ? 30000 : delay);
+      }
+    }
+    function stopPolling() {
+      if (pollTimer) {
+        window.clearTimeout(pollTimer);
+        pollTimer = null;
+      }
+    }
+    function restartPolling() {
+      pollStep = 0;
+      schedulePoll(30000);
+    }
+
+    function followRemoteHash() {
+      var match = window.location.hash.match(/^#comment-(\d+)$/);
+      if (!match) {
+        return;
+      }
+      var item = document.getElementById("comment-" + match[1]);
+      if (item) {
+        item.classList.add("guide-comment--target");
+        item.scrollIntoView({ block: "center" });
+      }
+    }
+
+    remoteBlocks.forEach(function (block) {
+      block.classList.add("guide-block");
+      var button = document.createElement("button");
+      button.type = "button";
+      button.className = "guide-comment-button";
+      button.textContent = "\u{1F4AC}";
+      button.setAttribute("aria-label", "Comment on this paragraph");
+      button.addEventListener("click", function () {
+        if (
+          documentInfo &&
+          documentInfo.isActive &&
+          documentInfo.permissions.canComment
+        ) {
+          openRemoteForm(
+            block,
+            "Add comment",
+            function (text) {
+              return store.add(block, text);
+            },
+            "",
+            true,
+          );
+        }
+      });
+      block.appendChild(button);
+    });
+    remoteToggle.addEventListener("click", function () {
+      var hidden = document.body.classList.toggle("guide-comments-hidden");
+      remoteToggle.textContent = hidden ? "Show comments" : "Hide comments";
+      remoteToggle.setAttribute("aria-pressed", hidden ? "false" : "true");
+    });
+    window.addEventListener("hashchange", followRemoteHash);
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) {
+        stopPolling();
+      } else {
+        pollStep = 0;
+        poll();
+      }
+    });
+
+    finishSignIn().then(function () {
+      var marker =
+        new URL(window.location.href).searchParams.get("interophub") ===
+        "signin";
+      if (marker) {
+        var clean = new URL(window.location.href);
+        clean.searchParams.delete("interophub");
+        history.replaceState(null, "", clean.href);
+        if (!validAuth()) {
+          beginSignIn(false);
+          return;
+        }
+      }
+      renderIdentity();
+      if (validAuth()) {
+        store
+          .load()
+          .then(function () {
+            renderIdentity();
+            renderRemote();
+            store.subscribe();
+          })
+          .catch(showStatusError);
+      } else {
+        renderRemote();
+      }
+    });
+  }
 })();
 
 </script>
