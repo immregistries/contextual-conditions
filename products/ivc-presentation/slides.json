@@ -1,0 +1,304 @@
+{
+  "core_release": "v0.3.0",
+  "family": "Blue",
+  "slides": [
+    {
+      "layout": "Rapid - Title - Blue Light",
+      "title": "Contextual Conditions and IVC",
+      "subtitle": "Three decisions for today · Working proposal, not a standard",
+      "content": [],
+      "speaker_notes": "Purpose: re-introduce Contextual Conditions as they are now defined, explain the role proposed for IVC, and ask the group for three agreements: IVC's scope, taking on Contextual Conditions, and one naming rule. Contextual Conditions remain a working proposal for community discussion; nothing here is a standard or a final decision.",
+      "sources": [
+        "content/00-status-and-scope.md",
+        "products/ivc-presentation/brief.yml"
+      ]
+    },
+    {
+      "pattern": "timeline",
+      "title": "A lot has moved since we last discussed this",
+      "milestones": [
+        {
+          "when": "Feb 2026",
+          "text": "Proposal gives IVC namespaces"
+        },
+        {
+          "when": "Sep 2026",
+          "text": "Concept page revised"
+        },
+        {
+          "when": "Oct 2026",
+          "text": "IVC proof of concept; Topic Reference"
+        },
+        {
+          "when": "Nov 2026",
+          "text": "v0.3: three roles, CDSi"
+        }
+      ],
+      "speaker_notes": "The February proposal described four roles (Code System, Publishing, Namespace, and CDS Authority) and assigned IVC responsibility for coordinating namespaces and publication. The concept has since been tightened: three roles (WD-10), CDSi patient observations recognized as Contextual Conditions (WD-9), and the concept published as a commentable Topic Reference for InteropHub topic 7, now at version 0.3. The IVC proof-of-concept pages went up on 10 October, unlinked and marked as a proof of concept.",
+      "sources": [
+        "content/00-status-and-scope.md",
+        "content/90-working-decisions.md",
+        "products/ivc-presentation/brief.yml"
+      ]
+    },
+    {
+      "pattern": "before_after",
+      "title": "CDS needs more than identity and immunization history",
+      "before": {
+        "label": "Without",
+        "heading": "Send the record",
+        "points": [
+          "The infant's forecast needs a fact from the mother's record",
+          "Sending her record is complex and discloses too much",
+          "Or each interface invents its own field"
+        ]
+      },
+      "after": {
+        "label": "With",
+        "heading": "Send one assertion",
+        "points": [
+          "Birth mother received RSV vaccine during the relevant pregnancy: Yes",
+          "One coded input, defined by the authority",
+          "New guidance adds vocabulary, not interface designs"
+        ]
+      },
+      "speaker_notes": "Maternal RSV made the need concrete. When the birth mother received RSV vaccine during pregnancy, the infant generally does not need RSV monoclonal antibody, so the infant's evaluation needs one fact about another person. Contextual Conditions are a third input to immunization CDS, after patient identification and immunization history.",
+      "sources": [
+        "content/02-the-problem.md"
+      ]
+    },
+    {
+      "pattern": "cards",
+      "title": "A Contextual Condition is what CDS must know to apply the guidance",
+      "cards": [
+        {
+          "heading": "Defined by the guidance",
+          "text": "Not by EHR fields or a clinical model. The authority assigns meaning and datatype."
+        },
+        {
+          "heading": "Definition, not assertion",
+          "text": "The published definition is stable; the assertion is one value for one evaluation."
+        },
+        {
+          "heading": "Omitted means unknown",
+          "text": "A missing condition is never No. Dates and numbers keep their datatype."
+        }
+      ],
+      "speaker_notes": "The starting question: what must the recommendation system know to apply this guidance? A condition is a circumstance relevant to applying guidance, not necessarily a diagnosis: a past event, a future intention, an exposure, or another person. Examples: patient is pregnant; patient has had varicella disease; patient plans to travel to Nigeria; number of weeks of gestation. The requesting system determines the value; the engine uses it without reconstructing the evidence.",
+      "sources": [
+        "content/03-the-concept.md",
+        "content/05-evaluation-and-time.md"
+      ]
+    },
+    {
+      "pattern": "split",
+      "eyebrow": "Already in practice",
+      "message": "Built independently, twice",
+      "items": [
+        {
+          "lead": "United States.",
+          "text": "CDSi patient observations: 278 coded observations in Supporting Data 4.65."
+        },
+        {
+          "lead": "France.",
+          "text": "Syadem's coded statements behind MesVaccins: 652 concepts."
+        },
+        {
+          "lead": "Shared need, not equivalence.",
+          "text": "Both identified maternal RSV vaccination. Matching meaning still needs comparison."
+        }
+      ],
+      "speaker_notes": "CDSi named these patient observations before the Contextual Conditions concept existed; WD-9 records that they are Contextual Conditions as defined here. The value of that work is not the list alone but the connection of each input to the logic that uses it. Counts are from the IVC publication plan: 278 observations in CDSi Supporting Data 4.65, and 652 concepts in the Syadem set. Similar labels, or independent identification of the same factor, are not evidence of equivalence.",
+      "sources": [
+        "content/02-the-problem.md",
+        "content/03-the-concept.md",
+        "products/ivc-presentation/brief.yml"
+      ]
+    },
+    {
+      "pattern": "cards",
+      "title": "Three roles, and IVC is the terminology steward",
+      "cards": [
+        {
+          "heading": "Schedule Authority",
+          "text": "Defines what each condition means for its guidance."
+        },
+        {
+          "heading": "Terminology steward",
+          "text": "Stable identifiers, namespaces, versions, distribution. Does not reinterpret meaning."
+        },
+        {
+          "heading": "Knowledge Base",
+          "text": "Applies the guidance and decides how conditions affect recommendations."
+        }
+      ],
+      "speaker_notes": "These replace the four roles of the original proposal: Code System Authority becomes the Schedule Authority; Publishing and Namespace Authority become the terminology steward; CDS Authority becomes the Knowledge Base (WD-10). The architecture does not depend on IVC. That is a strength: IVC organizes and documents what authorities define, rather than controlling it.",
+      "sources": [
+        "content/03-the-concept.md",
+        "content/90-working-decisions.md"
+      ]
+    },
+    {
+      "pattern": "split",
+      "eyebrow": "Why identifiers",
+      "message": "A code means nothing in a message without a stable code system name",
+      "items": [
+        {
+          "lead": "Every coded value",
+          "text": "carries a code and the code system of the authority that defines it."
+        },
+        {
+          "lead": "CDSi codes need a canonical name.",
+          "text": "IVC provides one, independently: ivci.org/contextual-conditions/usa/cdc-cdsi"
+        },
+        {
+          "lead": "Not an endorsement.",
+          "text": "CDSi remains the source; this is not a CDC publication."
+        }
+      ],
+      "speaker_notes": "Pause for discussion here. Illustration in HL7 v2: OBX-3 = 278 ^ Birth mother received RSV vaccine during pregnancy ^ https://ivci.org/contextual-conditions/usa/cdc-cdsi. How the canonical is carried in HL7 v2 and FHIR is still open and belongs to topics 137 and 1. IVC is not aware of a canonical URI assigned by CDC to these codes; IVC represents them independently so they can be used consistently in messages and compared with other code systems. Source: IVC publication plan.",
+      "sources": [
+        "content/05-evaluation-and-time.md",
+        "products/ivc-presentation/brief.yml"
+      ]
+    },
+    {
+      "pattern": "takeaway",
+      "label": "Decision 1",
+      "title": "IVC's scope covers coding concepts beyond vaccine codes",
+      "takeaway": "IVC documents and organizes the coding concepts and resources that already exist, across countries.",
+      "points": [
+        "Vaccine codes remain central",
+        "Contextual Conditions are the first concept beyond them",
+        "Organize what exists; do not redefine it"
+      ],
+      "speaker_notes": "Ask for agreement. This is the scope described in the IVC Identifiers and Namespaces proposal (IVC-Website, discussion/identifiers-and-namespaces.md). If agreed, the topic 31 overview on InteropHub, which still describes CVX only, should be updated.",
+      "sources": [
+        "products/ivc-presentation/brief.yml"
+      ]
+    },
+    {
+      "pattern": "process",
+      "title": "Decision 2: IVC publishes Contextual Condition code systems",
+      "steps": [
+        {
+          "label": "Take the source",
+          "text": "CDSi Supporting Data; Syadem's set"
+        },
+        {
+          "label": "Keep it whole",
+          "text": "Every source field kept, nothing silently corrected"
+        },
+        {
+          "label": "Flag issues",
+          "text": "Validation report and known-issues list"
+        },
+        {
+          "label": "Publish separately",
+          "text": "One code system per authority, never merged"
+        }
+      ],
+      "speaker_notes": "Ask for agreement. The proof of concept is already at ivci.org/contextual-conditions, marked as a proof of concept and not indexed. Each release publishes a FHIR CodeSystem, a human-readable page, a lossless source file, provenance, and a validation report. Crosswalks are not part of the first release. Source: IVC publication plan.",
+      "sources": [
+        "content/03-the-concept.md",
+        "products/ivc-presentation/brief.yml"
+      ]
+    },
+    {
+      "pattern": "table",
+      "title": "Decision 3: one naming rule for everything IVC publishes",
+      "columns": [
+        "Segment",
+        "Identifies",
+        "Rule"
+      ],
+      "rows": [
+        [
+          "Pattern",
+          "",
+          "ivci.org/{concept-name}/{jurisdiction}/{local-id}"
+        ],
+        [
+          "concept-name",
+          "The kind of concept",
+          "IVC-approved; lowercase, hyphenated plural noun; not cryptic or too long"
+        ],
+        [
+          "jurisdiction",
+          "Whose resources are named",
+          "ISO 3166-1 alpha-3 in lowercase: usa, fra"
+        ],
+        [
+          "local-id",
+          "One resource in the jurisdiction",
+          "Assigned by IVC; readable"
+        ],
+        [
+          "Examples",
+          "",
+          "ivci.org/contextual-conditions/usa/cdc-cdsi\nivci.org/contextual-conditions/fra/syadem"
+        ]
+      ],
+      "column_widths": [
+        2,
+        2.4,
+        6
+      ],
+      "speaker_notes": "Ask for agreement. The rule: https://ivci.org/{concept-name}/{jurisdiction}/{local-id}. It generalizes the earlier Contextual Conditions plan, which used country and authority, so the same rule can be reused for other kinds of concepts. The full URL identifies the resource itself, such as the code system in a coded value, and resolves to a page about it. Source: IVC Identifiers and Namespaces proposal.",
+      "sources": [
+        "products/ivc-presentation/brief.yml"
+      ]
+    },
+    {
+      "pattern": "cards",
+      "title": "Names scope; they do not endorse",
+      "cards": [
+        {
+          "heading": "Scope only",
+          "text": "fra or usa is a naming boundary, not government authorship or endorsement."
+        },
+        {
+          "heading": "Named by IVC",
+          "text": "Chosen by participants who know the jurisdiction, to tell efforts apart."
+        },
+        {
+          "heading": "Permanent",
+          "text": "Never reassigned. A retired resource still resolves, marked retired."
+        }
+      ],
+      "speaker_notes": "This is the critical point. fra/syadem does not mean the French government wrote or endorsed the Syadem set; usa/cdc-cdsi does not mean CDC asked IVC to publish. Names are not chosen by the jurisdiction's government. IVC assigns them so they are unique and easy to read in messages. Identifiers are very stable, though there is no guarantee every resource stays in use. Source: IVC Identifiers and Namespaces proposal.",
+      "sources": [
+        "products/ivc-presentation/brief.yml"
+      ]
+    },
+    {
+      "pattern": "split",
+      "eyebrow": "Next",
+      "message": "What we work out together, and what waits",
+      "items": [
+        {
+          "lead": "Stable identifiers.",
+          "text": "What one requires in practice."
+        },
+        {
+          "lead": "Requirements.",
+          "text": "What a published resource carries, and how FHIR and HL7 v2 cite it."
+        },
+        {
+          "lead": "Open names.",
+          "text": "Jurisdictions other than countries; NUVA's identifier."
+        },
+        {
+          "lead": "Later, not now.",
+          "text": "Mappings between authorities, as NUVA does for vaccines."
+        }
+      ],
+      "speaker_notes": "Requirements connect to today's agenda item on code system metadata standards. The concept document's list of what a definition contains is offered as the per-concept content requirement. Mappings are a likely future need and IVC may be a good home for them, with expertise to make them systematic, but they are not proposed now. Follow along: the Contextual Conditions Topic Reference (InteropHub topic 7, https://immregistries.github.io/contextual-conditions/latest/) and the IVC topic (topic 31). IVC's practices are planned to move into their own Topic Reference for topic 31.",
+      "sources": [
+        "content/03-the-concept.md",
+        "content/00-status-and-scope.md",
+        "products/ivc-presentation/brief.yml"
+      ]
+    }
+  ]
+}

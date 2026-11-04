@@ -1,0 +1,46 @@
+product_id: ivc-contextual-conditions-presentation
+status: draft
+core_release: v0.3.0
+canonical_source_revision: v0.3.0
+
+brief: brief.yml
+product_source: slides.json
+output: ../../output/ivc-contextual-conditions.pptx
+
+build:
+  date: 2026-11-03
+  method: process/tools/build_rapid_presentation.py
+  template: process/templates/powerpoint/AIRA Rapid Presentation Template.pptx
+
+sources:
+  - ../../content/00-status-and-scope.md
+  - ../../content/02-the-problem.md
+  - ../../content/03-the-concept.md
+  - ../../content/05-evaluation-and-time.md
+  - ../../content/90-working-decisions.md
+
+# Slides on IVC's scope, publication, and naming cite brief.yml, which pins
+# the IVC-Website commit their substance comes from (external_sources).
+
+new_or_changed_claims: []
+edge_innovations_awaiting_core_adjudication: []
+deliberate_departures:
+  - Slide 5 gives observation and concept counts (278 CDSi, 652 Syadem) from
+    the IVC publication plan; the core document does not state counts.
+unresolved_issues:
+  - The CONFIRM on the French work (content/02-the-problem.md) is still open;
+    slide 5 states the Syadem set as published by IVC, not the French claims.
+
+review:
+  subject_matter:
+    reviewer: null
+    date: null
+    status: pending
+  audience:
+    reviewer: null
+    date: null
+    status: pending
+  publication:
+    approver: null
+    date: null
+    status: pending

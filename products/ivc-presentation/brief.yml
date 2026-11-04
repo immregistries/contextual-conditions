@@ -10,7 +10,7 @@ product:
   template: process/templates/powerpoint
 
 audience:
-  name: Immunization Vocabularies Collaboration (IVC) working group
+  name: Immunization Vocabularies Collaborative (IVC) working group
   assumed_knowledge:
     - Familiar with immunization vocabularies, NUVA, and code systems
     - Has seen the original Contextual Conditions proposal, which gave IVC a
