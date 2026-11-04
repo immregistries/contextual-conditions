@@ -74,7 +74,8 @@
 - Keep concept and transport separate. HL7 v2, FHIR, or other representations
   are bindings of the concept, not the concept itself. Describe them only at a
   general level and link to the related InteropHub topics listed in
-  `content/01-related-work.md` for detail; do not replicate their
+  the Related work section of
+  `content/00-status-and-scope.md` for detail; do not replicate their
   specifications here.
 - A date meaningful to a condition is modeled as a separate Contextual
   Condition with a date value, never through HL7 v2 OBX-14 or FHIR Observation

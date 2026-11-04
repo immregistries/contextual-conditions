@@ -29,7 +29,7 @@ on it.
 This project covers the **concept**: its definition, principles, boundaries,
 and working decisions. It describes the HL7 v2 and FHIR representations only at
 a general level; their detailed specifications belong to the related
-[InteropHub topics](content/01-related-work.md), which depend on this concept.
+[InteropHub topics](content/00-status-and-scope.md#related-work), which depend on this concept.
 It does not publish Contextual Condition codes or
 values. That is an operational activity, currently being explored by the
 Immunization Vocabularies Collaborative at <https://ivci.org/contextual-conditions/>

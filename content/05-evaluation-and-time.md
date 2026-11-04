@@ -1,4 +1,4 @@
-# Evaluation Scope, Absence, and Time
+# Evaluation, Time, and Representation
 
 ## Evaluation-scoped and stateless
 
@@ -37,6 +37,20 @@ A requesting system may explicitly supply No when it knows that a Boolean
 condition does not apply. False and unknown sometimes produce the same
 recommendation, but they mean different things and some guidance treats them
 differently.
+
+<!-- anchor: distinct-input-states -->
+
+Four states are never interchangeable:
+
+| State | Meaning |
+|---|---|
+| Unknown | The condition was not supplied. |
+| Explicit No | The requesting system asserts that the condition does not apply. |
+| Unsupported | The condition was supplied, but the selected Knowledge Base does not use it. |
+| Invalid | The condition was supplied with a value that does not fit its definition, such as the wrong datatype. |
+
+How an engine reports unsupported and invalid conditions is defined by each CDS
+interface, not by this concept.
 
 ## Evaluation date
 
@@ -97,8 +111,57 @@ Authority's decision, not the framework's.
 
 ## Dates are conditions
 
+<!-- anchor: date-as-own-condition -->
+
 When guidance needs a date, such as the start of a pregnancy or the date of a
-transplant, that date is its own Contextual Condition with a date value. It is
-not inferred from, or carried in, a representation's own timestamp fields.
-Those fields describe the record or the message, not the meaning of the
-condition.
+transplant, that date is a Contextual Condition of its own, with a date value
+(WD-8). It is not inferred from, or carried in, a representation's own date
+fields, such as HL7 v2 OBX-14 or the date elements of a FHIR Observation. Those
+fields describe the record or the message, not the meaning of the condition.
+
+## Representing Contextual Conditions {#representations}
+
+Contextual Conditions are a concept, not a message format. HL7 v2 and FHIR are
+the two representations in current use. This section describes what any
+representation must convey and which principles it must preserve; detailed
+specifications belong to the [related topics](00-status-and-scope.md#related-work)
+(WD-5).
+
+### What every representation conveys
+
+For each asserted Contextual Condition, a representation conveys:
+
+- **the condition**, identified by its code and by the code system of the
+  Schedule Authority that defines it, so that the authority is always explicit;
+  and
+- **the asserted value**, in the condition's datatype.
+
+### Principles every representation preserves
+
+- **Sparse.** Only asserted conditions are sent. There is no "unknown" value to
+  transmit, and a receiver never treats a missing condition as
+  [No](#explicit-no-vs-unknown).
+- **Dates are conditions.** A meaningful date is sent as its own
+  [Contextual Condition](#date-as-own-condition).
+- **Vocabulary, not structure.** A new condition is a vocabulary addition. It
+  does not need a new segment, element, extension, or message design.
+- **Support is reported, not assumed.** Sending a condition does not guarantee
+  that it influenced the result. Each representation defines how an engine
+  reports the [unsupported and invalid states](#distinct-input-states).
+
+### HL7 v2
+
+In HL7 v2, each Contextual Condition is a standard OBX observation. OBX-3
+identifies the condition, using the Schedule Authority's code system, and OBX-5
+carries the asserted value. No new segments or message structures are
+introduced. Use in immunization updates (VXU) and queries (QBP), including what
+an IIS may do with the conditions it receives, is defined by topics 137, 140,
+and 141.
+
+### FHIR
+
+In FHIR, Contextual Conditions are supplied as inputs to the immunization CDS
+interface defined by the ImmDS + HALO work, where they are known as HALO
+factors. The FHIR representation, including how an engine reports supported
+conditions, is defined by
+[topic 1](https://informatics.immregistries.org/hub/es/topic/1).

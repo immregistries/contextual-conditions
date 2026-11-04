@@ -15,12 +15,13 @@ it can be revisited.
 | WD-6 | HALO factors, from the Immunization CDS (ImmDS + HALO) work, are Contextual Conditions as defined in this document. | Project direction, October 2026 |
 | WD-7 | This document describes what a Contextual Condition is conceptually. It does not set rules for who creates, determines, or stores Contextual Conditions, or for how they are included in messages and workflows. IIS storage rules belong to topic 140; topic 141 also touches on storage and is likely to prohibit storing conditions supplied in a query. Resolves OQ-2. | Project direction, October 2026 |
 | WD-8 | When a date is meaningful to a Contextual Condition, it is modeled as a separate Contextual Condition with a date value. It is not conveyed through a representation's own date fields, such as HL7 v2 OBX-14 or the date elements of a FHIR Observation. This modeling rule applies to every representation and is in scope. | Project direction, October 2026 |
+| WD-9 | The patient observations defined by the US CDSi resources are Contextual Conditions as defined in this document; CDSi named them before this concept was developed. | Project direction, November 2026; [CDSi Logic Specification for ACIP Recommendations, version 4.6](https://www.cdc.gov/iis/downloads/logic-spec-acip-rec-4.6.pdf) |
 
 ## Open questions
 
-These were identified by comparing existing sources; see the
+OQ-1 to OQ-6 were identified by comparing existing sources; see the
 [initial source review](../review/2026-10-29-initial-source-review.md) for
-detail. Each needs discussion before the affected text is settled. Questions
+detail. OQ-7 to OQ-10 arose from the 3 November 2026 project discussion. Each needs discussion before the affected text is settled. Questions
 that belong to a related topic are referred there rather than answered here.
 
 | ID | Question | Sources in tension | Status |
@@ -31,3 +32,7 @@ that belong to a related topic are referred there rather than answered here.
 | OQ-4 | What are the current names for the governance roles? | The primer names four roles (Code System, Publishing, Namespace, and CDS Authority); the Confluence concept page uses Schedule Authority, terminology steward, and Knowledge Base. | Open |
 | OQ-5 | Is there a nullified state that removes a previously stored assertion? | The primer describes one; the Confluence concept page's stateless model has none. Depends on OQ-2. | Referred to topic 140 under WD-7 |
 | OQ-6 | Is the numeric datatype an integer, or any number? | The Confluence concept page names date or integer values; the draft French inventory includes Number values such as laboratory results, height, and weight. | Open |
+| OQ-7 | When the kind of evidence matters to the guidance, such as a self-reported versus a clinically verified value, is that requirement part of the condition's definition, a separate condition, or a determination policy outside the definition? | The concept describes a condition as independent of how it was determined; the 3 November 2026 discussion notes that self-reported and verified values are not automatically interchangeable. | Open |
+| OQ-8 | When an existing terminology concept, such as one in SNOMED CT, exactly matches a condition's meaning, may it serve as the condition's identifier, or is it recorded only as a mapping? | The concept does not use clinical terminologies directly as the Contextual Condition vocabulary; the 3 November 2026 discussion says exact matches should be recognized and reused or mapped. | Open |
+| OQ-9 | What may a CDS engine do with an assertion beyond using it: validate it against the definition, report it as unsupported, or detect and handle contradictory assertions? | The concept says the engine accepts the assertion without judging how it was derived; the 3 November 2026 discussion treats validation, unsupported-input reporting, and contradiction handling as legitimate engine responsibilities. Reporting belongs to each CDS interface. | Open |
+| OQ-10 | Who maintains evidence and determination mappings for a condition, and where are they published? | The 3 November 2026 discussion describes mappings as artifacts maintained alongside definitions; this concept leaves determination to requesting systems, and workflow rules to topics 140 and 141. | Open |
