@@ -65,8 +65,9 @@ interoperability community.
 
 - **Publishing Contextual Condition codes.** Code systems and their values are
   operational publications. The Immunization Vocabularies Collaborative (IVC)
-  is exploring how to publish them at <https://ivci.org/contextual-conditions/>.
-  That publication is itself a proposal under discussion.
+  is exploring how to publish them at <https://ivci.org/contextual-conditions/>,
+  under a [naming rule](https://github.com/IVC-NUVA/IVC-Website/blob/main/discussion/identifiers-and-namespaces.md) it proposes for the resources it publishes. Both are
+  proposals under discussion.
 - **Clinical policy and forecasting logic.** Schedule Authorities decide which
   factors affect their guidance and what each condition means. Knowledge Bases
   decide how conditions affect recommendations.
@@ -413,8 +414,14 @@ and coordination mechanism for these code systems, and may support future work
 on relationships between authority-specific concepts. IVC is not part of the
 clinical decision-making process and is not required by the Contextual
 Conditions architecture. How code systems are actually published is outside
-this document.
-<!-- CONFIRM: Role vocabulary. Earlier sources describe four roles (Code System, Publishing, Namespace, and CDS Authority); this section follows the September 2026 concept page. See OQ-4. -->
+this document. IVC's proposed rule for naming the code systems it publishes is
+in [IVC Identifiers and Namespaces](https://github.com/IVC-NUVA/IVC-Website/blob/main/discussion/identifiers-and-namespaces.md).
+
+The concept uses three roles: Schedule Authority, terminology steward, and
+Knowledge Base (WD-10). Earlier descriptions used four roles, Code System,
+Publishing, Namespace, and CDS Authority; the Schedule Authority corresponds to
+the first, the terminology steward to the second and third, and the Knowledge
+Base to the fourth.
 
 ## Evaluating a candidate condition {#applying-the-concept}
 
@@ -750,6 +757,7 @@ it can be revisited.
 | WD-7 | This document describes what a Contextual Condition is conceptually. It does not set rules for who creates, determines, or stores Contextual Conditions, or for how they are included in messages and workflows. IIS storage rules belong to topic 140; topic 141 also touches on storage and is likely to prohibit storing conditions supplied in a query. Resolves OQ-2. | Project direction, October 2026 |
 | WD-8 | When a date is meaningful to a Contextual Condition, it is modeled as a separate Contextual Condition with a date value. It is not conveyed through a representation's own date fields, such as HL7 v2 OBX-14 or the date elements of a FHIR Observation. This modeling rule applies to every representation and is in scope. | Project direction, October 2026 |
 | WD-9 | The patient observations defined by the US CDSi resources are Contextual Conditions as defined in this document; CDSi named them before this concept was developed. | Project direction, November 2026; [CDSi Logic Specification for ACIP Recommendations, version 4.6](https://www.cdc.gov/iis/downloads/logic-spec-acip-rec-4.6.pdf) |
+| WD-10 | The concept uses three roles: Schedule Authority, terminology steward, and Knowledge Base. The four roles of earlier sources (Code System, Publishing, Namespace, and CDS Authority) fold into them. Resolves OQ-4. | Project direction, November 2026 |
 
 ## Open questions
 
@@ -763,7 +771,7 @@ that belong to a related topic are referred there rather than answered here.
 | OQ-1 | Does this document include an HL7 v2 representation, or only the transport-neutral concept, with HL7 v2 and other representations documented elsewhere? | The Confluence concept page lists transport representations as a non-goal; the HL7 v2 Confluence page is a child of it. | Resolved by WD-5 |
 | OQ-2 | May an IIS store Contextual Conditions received in a VXU? | The Confluence concept page (September 2026) describes conditions as evaluation-scoped and leaves longitudinal storage to separate work; the HL7 v2 page (June 2026) and the primer allow optional storage under local policy. | Resolved by WD-7; storage rules belong to topic 140 |
 | OQ-3 | Which OBX-2 value type carries a Boolean Contextual Condition? | The primer's example uses `ID`; the HL7 v2 Confluence page uses `CE`. | Referred to topic 137 under WD-5 |
-| OQ-4 | What are the current names for the governance roles? | The primer names four roles (Code System, Publishing, Namespace, and CDS Authority); the Confluence concept page uses Schedule Authority, terminology steward, and Knowledge Base. | Open |
+| OQ-4 | What are the current names for the governance roles? | The primer names four roles (Code System, Publishing, Namespace, and CDS Authority); the Confluence concept page uses Schedule Authority, terminology steward, and Knowledge Base. | Resolved by WD-10 |
 | OQ-5 | Is there a nullified state that removes a previously stored assertion? | The primer describes one; the Confluence concept page's stateless model has none. Depends on OQ-2. | Referred to topic 140 under WD-7 |
 | OQ-6 | Is the numeric datatype an integer, or any number? | The Confluence concept page names date or integer values; the draft French inventory includes Number values such as laboratory results, height, and weight. | Open |
 | OQ-7 | When the kind of evidence matters to the guidance, such as a self-reported versus a clinically verified value, is that requirement part of the condition's definition, a separate condition, or a determination policy outside the definition? | The concept describes a condition as independent of how it was determined; the 3 November 2026 discussion notes that self-reported and verified values are not automatically interchangeable. | Open |

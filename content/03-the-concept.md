@@ -196,8 +196,16 @@ and coordination mechanism for these code systems, and may support future work
 on relationships between authority-specific concepts. IVC is not part of the
 clinical decision-making process and is not required by the Contextual
 Conditions architecture. How code systems are actually published is outside
-this document.
-<!-- CONFIRM: Role vocabulary. Earlier sources describe four roles (Code System, Publishing, Namespace, and CDS Authority); this section follows the September 2026 concept page. See OQ-4. -->
+this document. IVC's proposed rule for naming the code systems it publishes is
+in [IVC Identifiers and Namespaces](https://github.com/IVC-NUVA/IVC-Website/blob/main/discussion/identifiers-and-namespaces.md).
+
+<!-- anchor: three-roles -->
+
+The concept uses three roles: Schedule Authority, terminology steward, and
+Knowledge Base (WD-10). Earlier descriptions used four roles, Code System,
+Publishing, Namespace, and CDS Authority; the Schedule Authority corresponds to
+the first, the terminology steward to the second and third, and the Knowledge
+Base to the fourth.
 
 ## Evaluating a candidate condition {#applying-the-concept}
 

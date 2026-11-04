@@ -8,4 +8,5 @@ product go back into `content/` first.
 | Product | Purpose |
 |---|---|
 | [confluence/](confluence/brief.yml) | The HL7 PHWG Confluence pages used for sharing and feedback |
+| [ivc-presentation/](ivc-presentation/brief.yml) | Presentation to the IVC working group on the concept and IVC's role |
 | [web-guide/](web-guide/brief.yml) | The published Topic Reference on GitHub Pages, with on-page comments |

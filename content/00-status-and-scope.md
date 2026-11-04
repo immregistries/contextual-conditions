@@ -49,8 +49,9 @@ interoperability community.
 
 - **Publishing Contextual Condition codes.** Code systems and their values are
   operational publications. The Immunization Vocabularies Collaborative (IVC)
-  is exploring how to publish them at <https://ivci.org/contextual-conditions/>.
-  That publication is itself a proposal under discussion.
+  is exploring how to publish them at <https://ivci.org/contextual-conditions/>,
+  under a [naming rule](https://github.com/IVC-NUVA/IVC-Website/blob/main/discussion/identifiers-and-namespaces.md) it proposes for the resources it publishes. Both are
+  proposals under discussion.
 - **Clinical policy and forecasting logic.** Schedule Authorities decide which
   factors affect their guidance and what each condition means. Knowledge Bases
   decide how conditions affect recommendations.

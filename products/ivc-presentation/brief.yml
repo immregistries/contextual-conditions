@@ -1,0 +1,140 @@
+id: ivc-contextual-conditions-presentation
+status: draft
+core_release: null
+
+product:
+  type: presentation
+  format: PowerPoint, AIRA rapid presentation template
+  length: about 12 slides; length is a limit, not a target
+  presentation_time: null
+  template: process/templates/powerpoint
+
+audience:
+  name: Immunization Vocabularies Collaboration (IVC) working group
+  assumed_knowledge:
+    - Familiar with immunization vocabularies, NUVA, and code systems
+    - Has seen the original Contextual Conditions proposal, which gave IVC a
+      larger and differently named role than the current concept document
+    - May not have followed the Contextual Conditions concept work since then
+    - Includes CDC participants
+
+purpose: >-
+  Re-introduce Contextual Conditions as they are now defined, explain the role
+  proposed for IVC, and ask the group to agree to it.
+
+desired_outcome: >-
+  The group shares one understanding of what Contextual Conditions are and of
+  IVC's role, and agrees to three things: IVC's scope covers coding concepts
+  beyond vaccine codes; IVC takes on publishing Contextual Condition code
+  systems; and IVC adopts the general naming rule for the resources it
+  publishes.
+
+# Sections in order. Each names where its substance comes from. A slide may
+# simplify its source but must not reverse or overstate it.
+outline:
+  - section: The concept, re-introduced
+    job: Establish a shared understanding before asking for decisions.
+    points:
+      - The starting question; definition versus assertion; omission is unknown
+      - The authority defines meaning; similar labels are not equivalent
+      - CDSi patient observations are Contextual Conditions (WD-9)
+      - Concept, not transport
+    sources:
+      - ../../content/00-status-and-scope.md
+      - ../../content/02-the-problem.md
+      - ../../content/03-the-concept.md
+      - ../../content/05-evaluation-and-time.md
+  - section: Where IVC fits
+    job: Show IVC as the terminology steward, organizing rather than defining.
+    points:
+      - Three roles (WD-10); IVC is the terminology steward
+      - The architecture does not depend on IVC, so IVC organizes rather than
+        controls
+      - IVC gives the CDSi observation codes a stable identifier, represented
+        independently of the CDSi project, so they can be used in messages
+        and compared with other code systems; CDSi remains the source
+      - Faithful republication; independent code systems per authority
+    sources:
+      - ../../content/03-the-concept.md#authorities
+      - IVC-Website discussion/contextual-conditions-canonical-publication-plan.md
+  - section: "Decision 1: IVC's scope"
+    job: Confirm that IVC documents and organizes coding concepts and resources
+      across countries, beyond vaccine codes.
+    sources:
+      - IVC-Website discussion/identifiers-and-namespaces.md, Purpose
+  - section: "Decision 2: IVC takes on Contextual Conditions"
+    job: Ask the group to adopt the CDC CDSi and Syadem publications as IVC work.
+    sources:
+      - IVC-Website discussion/contextual-conditions-canonical-publication-plan.md
+      - https://ivci.org/contextual-conditions/
+  - section: "Decision 3: the naming rule"
+    job: Ask the group to adopt https://ivci.org/{concept-name}/{jurisdiction}/{local-id}.
+    points:
+      - What each segment means, with the two Contextual Conditions examples
+      - The jurisdiction scopes names only and implies no endorsement
+      - IVC assigns names, chosen by participants who know the jurisdiction
+      - Identifiers are permanent; retired resources still resolve
+    sources:
+      - IVC-Website discussion/identifiers-and-namespaces.md
+  - section: Work after agreement
+    job: Present the open requirements as the working agenda, each with its
+      existing draft as a starting point.
+    points:
+      - What a stable identifier requires in practice
+      - Publication requirements; the concept document's list of what a
+        definition contains is offered as the per-concept content requirement
+      - Representation in FHIR and HL7 v2
+      - Jurisdictions other than countries, and NUVA's identifier
+    sources:
+      - IVC-Website discussion/identifiers-and-namespaces.md, Open questions
+      - IVC-Website discussion/contextual-conditions-canonical-publication-plan.md
+      - ../../content/03-the-concept.md#definition-contents
+  - section: Later, not now
+    job: Acknowledge mappings without proposing them.
+    points:
+      - Mappings between authorities, as NUVA does for vaccines, are a likely
+        future need; IVC may be a good home and could help make them
+        systematic
+    sources:
+      - IVC-Website discussion/identifiers-and-namespaces.md
+      - ../../content/03-the-concept.md#mapping-not-equivalence
+
+emphasize:
+  - The three decisions sought, stated plainly
+  - The jurisdiction segment is for name scoping only, never endorsement
+  - Contextual Conditions remain a working proposal, not a standard
+
+exclude_or_deemphasize:
+  - Proposing mappings or a crosswalk now
+  - Detailed HL7 v2 or FHIR specifications (topics 1, 137, 140, 141)
+  - Any statement of CDC's or CDSi's position on IVC's work; CDC participants
+    can speak for themselves
+  - Repository and build detail
+
+tone:
+  - Plain language
+  - Collegial; asking for agreement, not announcing it
+
+# Sources outside this repository. The product check does not watch these, so
+# review this brief whenever they change and move the pinned commit forward.
+external_sources:
+  - repository: https://github.com/IVC-NUVA/IVC-Website
+    commit: ac5da87
+    files:
+      - discussion/identifiers-and-namespaces.md
+      - discussion/contextual-conditions-canonical-publication-plan.md
+
+assumptions:
+  - The deck is built from the next tagged core release, after WD-9, WD-10,
+    and the restructure are released.
+  - The IVC working group, not this repository, decides IVC's scope and naming
+    rule; the deck presents IVC's proposal and this document's concept.
+
+required_elements:
+  - A status note that Contextual Conditions are a working proposal
+  - Links to the published Topic Reference and the IVC proposal
+
+delivery_context: []
+requested_by: Nathan Bunker
+requested_date: 2026-11-03
+needed_by: null
