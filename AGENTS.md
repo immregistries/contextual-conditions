@@ -35,6 +35,16 @@
   there, in GitHub issues, or in meetings are review inputs. Adjudicate
   accepted changes into `content/` and regenerate the pages.
 
+## Writing the source
+
+- Keep the source concise. State each fact, rule, code, and decision in one
+  place and link to it from elsewhere. Do not restate tables in prose, add
+  recaps, or repeat the open-questions table in a section.
+- Keep the document to about six top-level chapters, including the appendix.
+  Merge short or related chapters and use second-level headings within them.
+- These limits apply to `content/` only. Derived products may repeat and
+  expand as their audience needs.
+
 ## Status and certainty
 
 - This is a working proposal. Never describe Contextual Conditions, or any

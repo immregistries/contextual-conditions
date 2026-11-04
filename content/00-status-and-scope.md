@@ -57,27 +57,3 @@ interoperability community.
   topics listed in the next section, which depend on this concept.
 - **Forecasting logic.** CDS engines and their Knowledge Bases decide how
   conditions affect recommendations.
-
-## How this document is maintained
-
-<!-- anchor: authoritative-source -->
-
-The Markdown source in this repository is the authoritative record of the
-concept. The HL7 Public Health Work Group Confluence pages are copies made from
-it for sharing and feedback:
-
-- [CDS Contextual Conditions](https://confluence.hl7.org/spaces/PHWG/pages/453920359/CDS+Contextual+Conditions)
-- [CDS Contextual Conditions in HL7 v2](https://confluence.hl7.org/spaces/PHWG/pages/468260886/CDS+Contextual+Conditions+in+HL7+v2)
-
-Community coordination, meetings, and discussion notes are tracked on
-InteropHub as [CDS Contextual Conditions, topic 7](https://informatics.immregistries.org/hub/es/topic/7).
-
-The concept is still being worked out, and its earlier descriptions do not all
-agree. Those disagreements, and critiques of the concept, are recorded openly
-in this repository as review inputs and open questions.
-
-<!-- anchor: feedback-adjudication -->
-
-Feedback is welcome as a GitHub issue, a Confluence comment, or in community
-meetings. Accepted changes are made here first, then the Confluence pages are
-regenerated.

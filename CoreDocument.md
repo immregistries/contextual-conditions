@@ -74,26 +74,6 @@ interoperability community.
 - **Forecasting logic.** CDS engines and their Knowledge Bases decide how
   conditions affect recommendations.
 
-## How this document is maintained
-
-The Markdown source in this repository is the authoritative record of the
-concept. The HL7 Public Health Work Group Confluence pages are copies made from
-it for sharing and feedback:
-
-- [CDS Contextual Conditions](https://confluence.hl7.org/spaces/PHWG/pages/453920359/CDS+Contextual+Conditions)
-- [CDS Contextual Conditions in HL7 v2](https://confluence.hl7.org/spaces/PHWG/pages/468260886/CDS+Contextual+Conditions+in+HL7+v2)
-
-Community coordination, meetings, and discussion notes are tracked on
-InteropHub as [CDS Contextual Conditions, topic 7](https://informatics.immregistries.org/hub/es/topic/7).
-
-The concept is still being worked out, and its earlier descriptions do not all
-agree. Those disagreements, and critiques of the concept, are recorded openly
-in this repository as review inputs and open questions.
-
-Feedback is welcome as a GitHub issue, a Confluence comment, or in community
-meetings. Accepted changes are made here first, then the Confluence pages are
-regenerated.
-
 ---
 
 # Related Work and Representations
@@ -675,8 +655,6 @@ it can be revisited.
 | ID | Working decision | Basis |
 |---|---|---|
 | WD-1 | This project covers the concept of Contextual Conditions. Publication of code systems and values is operational and is handled separately, currently as an IVC proposal. | Project scope, October 2026 |
-| WD-2 | This repository is the authoritative source for the concept. Confluence pages are regenerated from it for sharing and feedback. | Project scope, October 2026 |
-| WD-3 | Community coordination, meetings, and discussion notes are tracked on InteropHub, [topic 7](https://informatics.immregistries.org/hub/es/topic/7). | Project scope, October 2026 |
 | WD-4 | Disagreements among sources, and critiques of the concept, are kept visible in this repository rather than resolved privately. | Project scope, October 2026 |
 | WD-5 | This document describes the HL7 v2 and FHIR representations at a general level: what a representation must convey and which principles it must preserve. Detailed specifications belong to the related InteropHub topics (1, 137, 140, and 141), which depend on this concept and may develop their own documentation. Resolves OQ-1. | Project direction, October 2026 |
 | WD-6 | HALO factors, from the Immunization CDS (ImmDS + HALO) work, are Contextual Conditions as defined in this document. | Project direction, October 2026 |

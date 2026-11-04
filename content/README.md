@@ -5,7 +5,7 @@ assembled in the order listed in [ContextualConditions.qmd](../ContextualConditi
 
 | File | Section |
 |---|---|
-| [00-status-and-scope.md](00-status-and-scope.md) | Status, purpose, scope, and how the document is maintained |
+| [00-status-and-scope.md](00-status-and-scope.md) | Status, purpose, and scope |
 | [01-related-work.md](01-related-work.md) | Related InteropHub topics, and the general treatment of HL7 v2 and FHIR representations |
 | [02-the-problem.md](02-the-problem.md) | The problem, the maternal RSV example, and the third input to CDS |
 | [03-the-concept.md](03-the-concept.md) | Definitions, datatypes, properties, and what a Contextual Condition is not |
