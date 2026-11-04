@@ -2964,7 +2964,7 @@ html {
           </div>
           <div class="aira-topic-actions guide-status">
             <span class="aira-tag aira-tag--warning guide-status-tag">DRAFT</span>
-            <span class="aira-meta">Version main (f6b06cd)</span>
+            <span class="aira-meta">Version main (6dc7d3b)</span>
           </div>
         </div>
       </header>
@@ -2998,7 +2998,7 @@ html {
 <section id="what-this-project-does-not-cover" class="level3">
 <h3>What this project does not cover</h3>
 <ul data-anchor="what-this-project-does-not-cover" data-block-index="0">
-<li><strong>Publishing Contextual Condition codes.</strong> Code systems and their values are operational publications. The Immunization Vocabularies Collaborative (IVC) is exploring how to publish them at <a href="https://ivci.org/contextual-conditions/" class="uri">https://ivci.org/contextual-conditions/</a>. That publication is itself a proposal under discussion.</li>
+<li><strong>Publishing Contextual Condition codes.</strong> Code systems and their values are operational publications. The Immunization Vocabularies Collaborative (IVC) is exploring how to publish them at <a href="https://ivci.org/contextual-conditions/" class="uri">https://ivci.org/contextual-conditions/</a>, under a <a href="https://github.com/IVC-NUVA/IVC-Website/blob/main/discussion/identifiers-and-namespaces.md">naming rule</a> it proposes for the resources it publishes. Both are proposals under discussion.</li>
 <li><strong>Clinical policy and forecasting logic.</strong> Schedule Authorities decide which factors affect their guidance and what each condition means. Knowledge Bases decide how conditions affect recommendations.</li>
 <li><strong>Collection and determination in a particular workflow:</strong> how information is collected, how a value is derived from it, and who creates, determines, or stores Contextual Conditions. Storage, expiration, correction, and retraction of stored conditions belong to topics 140 and 141 (WD-7).</li>
 <li><strong>A longitudinal record,</strong> or a historical model of the conditions that applied when past doses were given. See <a href="#prospective-model">Evaluation, Time, and Representation</a>.</li>
@@ -3301,7 +3301,11 @@ html {
 <div id="publication-outside-architecture" class="guide-anchor" data-guide-anchor="publication-outside-architecture">
 
 </div>
-<p data-anchor="publication-outside-architecture" data-block-index="0">The Immunization Vocabularies Collaborative (IVC) may serve as a publication and coordination mechanism for these code systems, and may support future work on relationships between authority-specific concepts. IVC is not part of the clinical decision-making process and is not required by the Contextual Conditions architecture. How code systems are actually published is outside this document. <!-- CONFIRM: Role vocabulary. Earlier sources describe four roles (Code System, Publishing, Namespace, and CDS Authority); this section follows the September 2026 concept page. See OQ-4. --></p>
+<p data-anchor="publication-outside-architecture" data-block-index="0">The Immunization Vocabularies Collaborative (IVC) may serve as a publication and coordination mechanism for these code systems, and may support future work on relationships between authority-specific concepts. IVC is not part of the clinical decision-making process and is not required by the Contextual Conditions architecture. How code systems are actually published is outside this document. IVC’s proposed rule for naming the code systems it publishes is in <a href="https://github.com/IVC-NUVA/IVC-Website/blob/main/discussion/identifiers-and-namespaces.md">IVC Identifiers and Namespaces</a>.</p>
+<div id="three-roles" class="guide-anchor" data-guide-anchor="three-roles">
+
+</div>
+<p data-anchor="three-roles" data-block-index="0">The concept uses three roles: Schedule Authority, terminology steward, and Knowledge Base (WD-10). Earlier descriptions used four roles, Code System, Publishing, Namespace, and CDS Authority; the Schedule Authority corresponds to the first, the terminology steward to the second and third, and the Knowledge Base to the fourth.</p>
 </section>
 </section>
 <section id="applying-the-concept" class="level3">
@@ -3659,6 +3663,11 @@ html {
 <td>The patient observations defined by the US CDSi resources are Contextual Conditions as defined in this document; CDSi named them before this concept was developed.</td>
 <td>Project direction, November 2026; <a href="https://www.cdc.gov/iis/downloads/logic-spec-acip-rec-4.6.pdf">CDSi Logic Specification for ACIP Recommendations, version 4.6</a></td>
 </tr>
+<tr>
+<td>WD-10</td>
+<td>The concept uses three roles: Schedule Authority, terminology steward, and Knowledge Base. The four roles of earlier sources (Code System, Publishing, Namespace, and CDS Authority) fold into them. Resolves OQ-4.</td>
+<td>Project direction, November 2026</td>
+</tr>
 </tbody>
 </table></div>
 </section>
@@ -3703,7 +3712,7 @@ html {
 <td>OQ-4</td>
 <td>What are the current names for the governance roles?</td>
 <td>The primer names four roles (Code System, Publishing, Namespace, and CDS Authority); the Confluence concept page uses Schedule Authority, terminology steward, and Knowledge Base.</td>
-<td>Open</td>
+<td>Resolved by WD-10</td>
 </tr>
 <tr>
 <td>OQ-5</td>
@@ -3776,10 +3785,10 @@ html {
   </main>
   <footer class="aira-footer" aria-label="Document information">
     <p><a href="https://www.immregistries.org/">American Immunization Registry Association (AIRA)</a> supports collaboration, standards, and shared solutions that strengthen immunization information systems and improve the use of vaccination data to protect public health.</p>
-    <p>Contextual Conditions for Immunization Decision Support &middot; version main (f6b06cd) &middot; generated 2026-11-04 &middot; Content licensed CC BY 4.0</p>
+    <p>Contextual Conditions for Immunization Decision Support &middot; version main (6dc7d3b) &middot; generated 2026-11-04 &middot; Content licensed CC BY 4.0</p>
   </footer>
 </div>
-<script type="application/json" id="guide-data">{"id": "contextual-conditions", "title": "Contextual Conditions for Immunization Decision Support", "version": "main (f6b06cd)", "built": "2026-11-04", "comments": {"mode": "interophub", "hub": "https://informatics.immregistries.org/hub", "document": "contextual-conditions"}}</script>
+<script type="application/json" id="guide-data">{"id": "contextual-conditions", "title": "Contextual Conditions for Immunization Decision Support", "version": "main (6dc7d3b)", "built": "2026-11-04", "comments": {"mode": "interophub", "hub": "https://informatics.immregistries.org/hub", "document": "contextual-conditions"}}</script>
 <script>
 /* Content guide: section tracking and browser-only comments. */
 (function () {
