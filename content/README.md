@@ -11,6 +11,7 @@ assembled in the order listed in [ContextualConditions.qmd](../ContextualConditi
 | [04-source-information.md](04-source-information.md) | Source information models, determination, responsibilities, terminology, and mapping |
 | [05-evaluation-and-time.md](05-evaluation-and-time.md) | Evaluation scope, input states, evaluation date, dates, and representations |
 | [90-working-decisions.md](90-working-decisions.md) | Appendix: working decisions and open questions |
+| [infographic.yml](infographic.yml) | The primary infographic: the topic at a glance, each part referring to the section it summarizes |
 
 The concept sections were first drafted for version 0.1 from the sources listed
 in [sources/README.md](../sources/README.md); see the
