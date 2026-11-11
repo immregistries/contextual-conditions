@@ -72,6 +72,10 @@
 - Name the authority. Never imply a condition is universal or that similar
   labels from different authorities are equivalent.
 - Respect datatype. Do not turn a date or number into a Boolean.
+- Schedule Authority and Knowledge Base are defined in the Immunization CDS
+  Topic Reference (topic 1). Link to them; do not restate them here. This
+  project describes the terminology steward and how a Schedule Authority
+  defines conditions.
 - Do not create clinical policy. If guidance does not settle a question, mark it
   as open.
 - Keep concept and transport separate. HL7 v2, FHIR, or other representations

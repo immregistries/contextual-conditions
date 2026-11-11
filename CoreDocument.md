@@ -352,10 +352,13 @@ improving how a source determines a value never changes the shared meaning.
 
 ## Schedule Authorities, Knowledge Bases, and code systems {#authorities}
 
-### Schedule Authorities
+**Schedule Authority** and **Knowledge Base** are defined in the
+[Immunization CDS Topic Reference](https://immregistries.github.io/immunization-cds/latest/#terms)
+(topic 1), because a CDS interface selects, applies, and reports them whether
+or not Contextual Conditions are sent. This section covers their part in
+Contextual Conditions.
 
-A **Schedule Authority** is an organization or expert body that publishes
-immunization recommendations for clinical or public health use.
+### Schedule Authorities
 
 The Schedule Authority defines the meaning of the Contextual Conditions its
 recommendations require. It decides:
@@ -367,16 +370,13 @@ recommendations require. It decides:
 
 ### Knowledge Bases
 
-A **Knowledge Base** is an identifiable, executable operationalization of
-guidance from one or more Schedule Authorities, possibly including
-jurisdictional or local adaptations.
-
-A forecast applies one Knowledge Base as a coherent unit. The Knowledge Base
-identifies the Contextual Conditions, and their versions, that it supports.
-The CDS engine does not redefine a Schedule Authority's conditions; it applies
-the rules in its selected Knowledge Base. How a Knowledge Base declares support,
-and how an engine reports whether a submitted condition was recognized, are
-defined by the CDS interface, such as ImmDS + HALO, not by this concept.
+A Knowledge Base identifies the Contextual Conditions, and their versions, that
+it supports. The CDS engine does not redefine a Schedule Authority's
+conditions; it applies the rules in its selected Knowledge Base. How a
+Knowledge Base declares support, and how an engine reports whether a submitted
+condition was recognized, are defined by the CDS interface in
+[topic 1](https://immregistries.github.io/immunization-cds/latest/), not by
+this concept.
 
 ### Authority-specific code systems
 
@@ -417,8 +417,8 @@ Conditions architecture. How code systems are actually published is outside
 this document. IVC's proposed rule for naming the code systems it publishes is
 in [IVC Identifiers and Namespaces](https://github.com/IVC-NUVA/IVC-Website/blob/main/discussion/identifiers-and-namespaces.md).
 
-The concept uses three roles: Schedule Authority, terminology steward, and
-Knowledge Base (WD-10). Earlier descriptions used four roles, Code System,
+The concept uses three roles: the Schedule Authority and Knowledge Base,
+defined in topic 1, and the terminology steward, described above (WD-10). Earlier descriptions used four roles, Code System,
 Publishing, Namespace, and CDS Authority; the Schedule Authority corresponds to
 the first, the terminology steward to the second and third, and the Knowledge
 Base to the fourth.
@@ -757,7 +757,7 @@ it can be revisited.
 | WD-7 | This document describes what a Contextual Condition is conceptually. It does not set rules for who creates, determines, or stores Contextual Conditions, or for how they are included in messages and workflows. IIS storage rules belong to topic 140; topic 141 also touches on storage and is likely to prohibit storing conditions supplied in a query. Resolves OQ-2. | Project direction, October 2026 |
 | WD-8 | When a date is meaningful to a Contextual Condition, it is modeled as a separate Contextual Condition with a date value. It is not conveyed through a representation's own date fields, such as HL7 v2 OBX-14 or the date elements of a FHIR Observation. This modeling rule applies to every representation and is in scope. | Project direction, October 2026 |
 | WD-9 | The patient observations defined by the US CDSi resources are Contextual Conditions as defined in this document; CDSi named them before this concept was developed. | Project direction, November 2026; [CDSi Logic Specification for ACIP Recommendations, version 4.6](https://www.cdc.gov/iis/downloads/logic-spec-acip-rec-4.6.pdf) |
-| WD-10 | The concept uses three roles: Schedule Authority, terminology steward, and Knowledge Base. The four roles of earlier sources (Code System, Publishing, Namespace, and CDS Authority) fold into them. Resolves OQ-4. | Project direction, November 2026 |
+| WD-10 | The concept uses three roles: Schedule Authority, terminology steward, and Knowledge Base. The four roles of earlier sources (Code System, Publishing, Namespace, and CDS Authority) fold into them. Schedule Authority and Knowledge Base are defined by the Immunization CDS Topic Reference (topic 1); this document describes the terminology steward and the Schedule Authority's role in defining conditions. Resolves OQ-4. | Project direction, November 2026 |
 
 ## Open questions
 

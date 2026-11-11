@@ -124,10 +124,13 @@ improving how a source determines a value never changes the shared meaning.
 
 ## Schedule Authorities, Knowledge Bases, and code systems {#authorities}
 
-### Schedule Authorities
+**Schedule Authority** and **Knowledge Base** are defined in the
+[Immunization CDS Topic Reference](https://immregistries.github.io/immunization-cds/latest/#terms)
+(topic 1), because a CDS interface selects, applies, and reports them whether
+or not Contextual Conditions are sent. This section covers their part in
+Contextual Conditions.
 
-A **Schedule Authority** is an organization or expert body that publishes
-immunization recommendations for clinical or public health use.
+### Schedule Authorities
 
 The Schedule Authority defines the meaning of the Contextual Conditions its
 recommendations require. It decides:
@@ -139,16 +142,13 @@ recommendations require. It decides:
 
 ### Knowledge Bases
 
-A **Knowledge Base** is an identifiable, executable operationalization of
-guidance from one or more Schedule Authorities, possibly including
-jurisdictional or local adaptations.
-
-A forecast applies one Knowledge Base as a coherent unit. The Knowledge Base
-identifies the Contextual Conditions, and their versions, that it supports.
-The CDS engine does not redefine a Schedule Authority's conditions; it applies
-the rules in its selected Knowledge Base. How a Knowledge Base declares support,
-and how an engine reports whether a submitted condition was recognized, are
-defined by the CDS interface, such as ImmDS + HALO, not by this concept.
+A Knowledge Base identifies the Contextual Conditions, and their versions, that
+it supports. The CDS engine does not redefine a Schedule Authority's
+conditions; it applies the rules in its selected Knowledge Base. How a
+Knowledge Base declares support, and how an engine reports whether a submitted
+condition was recognized, are defined by the CDS interface in
+[topic 1](https://immregistries.github.io/immunization-cds/latest/), not by
+this concept.
 
 ### Authority-specific code systems
 
@@ -201,8 +201,8 @@ in [IVC Identifiers and Namespaces](https://github.com/IVC-NUVA/IVC-Website/blob
 
 <!-- anchor: three-roles -->
 
-The concept uses three roles: Schedule Authority, terminology steward, and
-Knowledge Base (WD-10). Earlier descriptions used four roles, Code System,
+The concept uses three roles: the Schedule Authority and Knowledge Base,
+defined in topic 1, and the terminology steward, described above (WD-10). Earlier descriptions used four roles, Code System,
 Publishing, Namespace, and CDS Authority; the Schedule Authority corresponds to
 the first, the terminology steward to the second and third, and the Knowledge
 Base to the fourth.
